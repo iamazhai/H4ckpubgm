@@ -7,4 +7,8 @@
     <groupId>org.yinwang</groupId>
     <artifactId>rubysonar</artifactId>
     <version>0.1-SNAPSHOT</version>
-    <packaging>jar</p
+    <packaging>jar</packaging>
+    <name>rubysonar</name>
+
+    <properties>
+        <project.build.sourceEncod
