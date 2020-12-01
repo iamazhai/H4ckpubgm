@@ -27,4 +27,6 @@
             <version>2.2.4</version>
         </dependency>
 
-        <d
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>annotations</artifactId>
