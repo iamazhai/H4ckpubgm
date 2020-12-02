@@ -33,4 +33,6 @@
             <version>5.1</version>
         </dependency>
 
-        <!-- the core, which includes Streaming API, sha
+        <!-- the core, which includes Streaming API, shared low-level abstractions (but NOT data-binding) -->
+        <dependency>
+            <groupId>com.faste
