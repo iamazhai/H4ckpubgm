@@ -30,3 +30,7 @@
         <dependency>
             <groupId>com.intellij</groupId>
             <artifactId>annotations</artifactId>
+            <version>5.1</version>
+        </dependency>
+
+        <!-- the core, which includes Streaming API, sha
