@@ -37,4 +37,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <vers
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <!-- Just the annotations
