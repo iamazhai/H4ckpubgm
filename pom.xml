@@ -35,4 +35,6 @@
 
         <!-- the core, which includes Streaming API, shared low-level abstractions (but NOT data-binding) -->
         <dependency>
-            <groupId>com.faste
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <vers
