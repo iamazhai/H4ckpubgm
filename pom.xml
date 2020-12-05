@@ -40,4 +40,5 @@
             <version>${jackson-version}</version>
         </dependency>
 
-        <!-- Just the annotations
+        <!-- Just the annotations; use this dependency if you want to attach annotations
+             to classes without connecting them to the
