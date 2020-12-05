@@ -41,4 +41,7 @@
         </dependency>
 
         <!-- Just the annotations; use this dependency if you want to attach annotations
-             to classes without connecting them to the
+             to classes without connecting them to the code. -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson
