@@ -52,4 +52,8 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson-version}</ve
+            <version>${jackson-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io
