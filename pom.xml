@@ -50,4 +50,6 @@
 
         <!-- databinding; ObjectMapper, JsonNode and related classes are here -->
         <dependency>
-            <groupId>co
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-version}</ve
