@@ -85,4 +85,5 @@
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>${maven-shade-plugin.version}</version>
                 <configuration>
-                 
+                    <!--<createDependencyReducedPom>true</createDependencyReducedPom>-->
+                  
