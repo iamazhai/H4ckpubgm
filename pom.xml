@@ -89,4 +89,6 @@
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
-   
+                            <excludes>
+                                <exclude>META-INF/*.SF</exclude>
+                
