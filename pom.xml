@@ -86,4 +86,7 @@
                 <version>${maven-shade-plugin.version}</version>
                 <configuration>
                     <!--<createDependencyReducedPom>true</createDependencyReducedPom>-->
-                  
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+   
