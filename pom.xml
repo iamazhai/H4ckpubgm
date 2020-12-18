@@ -107,4 +107,5 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
-     
+                                <transformer
+                                        implementation="o
