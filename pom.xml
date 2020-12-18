@@ -104,4 +104,6 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
-                            <transf
+                            <transformers>
+                                <transformer
+                                        im
