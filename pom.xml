@@ -106,4 +106,5 @@
                         <configuration>
                             <transformers>
                                 <transformer
-                                        im
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+     
