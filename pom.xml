@@ -112,4 +112,9 @@
                                     <mainClass>org.yinwang.rubysonar.demos.Demo</mainClass>
                                 </transformer>
                             </transformers>
-                        </config
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    <
