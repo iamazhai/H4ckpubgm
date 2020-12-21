@@ -89,3 +89,119 @@ public class Analyzer {
         } else {
             return false;
         }
+    }
+
+
+    private void copyModels() {
+        URL resource = Thread.currentThread().getContextClassLoader().getResource(MODEL_LOCATION);
+        String dest = _.locateTmp("models");
+        this.modelDir = dest;
+
+        try {
+            _.copyResourcesRecursively(resource, new File(dest));
+            _.msg("copied models to: " + modelDir);
+        } catch (Exception e) {
+            _.die("Failed to copy models. Please check permissions of writing to: " + dest);
+        }
+        addPath(dest);
+    }
+
+
+    // main entry to the analyzer
+    public void analyze(String path) {
+        String upath = _.unifyPath(path);
+        File f = new File(upath);
+        projectDir = f.isDirectory() ? f.getPath() : f.getParent();
+        loadFileRecursive(upath);
+    }
+
+
+    // main entry to the analyzer (for JSONDump only)
+    public void analyze(List<String> paths) {
+        for (String path : paths) {
+            loadFileRecursive(path);
+        }
+    }
+
+
+    public void setCWD(String cd) {
+        if (cd != null) {
+            cwd = _.unifyPath(cd);
+        }
+    }
+
+
+    public void addPaths(@NotNull List<String> p) {
+        for (String s : p) {
+            addPath(s);
+        }
+    }
+
+
+    public void addPath(String p) {
+        path.add(_.unifyPath(p));
+    }
+
+
+    public void setPath(@NotNull List<String> path) {
+        this.path = new ArrayList<>(path.size());
+        addPaths(path);
+    }
+
+
+    private void addEnvPath() {
+        String path = System.getenv("RUBYLIB");
+        if (path != null) {
+            String[] segments = path.split(":");
+            for (String p : segments) {
+                addPath(p);
+            }
+        }
+    }
+
+
+    @NotNull
+    public List<String> getLoadPath() {
+        List<String> loadPath = new ArrayList<>();
+        loadPath.addAll(path);
+        loadPath.add("/Users/yinwang/.rvm/src/ruby-2.0.0-p247/lib");
+
+        if (cwd != null) {
+            loadPath.add(cwd);
+        }
+        if (projectDir != null && (new File(projectDir).isDirectory())) {
+            loadPath.add(projectDir);
+        }
+
+        return loadPath;
+    }
+
+
+    public boolean inStack(Object f) {
+        return callStack.contains(f);
+    }
+
+
+    public void pushStack(Object f) {
+        callStack.add(f);
+    }
+
+
+    public void popStack(Object f) {
+        callStack.remove(f);
+    }
+
+
+    public boolean inImportStack(Object f) {
+        return importStack.contains(f);
+    }
+
+
+    public void pushImportStack(Object f) {
+        importStack.add(f);
+    }
+
+
+    public void popImportStack(Object f) {
+        importStack.remove(f);
+    }
