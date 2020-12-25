@@ -205,3 +205,97 @@ public class Analyzer {
     public void popImportStack(Object f) {
         importStack.remove(f);
     }
+
+
+    @NotNull
+    public List<Binding> getAllBindings() {
+        return allBindings;
+    }
+
+
+    public List<Diagnostic> getDiagnosticsForFile(String file) {
+        List<Diagnostic> errs = semanticErrors.get(file);
+        if (errs != null) {
+            return errs;
+        }
+        return new ArrayList<>();
+    }
+
+
+    public void putRef(@NotNull Node node, @NotNull List<Binding> bs) {
+        if (!(node instanceof Url)) {
+            List<Binding> bindings = references.get(node);
+            if (bindings == null) {
+                bindings = new ArrayList<>(1);
+                references.put(node, bindings);
+            }
+            for (Binding b : bs) {
+                if (!bindings.contains(b)) {
+                    bindings.add(b);
+                }
+                b.addRef(node);
+            }
+        }
+    }
+
+
+    public void putRef(@NotNull Node node, @NotNull Binding b) {
+        List<Binding> bs = new ArrayList<>();
+        bs.add(b);
+        putRef(node, bs);
+    }
+
+
+    @NotNull
+    public Map<Node, List<Binding>> getReferences() {
+        return references;
+    }
+
+
+    public void putProblem(@NotNull Node loc, String msg) {
+        String file = loc.file;
+        if (file != null) {
+            addFileErr(file, loc.start, loc.end, msg);
+        }
+    }
+
+
+    // for situations without a Node
+    public void putProblem(@Nullable String file, int begin, int end, String msg) {
+        if (file != null) {
+            addFileErr(file, begin, end, msg);
+        }
+    }
+
+
+    void addFileErr(String file, int begin, int end, String msg) {
+        Diagnostic d = new Diagnostic(file, Diagnostic.Category.ERROR, begin, end, msg);
+        getFileErrs(file, semanticErrors).add(d);
+    }
+
+
+    List<Diagnostic> getFileErrs(String file, @NotNull Map<String, List<Diagnostic>> map) {
+        List<Diagnostic> msgs = map.get(file);
+        if (msgs == null) {
+            msgs = new ArrayList<>();
+            map.put(file, msgs);
+        }
+        return msgs;
+    }
+
+
+    @Nullable
+    public Type loadFile(String path) {
+        path = _.unifyPath(path);
+        File f = new File(path);
+
+        if (!f.canRead()) {
+            return null;
+        }
+
+        // detect circular import
+        if (Analyzer.self.inImportStack(path)) {
+            return null;
+        }
+
+        // set new CWD and save the old one on stack
