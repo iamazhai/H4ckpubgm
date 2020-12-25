@@ -299,3 +299,95 @@ public class Analyzer {
         }
 
         // set new CWD and save the old one on stack
+        String oldcwd = cwd;
+        setCWD(f.getParent());
+
+        Analyzer.self.pushImportStack(path);
+        Type type = parseAndResolve(path);
+
+        // restore old CWD
+        setCWD(oldcwd);
+        Analyzer.self.popImportStack(path);
+
+        return type;
+    }
+
+
+    @Nullable
+    private Type parseAndResolve(String file) {
+        try {
+            Node ast = getAstForFile(file);
+
+            if (ast == null) {
+                failedToParse.add(file);
+                return null;
+            } else {
+                Type type = Node.transformExpr(ast, globaltable);
+                if (!loadedFiles.contains(file)) {
+                    loadedFiles.add(file);
+                    loadingProgress.tick();
+                }
+                return type;
+            }
+        } catch (OutOfMemoryError | StackOverflowError e) {
+            if (astCache != null) {
+                astCache.clear();
+            }
+            System.gc();
+            if(e instanceof OutOfMemoryError) {
+                _.msg("Skiping for memory size limit: " + file);
+            }
+            if(e instanceof StackOverflowError) {
+                _.msg("Skiping for stack size limit: " + file);
+            }
+            return null;
+        }
+    }
+
+
+    private void createCacheDir() {
+        cacheDir = _.makePathString(_.getSystemTempDir(), "rubysonar", "ast_cache");
+        File f = new File(cacheDir);
+        _.msg("AST cache is at: " + cacheDir);
+
+        if (!f.exists()) {
+            if (!f.mkdirs()) {
+                _.die("Failed to create tmp directory: " + cacheDir +
+                        ".Please check permissions");
+            }
+        }
+    }
+
+
+    private AstCache getAstCache() {
+        if (astCache == null) {
+            astCache = AstCache.get();
+        }
+        return astCache;
+    }
+
+
+    @Nullable
+    public Node getAstForFile(String file) {
+        return getAstCache().getAST(file);
+    }
+
+
+    public Type requireFile(String headName) {
+        List<String> loadPath = getLoadPath();
+
+        for (String p : loadPath) {
+            String trial = _.makePathString(p, headName + suffix);
+            if (new File(trial).exists()) {
+                return loadFile(trial);
+            }
+        }
+
+        return null;
+    }
+
+
+    public void loadFileRecursive(String fullname) {
+        int count = countFileRecursive(fullname);
+        if (loadingProgress == null) {
+            loadingProgress = new Progress(count, 50);
