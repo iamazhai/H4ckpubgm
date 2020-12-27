@@ -391,3 +391,112 @@ public class Analyzer {
         int count = countFileRecursive(fullname);
         if (loadingProgress == null) {
             loadingProgress = new Progress(count, 50);
+        }
+
+        File file_or_dir = new File(fullname);
+
+        if (file_or_dir.isDirectory()) {
+            for (File file : file_or_dir.listFiles()) {
+                loadFileRecursive(file.getPath());
+            }
+        } else {
+            if (file_or_dir.getPath().endsWith(suffix)) {
+                loadFile(file_or_dir.getPath());
+            }
+        }
+    }
+
+
+    // count number of files that need processing
+    public int countFileRecursive(String fullname) {
+        File file_or_dir = new File(fullname);
+        int sum = 0;
+
+        if (file_or_dir.isDirectory()) {
+            for (File file : file_or_dir.listFiles()) {
+                sum += countFileRecursive(file.getPath());
+            }
+        } else {
+            if (file_or_dir.getPath().endsWith(suffix)) {
+                sum += 1;
+            }
+        }
+        return sum;
+    }
+
+
+    public void finish() {
+        _.msg("\nFinished loading files. " + nCalled + " functions were called.");
+        _.msg("Analyzing uncalled functions");
+        applyUncalled();
+
+        // mark unused variables
+        for (Binding b : allBindings) {
+            if (!(b.type instanceof ClassType) &&
+                    !(b.type instanceof FunType) &&
+                    !(b.type instanceof ModuleType)
+                    && b.refs.isEmpty())
+            {
+                Analyzer.self.putProblem(b.node, "Unused variable: " + b.node.name);
+            }
+        }
+
+        _.msg(getAnalysisSummary());
+    }
+
+
+    public void close() {
+        astCache.close();
+    }
+
+
+    public void addUncalled(@NotNull FunType cl) {
+        if (!cl.func.called) {
+            uncalled.add(cl);
+        }
+    }
+
+
+    public void removeUncalled(FunType f) {
+        uncalled.remove(f);
+    }
+
+
+    public void applyUncalled() {
+        Progress progress = new Progress(uncalled.size(), 50);
+
+        while (!uncalled.isEmpty()) {
+            List<FunType> uncalledDup = new ArrayList<>(uncalled);
+
+            for (FunType cl : uncalledDup) {
+                progress.tick();
+                Call.apply(cl, null, null, null, null, null, null);
+            }
+        }
+    }
+
+
+    @NotNull
+    public String getAnalysisSummary() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n" + _.banner("analysis summary"));
+
+        String duration = _.formatTime(System.currentTimeMillis() - stats.getInt("startTime"));
+        sb.append("\n- total time: " + duration);
+        sb.append("\n- modules loaded: " + loadedFiles.size());
+        sb.append("\n- semantic problems: " + semanticErrors.size());
+        sb.append("\n- failed to parse: " + failedToParse.size());
+
+        // calculate number of defs, refs, xrefs
+        int nDef = 0, nXRef = 0;
+        for (Binding b : getAllBindings()) {
+            nDef += 1;
+            nXRef += b.refs.size();
+        }
+
+        sb.append("\n- number of definitions: " + nDef);
+        sb.append("\n- number of cross references: " + nXRef);
+        sb.append("\n- number of references: " + getReferences().size());
+
+        long nResolved = this.resolved.size();
+        long nUnresolved = this.unresolved.size();
