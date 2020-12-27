@@ -500,3 +500,44 @@ public class Analyzer {
 
         long nResolved = this.resolved.size();
         long nUnresolved = this.unresolved.size();
+        sb.append("\n- resolved names: " + nResolved);
+        sb.append("\n- unresolved names: " + nUnresolved);
+        sb.append("\n- name resolve rate: " + _.percent(nResolved, nResolved + nUnresolved));
+        sb.append("\n" + _.getGCStats());
+
+        return sb.toString();
+    }
+
+
+    @NotNull
+    public List<String> getLoadedFiles() {
+        List<String> files = new ArrayList<>();
+        for (String file : loadedFiles) {
+            if (file.endsWith(suffix)) {
+                files.add(file);
+            }
+        }
+        return files;
+    }
+
+
+    public void registerBinding(@NotNull Binding b) {
+        allBindings.add(b);
+    }
+
+
+    public void setStaticContext(boolean staticContext) {
+        this.staticContext = staticContext;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(analyzer:" +
+                "[" + allBindings.size() + " bindings] " +
+                "[" + references.size() + " refs] " +
+                "[" + loadedFiles.size() + " files] " +
+                ")";
+    }
+}
