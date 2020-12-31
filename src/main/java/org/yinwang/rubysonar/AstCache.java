@@ -13,4 +13,7 @@ import java.util.logging.Logger;
 
 
 /**
- * Provides a factory for ruby source ASTs.  M
+ * Provides a factory for ruby source ASTs.  Maintains configurable on-disk and
+ * in-memory caches to avoid re-parsing files during analysis.
+ */
+pu
