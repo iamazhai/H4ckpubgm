@@ -16,4 +16,6 @@ import java.util.logging.Logger;
  * Provides a factory for ruby source ASTs.  Maintains configurable on-disk and
  * in-memory caches to avoid re-parsing files during analysis.
  */
-pu
+public class AstCache {
+
+    private static final Logger LOG = Logger.getLogger(AstCache.class.getC
