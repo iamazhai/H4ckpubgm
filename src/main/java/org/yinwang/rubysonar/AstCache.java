@@ -18,4 +18,9 @@ import java.util.logging.Logger;
  */
 public class AstCache {
 
-    private static final Logger LOG = Logger.getLogger(AstCache.class.getC
+    private static final Logger LOG = Logger.getLogger(AstCache.class.getCanonicalName());
+
+    private static AstCache INSTANCE;
+
+    @NotNull
+    private Map<String, Node> cache = new
