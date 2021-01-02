@@ -23,4 +23,13 @@ public class AstCache {
     private static AstCache INSTANCE;
 
     @NotNull
-    private Map<String, Node> cache = new
+    private Map<String, Node> cache = new HashMap<>();
+    @NotNull
+    private static Parser parser;
+
+
+    private AstCache() {
+    }
+
+
+    public static A
