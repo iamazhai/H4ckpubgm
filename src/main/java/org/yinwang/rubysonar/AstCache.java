@@ -32,4 +32,8 @@ public class AstCache {
     }
 
 
-    public static A
+    public static AstCache get() {
+        if (INSTANCE == null) {
+            INSTANCE = new AstCache();
+        }
+        parser = new 
