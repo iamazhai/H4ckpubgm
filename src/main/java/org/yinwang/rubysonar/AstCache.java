@@ -36,4 +36,12 @@ public class AstCache {
         if (INSTANCE == null) {
             INSTANCE = new AstCache();
         }
-        parser = new 
+        parser = new Parser();
+        return INSTANCE;
+    }
+
+
+    /**
+     * Clears the memory cache.
+     */
+    public
