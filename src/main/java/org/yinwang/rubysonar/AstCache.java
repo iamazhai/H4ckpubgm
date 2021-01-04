@@ -44,4 +44,10 @@ public class AstCache {
     /**
      * Clears the memory cache.
      */
-    public
+    public void clear() {
+        cache.clear();
+    }
+
+
+    /**
+     * Removes all serialized ASTs
