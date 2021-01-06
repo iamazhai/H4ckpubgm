@@ -53,3 +53,7 @@ public class AstCache {
      * Removes all serialized ASTs from the on-disk cache.
      *
      * @return {@code true} if all cached AST files were removed
+     */
+    public boolean clearDiskCache() {
+        try {
+            _.deleteDirec
