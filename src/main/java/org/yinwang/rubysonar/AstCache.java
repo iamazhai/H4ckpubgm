@@ -56,4 +56,7 @@ public class AstCache {
      */
     public boolean clearDiskCache() {
         try {
-            _.deleteDirec
+            _.deleteDirectory(new File(Analyzer.self.cacheDir));
+            return true;
+        } catch (Exception x) {
+          
