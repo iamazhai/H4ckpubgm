@@ -65,4 +65,11 @@ public class AstCache {
     }
 
 
-    publ
+    public void close() {
+        parser.close();
+//        clearDiskCache();
+    }
+
+
+    /**
+     * Returns the syntax tree f
