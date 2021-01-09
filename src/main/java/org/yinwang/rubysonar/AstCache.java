@@ -76,4 +76,8 @@ public class AstCache {
      * cached copy in the mem cache or the disk cache.
      *
      * @param path absolute path to a source file
-     * @return the AST, or {@code null} i
+     * @return the AST, or {@code null} if the parse failed for any reason
+     */
+    @Nullable
+    public Node getAST(@NotNull String path) {
+        // Cache stor
