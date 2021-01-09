@@ -80,4 +80,6 @@ public class AstCache {
      */
     @Nullable
     public Node getAST(@NotNull String path) {
-        // Cache stor
+        // Cache stores null value if the parse failed.
+        if (cache.containsKey(path)) {
+           
