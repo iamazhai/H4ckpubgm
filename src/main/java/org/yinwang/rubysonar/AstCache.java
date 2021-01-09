@@ -72,4 +72,6 @@ public class AstCache {
 
 
     /**
-     * Returns the syntax tree f
+     * Returns the syntax tree for {@code path}.  May find and/or create a
+     * cached copy in the mem cache or the disk cache.
+    
