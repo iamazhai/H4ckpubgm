@@ -82,4 +82,8 @@ public class AstCache {
     public Node getAST(@NotNull String path) {
         // Cache stores null value if the parse failed.
         if (cache.containsKey(path)) {
-           
+            return cache.get(path);
+        }
+
+        // Might be cached on disk but not in memory.
+        
