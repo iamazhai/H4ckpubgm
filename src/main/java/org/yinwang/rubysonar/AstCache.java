@@ -88,4 +88,9 @@ public class AstCache {
         // Might be cached on disk but not in memory.
         Node node = getSerializedModule(path);
         if (node != null) {
-            LOG.log(Lev
+            LOG.log(Level.FINE, "reusing " + path);
+            cache.put(path, node);
+            return node;
+        }
+
+        n
