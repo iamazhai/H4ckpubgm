@@ -93,4 +93,7 @@ public class AstCache {
             return node;
         }
 
-        n
+        node = null;
+        try {
+            LOG.log(Level.FINE, "parsing " + path);
+            node = parser.pars
