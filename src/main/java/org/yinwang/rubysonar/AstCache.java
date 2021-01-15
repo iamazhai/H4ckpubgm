@@ -110,4 +110,5 @@ public class AstCache {
 
 
     /**
-     * Ea
+     * Each source file's AST is saved in an object file named for the MD5
+     * checksum of the source file.  All that is 
