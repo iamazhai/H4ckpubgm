@@ -101,4 +101,13 @@ public class AstCache {
             cache.put(path, node);  // may be null
         }
 
-        if 
+        if (node != null) {
+            serialize(node);
+        }
+
+        return node;
+    }
+
+
+    /**
+     * Ea
