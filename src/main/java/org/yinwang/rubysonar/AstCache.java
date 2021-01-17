@@ -116,4 +116,9 @@ public class AstCache {
      */
     @NotNull
     public String getCachePath(@NotNull String sourcePath) {
-        return getCachePath(
+        return getCachePath(_.getSHA(sourcePath), sourcePath);
+    }
+
+
+    @NotNull
+    public String getCachePath(String md5, St
