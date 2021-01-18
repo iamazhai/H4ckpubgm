@@ -126,4 +126,6 @@ public class AstCache {
     }
 
 
-    // pac
+    // package-private for testing
+    void serialize(@NotNull Node ast) {
+        String path = getCachePat
