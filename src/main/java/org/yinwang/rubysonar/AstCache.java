@@ -136,4 +136,7 @@ public class AstCache {
             oos = new ObjectOutputStream(fos);
             oos.writeObject(ast);
         } catch (Exception e) {
-           
+            _.msg("Failed to serialize: " + path);
+        } finally {
+            try {
+                if (oos != nul
