@@ -130,4 +130,7 @@ public class AstCache {
     void serialize(@NotNull Node ast) {
         String path = getCachePath(_.getSHA(ast.file), new File(ast.file).getName());
         ObjectOutputStream oos = null;
-        Fil
+        FileOutputStream fos = null;
+        try {
+            fos = new FileOutputStream(path);
+            oos = ne
