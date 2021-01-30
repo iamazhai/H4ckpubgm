@@ -133,4 +133,7 @@ public class AstCache {
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(path);
-            oos = ne
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(ast);
+        } catch (Exception e) {
+           
