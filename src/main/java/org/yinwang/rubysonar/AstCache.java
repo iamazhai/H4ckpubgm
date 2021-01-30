@@ -139,4 +139,7 @@ public class AstCache {
             _.msg("Failed to serialize: " + path);
         } finally {
             try {
-                if (oos != nul
+                if (oos != null) {
+                    oos.close();
+                } else if (fos != null) {
+                    fos.c
