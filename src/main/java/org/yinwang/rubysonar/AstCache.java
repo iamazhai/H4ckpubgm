@@ -142,4 +142,9 @@ public class AstCache {
                 if (oos != null) {
                     oos.close();
                 } else if (fos != null) {
-                    fos.c
+                    fos.close();
+                }
+            } catch (Exception e) {
+            }
+        }
+    
