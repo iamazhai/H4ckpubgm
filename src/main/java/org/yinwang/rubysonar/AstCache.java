@@ -152,4 +152,8 @@ public class AstCache {
 
     // package-private for testing
     @Nullable
-    RbModule getSerializedModule(String sourcePath) 
+    RbModule getSerializedModule(String sourcePath) {
+        if (!new File(sourcePath).canRead()) {
+            return null;
+        }
+        File cached 
