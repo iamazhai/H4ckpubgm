@@ -147,4 +147,9 @@ public class AstCache {
             } catch (Exception e) {
             }
         }
-    
+    }
+
+
+    // package-private for testing
+    @Nullable
+    RbModule getSerializedModule(String sourcePath) 
