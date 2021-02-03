@@ -156,4 +156,7 @@ public class AstCache {
         if (!new File(sourcePath).canRead()) {
             return null;
         }
-        File cached 
+        File cached = new File(getCachePath(sourcePath));
+        if (!cached.canRead()) {
+            return null;
+    
