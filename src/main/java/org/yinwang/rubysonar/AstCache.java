@@ -165,4 +165,7 @@ public class AstCache {
 
 
     // package-private for testing
-    @Nullabl
+    @Nullable
+    RbModule deserialize(@NotNull String sourcePath) {
+        String cachePath = getCachePath(sourcePath);
+        F
