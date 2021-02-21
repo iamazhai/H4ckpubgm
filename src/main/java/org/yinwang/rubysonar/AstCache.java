@@ -159,4 +159,10 @@ public class AstCache {
         File cached = new File(getCachePath(sourcePath));
         if (!cached.canRead()) {
             return null;
-    
+        }
+        return deserialize(sourcePath);
+    }
+
+
+    // package-private for testing
+    @Nullabl
