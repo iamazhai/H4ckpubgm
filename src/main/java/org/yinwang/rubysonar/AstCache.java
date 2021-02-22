@@ -171,4 +171,6 @@ public class AstCache {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
-            fis = new FileInputStr
+            fis = new FileInputStream(cachePath);
+            ois = new ObjectInputStream(fis);
+            return (RbModule) ois.readObj
