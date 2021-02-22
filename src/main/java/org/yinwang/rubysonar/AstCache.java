@@ -168,4 +168,7 @@ public class AstCache {
     @Nullable
     RbModule deserialize(@NotNull String sourcePath) {
         String cachePath = getCachePath(sourcePath);
-        F
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            fis = new FileInputStr
