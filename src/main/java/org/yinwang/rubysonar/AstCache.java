@@ -173,4 +173,9 @@ public class AstCache {
         try {
             fis = new FileInputStream(cachePath);
             ois = new ObjectInputStream(fis);
-            return (RbModule) ois.readObj
+            return (RbModule) ois.readObject();
+        } catch (Exception e) {
+            return null;
+        } finally {
+            try {
+      
