@@ -178,4 +178,6 @@ public class AstCache {
             return null;
         } finally {
             try {
-      
+                if (ois != null) {
+                    ois.close();
+                } else if (fis != nu
