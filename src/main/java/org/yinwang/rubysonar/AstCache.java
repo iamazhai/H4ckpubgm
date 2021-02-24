@@ -180,4 +180,9 @@ public class AstCache {
             try {
                 if (ois != null) {
                     ois.close();
-                } else if (fis != nu
+                } else if (fis != null) {
+                    fis.close();
+                }
+            } catch (Exception e) {
+
+     
