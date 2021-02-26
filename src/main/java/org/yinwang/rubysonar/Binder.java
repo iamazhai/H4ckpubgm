@@ -80,3 +80,59 @@ public class Binder {
                         "unpacking non-iterable: " + rvalue);
             }
         }
+    }
+
+
+    public static void bind(@NotNull State s, @NotNull Name name, @NotNull Type rvalue, Binding.Kind kind) {
+        if (s.isGlobalName(name.id) || name.isGlobalVar()) {
+            Binding b = new Binding(name, rvalue, kind);
+            s.getGlobalTable().update(name.id, b);
+            Analyzer.self.putRef(name, b);
+        } else {
+            s.insert(name.id, name, rvalue, kind);
+        }
+    }
+
+
+    // iterator
+    public static void bindIter(@NotNull State s, Node target, @NotNull Node iter, Binding.Kind kind) {
+        Type iterType = Node.transformExpr(iter, s);
+
+        if (iterType instanceof ListType) {
+            bind(s, target, ((ListType) iterType).eltType, kind);
+        } else if (iterType instanceof TupleType) {
+            bind(s, target, ((TupleType) iterType).toListType().eltType, kind);
+        } else {
+            List<Binding> ents = iterType.table.lookupAttr("__iter__");
+            if (ents != null) {
+                for (Binding ent : ents) {
+                    if (ent == null || !(ent.type instanceof FunType)) {
+                        if (!iterType.isUnknownType()) {
+                            Analyzer.self.putProblem(iter, "not an iterable type: " + iterType);
+                        }
+                        bind(s, target, Type.UNKNOWN, kind);
+                    } else {
+                        bind(s, target, ((FunType) ent.type).getReturnType(), kind);
+                    }
+                }
+            } else {
+                bind(s, target, Type.UNKNOWN, kind);
+            }
+        }
+    }
+
+
+    private static void reportUnpackMismatch(@NotNull List<Node> xs, int vsize) {
+        int xsize = xs.size();
+        int beg = xs.get(0).start;
+        int end = xs.get(xs.size() - 1).end;
+        int diff = xsize - vsize;
+        String msg;
+        if (diff > 0) {
+            msg = "ValueError: need more than " + vsize + " values to unpack";
+        } else {
+            msg = "ValueError: too many values to unpack";
+        }
+        Analyzer.self.putProblem(xs.get(0).file, beg, end, msg);
+    }
+}
