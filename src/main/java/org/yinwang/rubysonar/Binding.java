@@ -48,3 +48,100 @@ public class Binding implements Comparable<Object> {
 
     public Binding(@NotNull Node node, @NotNull Type type, @NotNull Kind kind) {
         this.qname = type.table.path;
+        this.type = type;
+        this.kind = kind;
+        this.node = node;
+        refs = new LinkedHashSet<>(1);
+
+        if (node instanceof Url) {
+            String url = ((Url) node).getURL();
+            if (url.startsWith("file://")) {
+                file = url.substring("file://".length());
+            } else {
+                file = url;
+            }
+        } else {
+            file = node.file;
+        }
+
+        initLocationInfo(node);
+        Analyzer.self.registerBinding(this);
+    }
+
+
+    private void initLocationInfo(Node node) {
+        start = node.start;
+        end = node.end;
+
+        // find the node which node is the name of
+        Node bodyNode = node.parent;
+        while (!(bodyNode == null ||
+                bodyNode instanceof Function ||
+                bodyNode instanceof Class ||
+                bodyNode instanceof RbModule))
+        {
+            bodyNode = bodyNode.parent;
+        }
+
+        if ((bodyNode instanceof Function && ((Function) bodyNode).name == node) ||
+                (bodyNode instanceof Class && ((Class) bodyNode).name == node) ||
+                (bodyNode instanceof RbModule && ((RbModule) bodyNode).name == node))
+        {
+            bodyStart = bodyNode.start;
+            bodyEnd = bodyNode.end;
+        } else {
+            bodyStart = node.start;
+            bodyEnd = node.end;
+        }
+    }
+
+
+    public Str findDocString() {
+        Node fullNode = node;
+        if (kind == Kind.CLASS) {
+            while (fullNode != null && !(fullNode instanceof org.yinwang.rubysonar.ast.Class)) {
+                fullNode = fullNode.parent;
+            }
+        } else if (kind == Kind.METHOD || kind == Kind.CLASS_METHOD) {
+            while (fullNode != null && !(fullNode instanceof Function)) {
+                fullNode = fullNode.parent;
+            }
+        } else if (kind == Kind.MODULE) {
+            while (fullNode != null && !(fullNode instanceof RbModule)) {
+                fullNode = fullNode.parent;
+            }
+        }
+
+
+        if (fullNode instanceof org.yinwang.rubysonar.ast.Class) {
+            return ((org.yinwang.rubysonar.ast.Class) fullNode).docstring;
+        } else if (fullNode instanceof Function) {
+            return ((Function) fullNode).docstring;
+        } else if (fullNode instanceof RbModule) {
+            return ((RbModule) fullNode).docstring;
+        } else {
+            return null;
+        }
+    }
+
+
+    public void setQname(@NotNull String qname) {
+        this.qname = qname;
+    }
+
+
+    public void addRef(Node ref) {
+        refs.add(ref);
+    }
+
+
+    @NotNull
+    public String getFirstFile() {
+        Type bt = type;
+        if (bt instanceof ModuleType) {
+
+            String file = ((ModuleType) bt).file;
+            return file != null ? file : "<built-in module>";
+        }
+
+        String file = this.file;
