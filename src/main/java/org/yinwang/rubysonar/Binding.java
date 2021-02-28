@@ -145,3 +145,62 @@ public class Binding implements Comparable<Object> {
         }
 
         String file = this.file;
+        if (file != null) {
+            return file;
+        }
+
+        return "<built-in binding>";
+    }
+
+
+    /**
+     * Bindings can be sorted by their location for outlining purposes.
+     */
+    public int compareTo(@NotNull Object o) {
+        return start - ((Binding) o).start;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("(binding:");
+        sb.append(":kind=").append(kind);
+        sb.append(":node=").append(node);
+        sb.append(":type=").append(type);
+        sb.append(":qname=").append(qname);
+        sb.append(":refs=");
+        if (refs.size() > 10) {
+            sb.append("[");
+            sb.append(refs.iterator().next());
+            sb.append(", ...(");
+            sb.append(refs.size() - 1);
+            sb.append(" more)]");
+        } else {
+            sb.append(refs);
+        }
+        sb.append(">");
+        return sb.toString();
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Binding)) {
+            return false;
+        } else {
+            Binding b = (Binding) obj;
+            return (start == b.start &&
+                    end == b.end &&
+                    _.same(file, b.file));
+        }
+    }
+
+
+    @Override
+    public int hashCode() {
+        return ("" + file + start).hashCode();
+    }
+
+}
