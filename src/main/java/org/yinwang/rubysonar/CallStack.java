@@ -14,4 +14,9 @@ public class CallStack {
     private Set<Node> stack = new HashSet<>();
 
 
-    public void push(Node 
+    public void push(Node call, Type type) {
+        stack.add(call);
+    }
+
+
+    public void pop(Node call, Type ty
