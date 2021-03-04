@@ -19,4 +19,9 @@ public class CallStack {
     }
 
 
-    public void pop(Node call, Type ty
+    public void pop(Node call, Type type) {
+        stack.remove(call);
+    }
+
+
+    public boolean contains(Node call, Type type) {
