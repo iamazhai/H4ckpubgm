@@ -8,4 +8,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 
-public class CallStack
+public class CallStack {
+
+    @NotNull
+    private Set<Node> stack = new HashSet<>();
+
+
+    public void push(Node 
