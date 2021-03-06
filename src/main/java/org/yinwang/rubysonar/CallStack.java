@@ -25,3 +25,6 @@ public class CallStack {
 
 
     public boolean contains(Node call, Type type) {
+        return stack.contains(call);
+    }
+}
