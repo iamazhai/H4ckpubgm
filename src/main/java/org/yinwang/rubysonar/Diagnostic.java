@@ -4,4 +4,10 @@ import org.jetbrains.annotations.NotNull;
 
 
 public class Diagnostic {
-    public enu
+    public enum Category {
+        INFO, WARNING, ERROR
+    }
+
+
+    public String file;
+    public Catego
