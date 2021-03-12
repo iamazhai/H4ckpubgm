@@ -17,4 +17,7 @@ public class Diagnostic {
 
 
     public Diagnostic(String file, Category category, int start, int end, String msg) {
-        t
+        this.category = category;
+        this.file = file;
+        this.start = start;
+        this.end = end;
