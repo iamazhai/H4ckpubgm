@@ -10,4 +10,7 @@ public class Diagnostic {
 
 
     public String file;
-    public Catego
+    public Category category;
+    public int start;
+    public int end;
+    public String msg
