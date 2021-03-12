@@ -13,4 +13,8 @@ public class Diagnostic {
     public Category category;
     public int start;
     public int end;
-    public String msg
+    public String msg;
+
+
+    public Diagnostic(String file, Category category, int start, int end, String msg) {
+        t
