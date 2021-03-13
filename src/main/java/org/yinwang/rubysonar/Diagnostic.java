@@ -21,3 +21,11 @@ public class Diagnostic {
         this.file = file;
         this.start = start;
         this.end = end;
+        this.msg = msg;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+   
