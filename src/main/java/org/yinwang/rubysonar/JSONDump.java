@@ -89,3 +89,103 @@ public class JSONDump {
                 Type t = binding.type;
 
                 if (t instanceof UnionType) {
+                    t = ((UnionType) t).firstUseful();
+                }
+
+                if (t != null && t instanceof FunType) {
+                    Function func = ((FunType) t).func;
+                    if (func != null) {
+                        String signature = func.getArgList();
+                        if (!signature.equals("")) {
+                            signature = "(" + signature + ")";
+                        }
+                        json.writeStringField("signature", signature);
+                    }
+                }
+            }
+
+            Str docstring = binding.findDocString();
+            if (docstring != null) {
+                json.writeStringField("docstring", docstring.value);
+            }
+
+            json.writeEndObject();
+        }
+    }
+
+
+    private static void writeRefJson(Node ref, Binding binding, JsonGenerator json) throws IOException {
+        if (binding.file != null) {
+            String path = binding.qname.replace("%20", ".");
+
+            if (binding.start >= 0 && ref.start >= 0) {
+                json.writeStartObject();
+                json.writeStringField("sym", path);
+                json.writeStringField("symFile", binding.node.file);
+                json.writeStringField("file", ref.file);
+                json.writeNumberField("start", ref.start);
+                json.writeNumberField("end", ref.end);
+                json.writeBooleanField("builtin", false);
+                json.writeEndObject();
+            }
+        }
+    }
+
+
+    /*
+     * Precondition: srcpath and inclpaths are absolute paths
+     */
+    private static void graph(String projectDir,
+                              List<String> srcpath,
+                              List<String> inclpaths,
+                              OutputStream symOut,
+                              OutputStream refOut) throws Exception
+    {
+        Analyzer idx = newAnalyzer(projectDir, srcpath, inclpaths);
+        idx.multilineFunType = true;
+        JsonFactory jsonFactory = new JsonFactory();
+        JsonGenerator symJson = jsonFactory.createGenerator(symOut);
+        JsonGenerator refJson = jsonFactory.createGenerator(refOut);
+        JsonGenerator[] allJson = {symJson, refJson};
+        for (JsonGenerator json : allJson) {
+            json.writeStartArray();
+        }
+
+        for (Binding b : idx.getAllBindings()) {
+
+            if (b.file != null && b.file.startsWith(projectDir)) {
+                writeSymJson(b, symJson);
+                writeRefJson(b.node, b, refJson);    // self reference
+            }
+
+            for (Node ref : b.refs) {
+                if (ref.file != null && ref.file.startsWith(projectDir)) {
+                    String key = ref.file + ":" + ref.start;
+                    if (!seenRef.contains(key)) {
+                        writeRefJson(ref, b, refJson);
+                        seenRef.add(key);
+                    }
+                }
+            }
+        }
+
+        for (JsonGenerator json : allJson) {
+            json.writeEndArray();
+            json.close();
+        }
+    }
+
+
+    private static void info(Object msg) {
+        System.out.println(msg);
+    }
+
+
+    private static void usage() {
+        info("Usage: java org.yinwang.rubysonar.dump <project-dir> <out-root> <include-paths> <source-paths>... ");
+        info("  <project-dir> is path to the project's root, used to determine whether symbols should be exported");
+        info("  <out-root> is the prefix of the output files.  There are 2 output files: <out-root>-sym, <out-root>-ref");
+        info("  <include-paths> are colon-separated paths to included libs");
+        info("  <source-paths>... are space-separated paths to source units (.rb files) that will be graphed");
+    }
+
