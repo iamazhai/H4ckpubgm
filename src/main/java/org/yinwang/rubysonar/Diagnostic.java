@@ -28,4 +28,6 @@ public class Diagnostic {
     @NotNull
     @Override
     public String toString() {
-   
+        return "<Diagnostic:" + file + ":" + category + ":" + msg + ">";
+    }
+}
