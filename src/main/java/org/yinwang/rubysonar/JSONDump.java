@@ -189,3 +189,44 @@ public class JSONDump {
         info("  <source-paths>... are space-separated paths to source units (.rb files) that will be graphed");
     }
 
+
+    public static void main(String[] args) throws Exception {
+        log.setLevel(Level.SEVERE);
+
+        String projectDir;
+        String outroot;
+        List<String> inclpaths;
+        List<String> srcpath = new ArrayList<>();
+
+        if (args.length >= 3) {
+            projectDir = args[0];
+            outroot = args[1];
+            inclpaths = Arrays.asList(args[2].split(":"));
+            srcpath.addAll(Arrays.asList(args).subList(3, args.length));
+        } else {
+            usage();
+            return;
+        }
+
+        OutputStream symOut = null, refOut = null;
+        try {
+            symOut = new BufferedOutputStream(new FileOutputStream(outroot + "-sym"));
+            refOut = new BufferedOutputStream(new FileOutputStream(outroot + "-ref"));
+            _.msg("graphing: " + srcpath);
+            graph(projectDir, srcpath, inclpaths, symOut, refOut);
+            symOut.flush();
+            refOut.flush();
+        } catch (FileNotFoundException e) {
+            System.err.println("Could not find file: " + e);
+            return;
+        } finally {
+            if (symOut != null) {
+                symOut.close();
+            }
+            if (refOut != null) {
+                refOut.close();
+            }
+        }
+        log.info("SUCCESS");
+    }
+}
