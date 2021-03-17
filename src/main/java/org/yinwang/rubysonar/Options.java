@@ -7,4 +7,10 @@ import java.util.Map;
 
 public class Options {
 
-    private
+    private Map<String, Object> optionsMap = new LinkedHashMap<>();
+
+
+    private List<String> args = new ArrayList<>();
+
+
+ 
