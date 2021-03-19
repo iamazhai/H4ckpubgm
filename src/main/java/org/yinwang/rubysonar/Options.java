@@ -20,4 +20,6 @@ public class Options {
                 if (i + 1 >= args.length) {
                     _.die("option needs a value: " + key);
                 } else {
-                 
+                    key = key.substring(2);
+                    String value = args[i + 1];
+                    if (!value.start
