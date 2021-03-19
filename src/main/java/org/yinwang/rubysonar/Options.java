@@ -13,4 +13,6 @@ public class Options {
     private List<String> args = new ArrayList<>();
 
 
- 
+    public Options(String[] args) {
+        for (int i = 0; i < args.length; i++) {
+            String ke
