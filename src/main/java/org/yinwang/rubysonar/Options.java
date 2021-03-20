@@ -22,4 +22,6 @@ public class Options {
                 } else {
                     key = key.substring(2);
                     String value = args[i + 1];
-                    if (!value.start
+                    if (!value.startsWith("-")) {
+                        optionsMap.put(key, value);
+                        i++
