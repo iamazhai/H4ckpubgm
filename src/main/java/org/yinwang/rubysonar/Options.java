@@ -28,4 +28,7 @@ public class Options {
                     }
                 }
             } else if (key.startsWith("-")) {
-                key = key.su
+                key = key.substring(1);
+                optionsMap.put(key, true);
+            } else {
+                this.args.add(key);
