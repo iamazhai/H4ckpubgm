@@ -32,3 +32,10 @@ public class Options {
                 optionsMap.put(key, true);
             } else {
                 this.args.add(key);
+            }
+        }
+    }
+
+
+    public Object get(String key) {
+        return optionsMap.get(key);
