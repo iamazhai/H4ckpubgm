@@ -57,4 +57,9 @@ public class Options {
     }
 
 
-    
+    public List<String> getArgs() {
+        return args;
+    }
+
+
+    public Map<String, Objec
