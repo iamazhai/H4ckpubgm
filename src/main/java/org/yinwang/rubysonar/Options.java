@@ -44,4 +44,7 @@ public class Options {
 
     public boolean hasOption(String key) {
         Object v = optionsMap.get(key);
-        i
+        if (v instanceof Boolean) {
+            return (boolean) v;
+        } else {
+            return false;
