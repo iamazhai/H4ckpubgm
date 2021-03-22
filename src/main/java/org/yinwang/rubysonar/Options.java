@@ -48,3 +48,13 @@ public class Options {
             return (boolean) v;
         } else {
             return false;
+        }
+    }
+
+
+    public void put(String key, Object value) {
+        optionsMap.put(key, value);
+    }
+
+
+    
