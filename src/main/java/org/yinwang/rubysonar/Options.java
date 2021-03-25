@@ -62,4 +62,10 @@ public class Options {
     }
 
 
-    public Map<String, Objec
+    public Map<String, Object> getOptionsMap() {
+        return optionsMap;
+    }
+
+
+    public static void main(String[] args) {
+       
