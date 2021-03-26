@@ -70,4 +70,8 @@ public class Options {
     public static void main(String[] args) {
         Options options = new Options(args);
         for (String key : options.optionsMap.keySet()) {
-            Syst
+            System.out.println(key + " = " + options.get(key));
+        }
+    }
+
+}
