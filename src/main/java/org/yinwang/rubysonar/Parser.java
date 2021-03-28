@@ -15,4 +15,11 @@ import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List
+import java.util.List;
+import java.util.Map;
+
+
+public class Parser {
+
+    private static final String RUBY_EXE = "irb";
+    privat
