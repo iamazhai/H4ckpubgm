@@ -7,4 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import org.yinwang.rubysonar.ast.Class;
 import org.yinwang.rubysonar.ast.RbModule;
 import org.yinwang.rubysonar.ast.Void;
-import org.yinwang.rubys
+import org.yinwang.rubysonar.ast.*;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.InputStream;
+import java.io.OutputStre
