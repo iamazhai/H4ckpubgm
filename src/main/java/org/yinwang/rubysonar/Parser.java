@@ -12,4 +12,7 @@ import org.yinwang.rubysonar.ast.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.InputStream;
-import java.io.OutputStre
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List
