@@ -26,4 +26,5 @@ public class Parser {
 
     @Nullable
     Process rubyProcess;
-    private static Gson gs
+    private static Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    private static final String dumpRubyResource = "org/yinwang/rub
