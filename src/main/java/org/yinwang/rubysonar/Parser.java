@@ -22,4 +22,8 @@ import java.util.Map;
 public class Parser {
 
     private static final String RUBY_EXE = "irb";
-    privat
+    private static final int TIMEOUT = 30000;
+
+    @Nullable
+    Process rubyProcess;
+    private static Gson gs
