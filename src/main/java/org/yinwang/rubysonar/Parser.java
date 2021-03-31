@@ -30,4 +30,10 @@ public class Parser {
     private static final String dumpRubyResource = "org/yinwang/rubysonar/ruby/dump_ruby.rb";
     private String exchangeFile;
     private String endMark;
-    private String j
+    private String jsonizer;
+    private String parserLog;
+    private String file;
+
+
+    public Parser() {
+        
