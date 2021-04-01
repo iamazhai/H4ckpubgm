@@ -38,4 +38,7 @@ public class Parser {
     public Parser() {
         exchangeFile = _.locateTmp("json");
         endMark = _.locateTmp("end");
-        jsonizer = _.locateTmp("dump_
+        jsonizer = _.locateTmp("dump_ruby");
+        parserLog = _.locateTmp("parser_log");
+
+        startRubyProcesses(
