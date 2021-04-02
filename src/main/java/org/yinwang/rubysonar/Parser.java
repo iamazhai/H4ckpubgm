@@ -51,4 +51,7 @@ public class Parser {
     // start or restart ruby process
     private void startRubyProcesses() {
         if (rubyProcess != null) {
-  
+            rubyProcess.destroy();
+        }
+
+        rubyProcess = startInterpreter(RUBY_EX
