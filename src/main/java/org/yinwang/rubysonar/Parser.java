@@ -48,4 +48,7 @@ public class Parser {
     }
 
 
-    // star
+    // start or restart ruby process
+    private void startRubyProcesses() {
+        if (rubyProcess != null) {
+  
