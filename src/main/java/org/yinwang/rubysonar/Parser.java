@@ -41,4 +41,11 @@ public class Parser {
         jsonizer = _.locateTmp("dump_ruby");
         parserLog = _.locateTmp("parser_log");
 
-        startRubyProcesses(
+        startRubyProcesses();
+        if (rubyProcess != null) {
+            _.msg("started: " + RUBY_EXE);
+        }
+    }
+
+
+    // star
