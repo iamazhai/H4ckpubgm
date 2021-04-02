@@ -54,4 +54,8 @@ public class Parser {
             rubyProcess.destroy();
         }
 
-        rubyProcess = startInterpreter(RUBY_EX
+        rubyProcess = startInterpreter(RUBY_EXE);
+
+        if (rubyProcess == null) {
+            _.die("You don't seem to have ruby on PATH");
+   
