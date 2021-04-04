@@ -66,4 +66,11 @@ public class Parser {
         if (!Analyzer.self.hasOption("debug")) {
             new File(jsonizer).delete();
             new File(exchangeFile).delete();
-            new File(endMa
+            new File(endMark).delete();
+            new File(parserLog).delete();
+        }
+    }
+
+
+    @Nullable
+    public Node convert(Ob
