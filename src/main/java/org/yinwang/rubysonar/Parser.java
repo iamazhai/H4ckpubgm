@@ -58,4 +58,10 @@ public class Parser {
 
         if (rubyProcess == null) {
             _.die("You don't seem to have ruby on PATH");
-   
+        }
+    }
+
+
+    public void close() {
+        if (!Analyzer.self.hasOption("debug")) {
+         
