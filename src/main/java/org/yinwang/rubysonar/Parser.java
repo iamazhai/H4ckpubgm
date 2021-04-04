@@ -73,4 +73,9 @@ public class Parser {
 
 
     @Nullable
-    public Node convert(Ob
+    public Node convert(Object o) {
+        if (!(o instanceof Map) || ((Map) o).isEmpty()) {
+            return null;
+        }
+
+        Map<Stri
