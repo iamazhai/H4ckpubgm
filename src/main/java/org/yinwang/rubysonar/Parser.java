@@ -78,4 +78,7 @@ public class Parser {
             return null;
         }
 
-        Map<Stri
+        Map<String, Object> map = (Map<String, Object>) o;
+
+        String type = (String) map.get("type");
+        Dou
