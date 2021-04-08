@@ -81,4 +81,5 @@ public class Parser {
         Map<String, Object> map = (Map<String, Object>) o;
 
         String type = (String) map.get("type");
-        Dou
+        Double startDouble = (Double) map.get("start");
+        Double endDouble = (Double) map.get("end")
