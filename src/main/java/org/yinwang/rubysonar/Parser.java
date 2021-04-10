@@ -85,4 +85,8 @@ public class Parser {
         Double endDouble = (Double) map.get("end");
 
         int start = startDouble == null ? 0 : startDouble.intValue();
-        int end = endDouble == null ? 1
+        int end = endDouble == null ? 1 : endDouble.intValue();
+
+
+        if (type.equals("program")) {
+            retu
