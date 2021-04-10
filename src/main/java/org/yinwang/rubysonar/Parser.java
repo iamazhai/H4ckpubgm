@@ -82,4 +82,7 @@ public class Parser {
 
         String type = (String) map.get("type");
         Double startDouble = (Double) map.get("start");
-        Double endDouble = (Double) map.get("end")
+        Double endDouble = (Double) map.get("end");
+
+        int start = startDouble == null ? 0 : startDouble.intValue();
+        int end = endDouble == null ? 1
