@@ -93,4 +93,7 @@ public class Parser {
         }
 
         if (type.equals("module")) {
-            Nod
+            Node name = convert(map.get("name"));
+            Block body = (Block) convert(map.get("body"));
+
+            if (name instan
