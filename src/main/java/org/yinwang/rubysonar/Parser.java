@@ -96,4 +96,6 @@ public class Parser {
             Node name = convert(map.get("name"));
             Block body = (Block) convert(map.get("body"));
 
-            if (name instan
+            if (name instanceof Name) {
+                String id = ((Name) name).id;
+                if (id.startsWith("Ins
