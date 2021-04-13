@@ -98,4 +98,8 @@ public class Parser {
 
             if (name instanceof Name) {
                 String id = ((Name) name).id;
-                if (id.startsWith("Ins
+                if (id.startsWith("InstanceMethods")) {
+                    return body;
+                }
+            }
+            Str docstri
