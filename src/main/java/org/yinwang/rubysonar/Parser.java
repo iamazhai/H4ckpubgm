@@ -103,4 +103,8 @@ public class Parser {
                 }
             }
             Str docstring = (Str) convert(map.get("doc"));
-            return new RbModule(name, body, docstring, file,
+            return new RbModule(name, body, docstring, file, start, end);
+        }
+
+        if (type.equals("block")) {
+            List<Node> stmts = convertList(map.
