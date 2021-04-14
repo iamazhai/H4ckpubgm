@@ -102,4 +102,5 @@ public class Parser {
                     return body;
                 }
             }
-            Str docstri
+            Str docstring = (Str) convert(map.get("doc"));
+            return new RbModule(name, body, docstring, file,
