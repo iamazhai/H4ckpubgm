@@ -107,4 +107,8 @@ public class Parser {
         }
 
         if (type.equals("block")) {
-            List<Node> stmts = convertList(map.
+            List<Node> stmts = convertList(map.get("stmts"));
+            return new Block(stmts, file, start, end);
+        }
+
+        if (type.equals("def") || type.equa
