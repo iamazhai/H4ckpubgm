@@ -111,4 +111,6 @@ public class Parser {
             return new Block(stmts, file, start, end);
         }
 
-        if (type.equals("def") || type.equa
+        if (type.equals("def") || type.equals("lambda")) {
+            Node binder = convert(map.get("name"));
+            Node body = convert(map.get("body"))
