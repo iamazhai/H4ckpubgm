@@ -116,4 +116,6 @@ public class Parser {
             Node body = convert(map.get("body"));
             Map<String, Object> argsMap = (Map<String, Object>) map.get("params");
             List<Node> positional = convertList(argsMap.get("positional"));
-            List<Node> defaults = convertList(argsMap.get
+            List<Node> defaults = convertList(argsMap.get("defaults"));
+            Name var = (Name) convert(argsMap.get("rest"));
+            Name vararg = var == null ? n
