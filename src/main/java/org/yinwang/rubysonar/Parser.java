@@ -115,4 +115,5 @@ public class Parser {
             Node binder = convert(map.get("name"));
             Node body = convert(map.get("body"));
             Map<String, Object> argsMap = (Map<String, Object>) map.get("params");
-            List<Node> positional =
+            List<Node> positional = convertList(argsMap.get("positional"));
+            List<Node> defaults = convertList(argsMap.get
