@@ -122,3 +122,5 @@ public class Parser {
             Name kw = (Name) convert(argsMap.get("rest_kw"));
             Name kwarg = kw == null ? null : kw;
             List<Node> afterRest = convertList(argsMap.get("after_rest"));
+            Name blockarg = (Name) convert(argsMap.get("blockarg"));
+            Str docstring = (Str) convert(map.g
