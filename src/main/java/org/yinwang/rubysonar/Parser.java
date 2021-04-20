@@ -120,4 +120,5 @@ public class Parser {
             Name var = (Name) convert(argsMap.get("rest"));
             Name vararg = var == null ? null : var;
             Name kw = (Name) convert(argsMap.get("rest_kw"));
-            Name kwarg =
+            Name kwarg = kw == null ? null : kw;
+            List<Node> afterRest = convertList(argsMap.get("after_rest"));
