@@ -124,4 +124,8 @@ public class Parser {
             List<Node> afterRest = convertList(argsMap.get("after_rest"));
             Name blockarg = (Name) convert(argsMap.get("blockarg"));
             Str docstring = (Str) convert(map.get("doc"));
-            return new Function(binder, positional, body, defaults, vararg, kwarg
+            return new Function(binder, positional, body, defaults, vararg, kwarg, afterRest, blockarg,
+                    docstring, file, start, end);
+        }
+
+        if (type.equa
