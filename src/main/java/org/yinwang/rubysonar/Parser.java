@@ -128,4 +128,6 @@ public class Parser {
                     docstring, file, start, end);
         }
 
-        if (type.equa
+        if (type.equals("call")) {
+            Node func = convert(map.get("func"));
+            Map<String, Object> args = (Map<String
