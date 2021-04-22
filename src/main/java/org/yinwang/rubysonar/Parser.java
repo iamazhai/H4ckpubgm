@@ -130,4 +130,6 @@ public class Parser {
 
         if (type.equals("call")) {
             Node func = convert(map.get("func"));
-            Map<String, Object> args = (Map<String
+            Map<String, Object> args = (Map<String, Object>) map.get("args");
+            Node blockarg = null;
+            Node stararg = n
