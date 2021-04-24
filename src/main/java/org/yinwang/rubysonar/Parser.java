@@ -132,4 +132,7 @@ public class Parser {
             Node func = convert(map.get("func"));
             Map<String, Object> args = (Map<String, Object>) map.get("args");
             Node blockarg = null;
-            Node stararg = n
+            Node stararg = null;
+
+            if (args != null) {
+                List<Node> posKey = convertList(args.get("positio
