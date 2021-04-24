@@ -135,4 +135,6 @@ public class Parser {
             Node stararg = null;
 
             if (args != null) {
-                List<Node> posKey = convertList(args.get("positio
+                List<Node> posKey = convertList(args.get("positional"));
+                List<Node> pos = new ArrayList<>();
+                List<Keyword> kws = new ArrayList
