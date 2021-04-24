@@ -140,4 +140,5 @@ public class Parser {
                 List<Keyword> kws = new ArrayList<>();
                 if (posKey != null) {
                     for (Node node : posKey) {
- 
+                        if (node instanceof Assign && ((Assign) node).target instanceof Name) {
+     
