@@ -142,4 +142,6 @@ public class Parser {
                     for (Node node : posKey) {
                         if (node instanceof Assign && ((Assign) node).target instanceof Name) {
                             kws.add(new Keyword(((Name) ((Assign) node).target).id,
-                                    ((
+                                    ((Assign) node).value,
+                                    file,
+                                  
