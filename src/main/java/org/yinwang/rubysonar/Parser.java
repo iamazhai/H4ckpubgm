@@ -147,4 +147,7 @@ public class Parser {
                                     node.start,
                                     node.end));
                         } else {
-         
+                            pos.add(node);
+                        }
+                    }
+              
