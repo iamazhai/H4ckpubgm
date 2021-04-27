@@ -150,4 +150,6 @@ public class Parser {
                             pos.add(node);
                         }
                     }
-              
+                }
+                stararg = convert(args.get("star"));
+                blockarg = convert(args.get("blockar
