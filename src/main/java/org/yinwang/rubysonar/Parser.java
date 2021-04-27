@@ -144,4 +144,7 @@ public class Parser {
                             kws.add(new Keyword(((Name) ((Assign) node).target).id,
                                     ((Assign) node).value,
                                     file,
-                                  
+                                    node.start,
+                                    node.end));
+                        } else {
+         
