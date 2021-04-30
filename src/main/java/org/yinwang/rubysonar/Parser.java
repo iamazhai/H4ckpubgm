@@ -152,4 +152,7 @@ public class Parser {
                     }
                 }
                 stararg = convert(args.get("star"));
-                blockarg = convert(args.get("blockar
+                blockarg = convert(args.get("blockarg"));
+                return new Call(func, pos, kws, null, stararg, blockarg, file, start, end);
+            } else {
+ 
