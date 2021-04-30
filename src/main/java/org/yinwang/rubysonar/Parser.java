@@ -155,4 +155,5 @@ public class Parser {
                 blockarg = convert(args.get("blockarg"));
                 return new Call(func, pos, kws, null, stararg, blockarg, file, start, end);
             } else {
- 
+                // call with no arguments
+                return new Call(func, null, null, null, stara
