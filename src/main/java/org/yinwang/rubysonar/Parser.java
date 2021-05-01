@@ -161,4 +161,6 @@ public class Parser {
         }
 
         if (type.equals("attribute")) {
-            Node va
+            Node value = convert(map.get("value"));
+            Name attr = (Name) convert(map.get("attr"));
+            return ne
