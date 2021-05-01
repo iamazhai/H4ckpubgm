@@ -156,4 +156,9 @@ public class Parser {
                 return new Call(func, pos, kws, null, stararg, blockarg, file, start, end);
             } else {
                 // call with no arguments
-                return new Call(func, null, null, null, stara
+                return new Call(func, null, null, null, stararg, blockarg, file, start, end);
+            }
+        }
+
+        if (type.equals("attribute")) {
+            Node va
