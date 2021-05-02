@@ -163,4 +163,7 @@ public class Parser {
         if (type.equals("attribute")) {
             Node value = convert(map.get("value"));
             Name attr = (Name) convert(map.get("attr"));
-            return ne
+            return new Attribute(value, attr, file, start, end);
+        }
+
+        if (type.equals("binary"))
