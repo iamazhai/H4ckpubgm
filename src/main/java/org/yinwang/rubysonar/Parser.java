@@ -166,4 +166,7 @@ public class Parser {
             return new Attribute(value, attr, file, start, end);
         }
 
-        if (type.equals("binary"))
+        if (type.equals("binary")) {
+            Node left = convert(map.get("left"));
+            Node right = convert(map.get("right"));
+  
