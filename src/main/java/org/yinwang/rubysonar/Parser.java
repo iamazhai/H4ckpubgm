@@ -169,4 +169,7 @@ public class Parser {
         if (type.equals("binary")) {
             Node left = convert(map.get("left"));
             Node right = convert(map.get("right"));
-  
+            Op op = convertOp(map.get("op"));
+
+            // desugar complex operators
+            
