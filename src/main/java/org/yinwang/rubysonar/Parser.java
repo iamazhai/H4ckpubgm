@@ -172,4 +172,6 @@ public class Parser {
             Op op = convertOp(map.get("op"));
 
             // desugar complex operators
-            
+            if (op == Op.NotEqual) {
+                Node eq = new BinOp(Op.Equal, left, right, file, start, end);
+       
