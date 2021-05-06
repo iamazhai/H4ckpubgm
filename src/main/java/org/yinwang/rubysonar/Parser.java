@@ -174,4 +174,8 @@ public class Parser {
             // desugar complex operators
             if (op == Op.NotEqual) {
                 Node eq = new BinOp(Op.Equal, left, right, file, start, end);
-       
+                return new UnaryOp(Op.Not, eq, file, start, end);
+            }
+
+            if (op == Op.NotMatch) {
+            
