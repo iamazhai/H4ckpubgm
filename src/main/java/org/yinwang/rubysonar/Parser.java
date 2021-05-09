@@ -188,4 +188,6 @@ public class Parser {
                 return new BinOp(Op.Or, lt, eq, file, start, end);
             }
 
-            if (op == Op.GtE)
+            if (op == Op.GtE) {
+                Node gt = new BinOp(Op.Gt, left, right, file, start, end);
+                Node eq = new BinOp(Op.Eq, left, right,
