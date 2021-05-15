@@ -204,4 +204,10 @@ public class Parser {
                 return new UnaryOp(Op.Not, in, file, start, end);
             }
 
-            return new BinOp(op, left, right, file, start, en
+            return new BinOp(op, left, right, file, start, end);
+
+        }
+
+        if (type.equals("void")) {
+            return new Void(file, start, end);
+ 
