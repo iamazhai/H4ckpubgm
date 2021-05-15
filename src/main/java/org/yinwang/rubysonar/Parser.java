@@ -210,4 +210,9 @@ public class Parser {
 
         if (type.equals("void")) {
             return new Void(file, start, end);
- 
+        }
+
+
+        if (type.equals("break")) {
+            return new Control("break", file, start, end);
+   
