@@ -218,4 +218,8 @@ public class Parser {
         }
 
         if (type.equals("retry")) {
-            return new Control("retry", file, start, 
+            return new Control("retry", file, start, end);
+        }
+
+        if (type.equals("redo")) {
+            return new Control("re
