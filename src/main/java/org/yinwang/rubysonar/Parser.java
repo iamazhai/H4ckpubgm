@@ -222,4 +222,8 @@ public class Parser {
         }
 
         if (type.equals("redo")) {
-            return new Control("re
+            return new Control("redo", file, start, end);
+        }
+
+        if (type.equals("continue")) {
+            return new C
