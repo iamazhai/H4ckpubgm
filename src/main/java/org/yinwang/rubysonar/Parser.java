@@ -230,4 +230,6 @@ public class Parser {
         }
 
         if (type.equals("class")) {
-            Node
+            Node locator = convert(map.get("name"));
+            Node base = convert(map.get("super"));
+   
