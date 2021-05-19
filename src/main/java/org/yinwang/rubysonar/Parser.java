@@ -232,4 +232,6 @@ public class Parser {
         if (type.equals("class")) {
             Node locator = convert(map.get("name"));
             Node base = convert(map.get("super"));
-   
+            Node body = convert(map.get("body"));
+            Str docstring = (Str) convert(map.get("doc"));
+ 
