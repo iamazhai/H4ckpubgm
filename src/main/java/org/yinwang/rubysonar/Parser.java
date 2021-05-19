@@ -226,4 +226,8 @@ public class Parser {
         }
 
         if (type.equals("continue")) {
-            return new C
+            return new Control("continue", file, start, end);
+        }
+
+        if (type.equals("class")) {
+            Node
