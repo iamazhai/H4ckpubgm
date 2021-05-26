@@ -234,4 +234,5 @@ public class Parser {
             Node base = convert(map.get("super"));
             Node body = convert(map.get("body"));
             Str docstring = (Str) convert(map.get("doc"));
- 
+            boolean isStatic = (Boolean) map.get("static");
+            return new Class(locator, b
