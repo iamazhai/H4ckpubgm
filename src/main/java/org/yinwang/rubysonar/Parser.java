@@ -241,4 +241,7 @@ public class Parser {
         if (type.equals("undef")) {
             List<Node> targets = convertList(map.get("names"));
             return new Undef(targets, file, start, end);
-       
+        }
+
+        if (type.equals("hash")) {
+            List<Map<String, Object>> entries = (List<Map<String, Object>>)
