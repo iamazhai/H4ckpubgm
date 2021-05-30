@@ -244,4 +244,6 @@ public class Parser {
         }
 
         if (type.equals("hash")) {
-            List<Map<String, Object>> entries = (List<Map<String, Object>>)
+            List<Map<String, Object>> entries = (List<Map<String, Object>>) map.get("entries");
+            List<Node> keys = new ArrayList<>();
+            List<Node> values = new A
