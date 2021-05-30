@@ -251,4 +251,7 @@ public class Parser {
             if (entries != null) {
                 for (Map<String, Object> e : entries) {
                     Node k = convert(e.get("key"));
-                    Node v = convert(e.get("value")
+                    Node v = convert(e.get("value"));
+                    if (k != null && v != null) {
+                        keys.add(k);
+                
