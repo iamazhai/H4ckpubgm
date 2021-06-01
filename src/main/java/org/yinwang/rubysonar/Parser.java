@@ -262,4 +262,6 @@ public class Parser {
         }
 
         if (type.equals("rescue")) {
-            List<Nod
+            List<Node> exceptions = convertList(map.get("exceptions"));
+            Node binder = convert(map.get("binder"));
+       
