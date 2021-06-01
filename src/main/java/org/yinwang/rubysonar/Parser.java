@@ -254,4 +254,8 @@ public class Parser {
                     Node v = convert(e.get("value"));
                     if (k != null && v != null) {
                         keys.add(k);
-                
+                        values.add(v);
+                    }
+                }
+            }
+            return new Dict(k
