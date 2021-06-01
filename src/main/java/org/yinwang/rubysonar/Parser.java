@@ -258,4 +258,8 @@ public class Parser {
                     }
                 }
             }
-            return new Dict(k
+            return new Dict(keys, values, file, start, end);
+        }
+
+        if (type.equals("rescue")) {
+            List<Nod
