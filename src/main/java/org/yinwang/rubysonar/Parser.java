@@ -266,4 +266,7 @@ public class Parser {
             Node binder = convert(map.get("binder"));
             Node handler = convert(map.get("handler"));
             Node orelse = convert(map.get("else"));
-            re
+            return new Handler(exceptions, binder, handler, orelse, file, start, end);
+        }
+
+        if (type.eq
