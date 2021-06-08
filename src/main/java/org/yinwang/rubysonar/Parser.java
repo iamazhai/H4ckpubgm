@@ -269,4 +269,6 @@ public class Parser {
             return new Handler(exceptions, binder, handler, orelse, file, start, end);
         }
 
-        if (type.eq
+        if (type.equals("for")) {
+            Node target = convert(map.get("target"));
+            Node iter = conv
