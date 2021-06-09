@@ -276,4 +276,6 @@ public class Parser {
             return new For(target, iter, body, null, file, start, end);
         }
 
-        if (type.equals("if")
+        if (type.equals("if")) {
+            Node test = convert(map.get("test"));
+            Node body = convert(map.get("body")
