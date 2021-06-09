@@ -273,4 +273,7 @@ public class Parser {
             Node target = convert(map.get("target"));
             Node iter = convert(map.get("iter"));
             Block body = (Block) convert(map.get("body"));
-            re
+            return new For(target, iter, body, null, file, start, end);
+        }
+
+        if (type.equals("if")
