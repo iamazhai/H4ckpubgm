@@ -278,4 +278,7 @@ public class Parser {
 
         if (type.equals("if")) {
             Node test = convert(map.get("test"));
-            Node body = convert(map.get("body")
+            Node body = convert(map.get("body"));
+            Node orelse = convert(map.get("else"));
+            return new If(test, body, orelse, file, start, end);
+      
