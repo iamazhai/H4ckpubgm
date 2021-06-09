@@ -271,4 +271,6 @@ public class Parser {
 
         if (type.equals("for")) {
             Node target = convert(map.get("target"));
-            Node iter = conv
+            Node iter = convert(map.get("iter"));
+            Block body = (Block) convert(map.get("body"));
+            re
