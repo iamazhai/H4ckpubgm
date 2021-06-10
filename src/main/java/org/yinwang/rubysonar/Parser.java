@@ -286,4 +286,8 @@ public class Parser {
         if (type.equals("keyword")) {
             String arg = (String) map.get("arg");
             Node value = convert(map.get("value"));
-            return new Keyword(arg, value, fi
+            return new Keyword(arg, value, file, start, end);
+        }
+
+        if (type.equals("array")) {
+            List<Node>
