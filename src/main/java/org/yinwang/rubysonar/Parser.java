@@ -281,4 +281,8 @@ public class Parser {
             Node body = convert(map.get("body"));
             Node orelse = convert(map.get("else"));
             return new If(test, body, orelse, file, start, end);
-      
+        }
+
+        if (type.equals("keyword")) {
+            String arg = (String) map.get("arg");
+ 
