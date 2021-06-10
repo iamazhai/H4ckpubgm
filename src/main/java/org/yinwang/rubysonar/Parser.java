@@ -285,4 +285,5 @@ public class Parser {
 
         if (type.equals("keyword")) {
             String arg = (String) map.get("arg");
- 
+            Node value = convert(map.get("value"));
+            return new Keyword(arg, value, fi
