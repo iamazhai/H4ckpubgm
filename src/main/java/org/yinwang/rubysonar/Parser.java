@@ -290,4 +290,6 @@ public class Parser {
         }
 
         if (type.equals("array")) {
-            List<Node>
+            List<Node> elts = convertList(map.get("elts"));
+            if (elts == null) {
+                elts = Collections.emptyLi
