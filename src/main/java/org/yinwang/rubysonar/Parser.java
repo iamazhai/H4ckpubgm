@@ -292,4 +292,9 @@ public class Parser {
         if (type.equals("array")) {
             List<Node> elts = convertList(map.get("elts"));
             if (elts == null) {
-                elts = Collections.emptyLi
+                elts = Collections.emptyList();
+            }
+            return new Array(elts, file, start, end);
+        }
+
+        if
