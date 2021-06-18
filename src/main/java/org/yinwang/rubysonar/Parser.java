@@ -297,4 +297,6 @@ public class Parser {
             return new Array(elts, file, start, end);
         }
 
-        if
+        if (type.equals("args")) {
+            List<Node> elts = convertList(map.get("positional"));
+            
