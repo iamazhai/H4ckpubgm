@@ -302,4 +302,6 @@ public class Parser {
             if (elts != null) {
                 return new Array(elts, file, start, end);
             } else {
-              
+                elts = convertList(map.get("star"));
+                if (elts != null) {
+                    return new Array(elt
