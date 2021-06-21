@@ -311,4 +311,6 @@ public class Parser {
             }
         }
 
-        if (type.eq
+        if (type.equals("dot2") || type.equals("dot3")) {
+            Node from = convert(map.get("from"));
+            Node
