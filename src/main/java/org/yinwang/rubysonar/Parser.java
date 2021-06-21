@@ -306,4 +306,9 @@ public class Parser {
                 if (elts != null) {
                     return new Array(elts, file, start, end);
                 } else {
-                    return new Array(Collection
+                    return new Array(Collections.<Node>emptyList(), file, start, end);
+                }
+            }
+        }
+
+        if (type.eq
