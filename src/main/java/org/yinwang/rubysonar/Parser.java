@@ -316,4 +316,8 @@ public class Parser {
             Node to = convert(map.get("to"));
             List<Node> elts = new ArrayList<>();
             elts.add(from);
-           
+            elts.add(to);
+            return new Array(elts, file, start, end);
+        }
+
+        if (type.equals("star"))
