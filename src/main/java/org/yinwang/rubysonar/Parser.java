@@ -313,4 +313,7 @@ public class Parser {
 
         if (type.equals("dot2") || type.equals("dot3")) {
             Node from = convert(map.get("from"));
-            Node
+            Node to = convert(map.get("to"));
+            List<Node> elts = new ArrayList<>();
+            elts.add(from);
+           
