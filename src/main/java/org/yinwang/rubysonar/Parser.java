@@ -322,4 +322,7 @@ public class Parser {
 
         if (type.equals("star")) { // f(*[1, 2, 3, 4])
             Node value = convert(map.get("value"));
-            return new Starred
+            return new Starred(value, file, start, end);
+        }
+
+        // another name for Name in Pyth
