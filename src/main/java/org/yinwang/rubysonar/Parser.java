@@ -320,4 +320,6 @@ public class Parser {
             return new Array(elts, file, start, end);
         }
 
-        if (type.equals("star"))
+        if (type.equals("star")) { // f(*[1, 2, 3, 4])
+            Node value = convert(map.get("value"));
+            return new Starred
