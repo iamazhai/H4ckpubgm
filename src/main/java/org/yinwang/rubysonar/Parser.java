@@ -325,4 +325,7 @@ public class Parser {
             return new Starred(value, file, start, end);
         }
 
-        // another name for Name in Pyth
+        // another name for Name in Python3 func parameters?
+        if (type.equals("arg")) {
+            String id = (String) map.get("arg");
+    
