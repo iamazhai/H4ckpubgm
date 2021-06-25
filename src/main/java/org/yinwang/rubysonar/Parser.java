@@ -332,4 +332,8 @@ public class Parser {
         }
 
         if (type.equals("return")) {
-            Nod
+            Node value = convert(map.get("value"));
+            return new Return(value, file, start, end);
+        }
+
+        if (type.equals("st
