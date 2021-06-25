@@ -328,4 +328,8 @@ public class Parser {
         // another name for Name in Python3 func parameters?
         if (type.equals("arg")) {
             String id = (String) map.get("arg");
-    
+            return new Name(id, file, start, end);
+        }
+
+        if (type.equals("return")) {
+            Nod
