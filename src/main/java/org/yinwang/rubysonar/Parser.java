@@ -336,4 +336,7 @@ public class Parser {
             return new Return(value, file, start, end);
         }
 
-        if (type.equals("st
+        if (type.equals("string")) {
+            String s = (String) map.get("id");
+            return new Str(s, file, start, end);
+   
