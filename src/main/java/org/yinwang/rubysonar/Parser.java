@@ -342,4 +342,8 @@ public class Parser {
         }
 
         if (type.equals("string_embexpr")) {
-            Node value = convert(map.get("value"
+            Node value = convert(map.get("value"));
+            return new StrEmbed(value, file, start, end);
+        }
+
+        if (type.equals("regex
