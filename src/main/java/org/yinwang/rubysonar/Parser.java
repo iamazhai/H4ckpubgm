@@ -339,4 +339,7 @@ public class Parser {
         if (type.equals("string")) {
             String s = (String) map.get("id");
             return new Str(s, file, start, end);
-   
+        }
+
+        if (type.equals("string_embexpr")) {
+            Node value = convert(map.get("value"
