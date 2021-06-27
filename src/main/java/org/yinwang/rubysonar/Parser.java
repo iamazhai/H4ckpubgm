@@ -346,4 +346,6 @@ public class Parser {
             return new StrEmbed(value, file, start, end);
         }
 
-        if (type.equals("regex
+        if (type.equals("regexp")) {
+            Node pattern = convert(map.get("pattern"));
+            Node regexp_end = conve
