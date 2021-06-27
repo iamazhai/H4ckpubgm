@@ -348,4 +348,6 @@ public class Parser {
 
         if (type.equals("regexp")) {
             Node pattern = convert(map.get("pattern"));
-            Node regexp_end = conve
+            Node regexp_end = convert(map.get("regexp_end"));
+            return new Regexp(pattern, regexp_end, file, start, end);
+       
