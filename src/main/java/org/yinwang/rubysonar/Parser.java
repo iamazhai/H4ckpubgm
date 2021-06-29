@@ -350,4 +350,8 @@ public class Parser {
             Node pattern = convert(map.get("pattern"));
             Node regexp_end = convert(map.get("regexp_end"));
             return new Regexp(pattern, regexp_end, file, start, end);
-       
+        }
+
+        // Ruby's subscript is Python's Slice with step size 1
+        if (type.equals("subscript")) {
+            Node valu
