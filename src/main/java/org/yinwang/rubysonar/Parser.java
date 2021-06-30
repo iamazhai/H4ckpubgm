@@ -354,4 +354,7 @@ public class Parser {
 
         // Ruby's subscript is Python's Slice with step size 1
         if (type.equals("subscript")) {
-            Node valu
+            Node value = convert(map.get("value"));
+            Object sliceObj = map.get("slice");
+
+            i
