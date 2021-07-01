@@ -361,4 +361,5 @@ public class Parser {
                 List<Node> s = convertList(sliceObj);
                 if (s.size() == 1) {
                     Node node = s.get(0);
-                    Index idx = new Index(
+                    Index idx = new Index(node, file, node.start, node.end);
+                    return new Subscript(value, id
