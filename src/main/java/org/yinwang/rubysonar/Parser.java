@@ -359,4 +359,6 @@ public class Parser {
 
             if (sliceObj instanceof List) {
                 List<Node> s = convertList(sliceObj);
-               
+                if (s.size() == 1) {
+                    Node node = s.get(0);
+                    Index idx = new Index(
