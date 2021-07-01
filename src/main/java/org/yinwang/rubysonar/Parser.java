@@ -357,4 +357,6 @@ public class Parser {
             Node value = convert(map.get("value"));
             Object sliceObj = map.get("slice");
 
-            i
+            if (sliceObj instanceof List) {
+                List<Node> s = convertList(sliceObj);
+               
