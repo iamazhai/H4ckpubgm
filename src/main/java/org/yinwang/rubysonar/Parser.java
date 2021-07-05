@@ -362,4 +362,6 @@ public class Parser {
                 if (s.size() == 1) {
                     Node node = s.get(0);
                     Index idx = new Index(node, file, node.start, node.end);
-                    return new Subscript(value, id
+                    return new Subscript(value, idx, file, start, end);
+                } else if (s.size() == 2) {
+                    Slice slice = new Slice(s.get(0), null,
