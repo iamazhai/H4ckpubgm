@@ -365,4 +365,6 @@ public class Parser {
                     return new Subscript(value, idx, file, start, end);
                 } else if (s.size() == 2) {
                     Slice slice = new Slice(s.get(0), null, s.get(1), file, s.get(0).start, s.get(1).end);
-                    return new Subscript(value, slice, file, start, 
+                    return new Subscript(value, slice, file, start, end);
+                } else {
+                    // failed to parse the subscript part
