@@ -368,3 +368,7 @@ public class Parser {
                     return new Subscript(value, slice, file, start, end);
                 } else {
                     // failed to parse the subscript part
+                    // cheat by returning the value
+                    return value;
+                }
+       
