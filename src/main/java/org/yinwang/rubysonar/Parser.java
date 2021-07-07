@@ -371,4 +371,5 @@ public class Parser {
                     // cheat by returning the value
                     return value;
                 }
-       
+            } else if (sliceObj == null) {
+                return new Subscript(value, null, file, start, end
