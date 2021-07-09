@@ -375,4 +375,9 @@ public class Parser {
                 return new Subscript(value, null, file, start, end);
             } else {
                 Node sliceNode = convert(sliceObj);
-                return new Subscript(value, sliceNode,
+                return new Subscript(value, sliceNode, file, start, end);
+            }
+        }
+
+        if (type.equals("begin")) {
+            Node body
