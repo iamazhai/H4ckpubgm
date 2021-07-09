@@ -372,4 +372,7 @@ public class Parser {
                     return value;
                 }
             } else if (sliceObj == null) {
-                return new Subscript(value, null, file, start, end
+                return new Subscript(value, null, file, start, end);
+            } else {
+                Node sliceNode = convert(sliceObj);
+                return new Subscript(value, sliceNode,
