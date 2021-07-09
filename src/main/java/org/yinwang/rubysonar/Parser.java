@@ -380,4 +380,6 @@ public class Parser {
         }
 
         if (type.equals("begin")) {
-            Node body
+            Node body = convert(map.get("body"));
+            Node rescue = convert(map.get("rescue"));
+            Node or
