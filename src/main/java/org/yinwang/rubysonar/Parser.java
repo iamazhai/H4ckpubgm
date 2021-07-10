@@ -382,4 +382,6 @@ public class Parser {
         if (type.equals("begin")) {
             Node body = convert(map.get("body"));
             Node rescue = convert(map.get("rescue"));
-            Node or
+            Node orelse = convert(map.get("else"));
+            Node finalbody = convert(map.get("ensure"));
+            return
