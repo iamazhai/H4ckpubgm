@@ -384,4 +384,8 @@ public class Parser {
             Node rescue = convert(map.get("rescue"));
             Node orelse = convert(map.get("else"));
             Node finalbody = convert(map.get("ensure"));
-            return
+            return new Try(rescue, body, orelse, finalbody, file, start, end);
+        }
+
+        if (type.equals("unary")) {
+      
