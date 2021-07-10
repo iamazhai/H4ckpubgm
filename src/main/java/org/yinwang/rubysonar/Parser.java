@@ -390,4 +390,8 @@ public class Parser {
         if (type.equals("unary")) {
             Op op = convertOp(map.get("op"));
             Node operand = convert(map.get("operand"));
-            return new Una
+            return new UnaryOp(op, operand, file, start, end);
+        }
+
+        if (type.equals("while")) {
+            Nod
