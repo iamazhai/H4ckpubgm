@@ -396,4 +396,8 @@ public class Parser {
         if (type.equals("while")) {
             Node test = convert(map.get("test"));
             Node body = convert(map.get("body"));
-            return new
+            return new While(test, body, null, file, start, end);
+        }
+
+        if (type.equals("yield")) {
+            N
