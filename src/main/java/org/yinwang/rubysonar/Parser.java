@@ -404,4 +404,6 @@ public class Parser {
             return new Yield(value, file, start, end);
         }
 
- 
+        if (type.equals("assign")) {
+            Node target = convert(map.get("target"));
+            Node val
