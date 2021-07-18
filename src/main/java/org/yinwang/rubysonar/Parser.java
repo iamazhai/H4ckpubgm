@@ -400,4 +400,8 @@ public class Parser {
         }
 
         if (type.equals("yield")) {
-            N
+            Node value = convert(map.get("value"));
+            return new Yield(value, file, start, end);
+        }
+
+ 
