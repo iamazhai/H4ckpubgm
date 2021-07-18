@@ -406,4 +406,6 @@ public class Parser {
 
         if (type.equals("assign")) {
             Node target = convert(map.get("target"));
-            Node val
+            Node value = convert(map.get("value"));
+            return new Assign(target, value, file, start, end);
+        }
