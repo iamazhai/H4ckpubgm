@@ -409,3 +409,7 @@ public class Parser {
             Node value = convert(map.get("value"));
             return new Assign(target, value, file, start, end);
         }
+
+        if (type.equals("name")) {
+            String id = (String) map.get("id");
+            return new Name(id
