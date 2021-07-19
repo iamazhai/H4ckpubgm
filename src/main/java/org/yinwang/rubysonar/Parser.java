@@ -412,4 +412,8 @@ public class Parser {
 
         if (type.equals("name")) {
             String id = (String) map.get("id");
-            return new Name(id
+            return new Name(id, file, start, end);
+        }
+
+        if (type.equals("cvar")) {
+            String id = (String) map.get("id"
