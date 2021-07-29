@@ -422,4 +422,8 @@ public class Parser {
 
         if (type.equals("ivar")) {
             String id = (String) map.get("id");
-            return new Name(id, NameType.INSTANCE, 
+            return new Name(id, NameType.INSTANCE, file, start, end);
+        }
+
+        if (type.equals("gvar")) {
+            Strin
