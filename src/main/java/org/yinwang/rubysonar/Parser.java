@@ -432,4 +432,8 @@ public class Parser {
 
         if (type.equals("symbol")) {
             String id = (String) map.get("id");
-            retur
+            return new Symbol(id, file, start, end);
+        }
+
+        if (type.equals("int")) {
+            String n =
