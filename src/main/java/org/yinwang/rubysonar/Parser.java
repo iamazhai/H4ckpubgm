@@ -430,4 +430,6 @@ public class Parser {
             return new Name(id, NameType.GLOBAL, file, start, end);
         }
 
-     
+        if (type.equals("symbol")) {
+            String id = (String) map.get("id");
+            retur
