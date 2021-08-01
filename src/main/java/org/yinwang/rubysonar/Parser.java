@@ -436,4 +436,8 @@ public class Parser {
         }
 
         if (type.equals("int")) {
-            String n =
+            String n = (String) map.get("value");
+            return new RbInt(n, file, start, end);
+        }
+
+        if (type.equals("f
