@@ -426,4 +426,8 @@ public class Parser {
         }
 
         if (type.equals("gvar")) {
-            Strin
+            String id = (String) map.get("id");
+            return new Name(id, NameType.GLOBAL, file, start, end);
+        }
+
+     
