@@ -442,4 +442,7 @@ public class Parser {
 
         if (type.equals("float")) {
             String n = (String) map.get("value");
-            return new RbFloat(n, file, sta
+            return new RbFloat(n, file, start, end);
+        }
+
+        _.die("[please report parser bug]: unexpected ast node: " +
