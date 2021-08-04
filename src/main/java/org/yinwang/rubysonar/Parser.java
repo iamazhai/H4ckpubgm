@@ -445,4 +445,10 @@ public class Parser {
             return new RbFloat(n, file, start, end);
         }
 
-        _.die("[please report parser bug]: unexpected ast node: " +
+        _.die("[please report parser bug]: unexpected ast node: " + type);
+        return null;
+    }
+
+
+    @Nullable
+    private <T> List<T> convertList(@Nullabl
