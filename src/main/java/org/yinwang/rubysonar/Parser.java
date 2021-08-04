@@ -440,4 +440,6 @@ public class Parser {
             return new RbInt(n, file, start, end);
         }
 
-        if (type.equals("f
+        if (type.equals("float")) {
+            String n = (String) map.get("value");
+            return new RbFloat(n, file, sta
