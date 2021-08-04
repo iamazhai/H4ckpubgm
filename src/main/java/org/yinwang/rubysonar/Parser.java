@@ -451,4 +451,8 @@ public class Parser {
 
 
     @Nullable
-    private <T> List<T> convertList(@Nullabl
+    private <T> List<T> convertList(@Nullable Object o) {
+        if (o == null) {
+            return null;
+        } else {
+            List<Map<
