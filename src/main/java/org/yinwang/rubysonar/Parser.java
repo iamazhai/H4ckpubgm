@@ -455,4 +455,7 @@ public class Parser {
         if (o == null) {
             return null;
         } else {
-            List<Map<
+            List<Map<String, Object>> in = (List<Map<String, Object>>) o;
+            List<T> out = new ArrayList<>();
+
+            for (Obje
