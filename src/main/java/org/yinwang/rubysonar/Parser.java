@@ -458,4 +458,7 @@ public class Parser {
             List<Map<String, Object>> in = (List<Map<String, Object>>) o;
             List<T> out = new ArrayList<>();
 
-            for (Obje
+            for (Object x : (List) in) {
+                if (!(x instanceof Map)) {
+                    _.die("not a map: " + x);
+    
