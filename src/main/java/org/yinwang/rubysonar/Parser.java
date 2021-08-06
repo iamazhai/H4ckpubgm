@@ -465,4 +465,7 @@ public class Parser {
             }
 
             for (Map<String, Object> m : in) {
-              
+                Node n = convert(m);
+                if (n != null) {
+                    out.add((T) n);
+ 
