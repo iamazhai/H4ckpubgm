@@ -461,4 +461,8 @@ public class Parser {
             for (Object x : (List) in) {
                 if (!(x instanceof Map)) {
                     _.die("not a map: " + x);
-    
+                }
+            }
+
+            for (Map<String, Object> m : in) {
+              
