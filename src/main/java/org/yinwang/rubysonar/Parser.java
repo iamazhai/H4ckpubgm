@@ -479,4 +479,8 @@ public class Parser {
     public Op convertOp(Object map) {
         String name = (String) ((Map<String, Object>) map).get("name");
 
-    
+        if (name.equals("+") || name.equals("+@")) {
+            return Op.Add;
+        }
+
+        if (name.equ
