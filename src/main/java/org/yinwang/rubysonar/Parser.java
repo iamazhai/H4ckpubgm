@@ -476,4 +476,7 @@ public class Parser {
     }
 
 
-    public Op conv
+    public Op convertOp(Object map) {
+        String name = (String) ((Map<String, Object>) map).get("name");
+
+    
