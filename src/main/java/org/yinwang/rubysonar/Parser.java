@@ -483,4 +483,8 @@ public class Parser {
             return Op.Add;
         }
 
-        if (name.equ
+        if (name.equals("-") || name.equals("-@") || name.equals("<=>")) {
+            return Op.Sub;
+        }
+
+  
