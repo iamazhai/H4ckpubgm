@@ -492,3 +492,8 @@ public class Parser {
         }
 
         if (name.equals("/")) {
+            return Op.Div;
+        }
+
+        if (name.equals("**")) {
+          
