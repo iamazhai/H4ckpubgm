@@ -487,4 +487,8 @@ public class Parser {
             return Op.Sub;
         }
 
-  
+        if (name.equals("*")) {
+            return Op.Mul;
+        }
+
+        if (name.equals("/")) {
