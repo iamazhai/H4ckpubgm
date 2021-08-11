@@ -496,4 +496,11 @@ public class Parser {
         }
 
         if (name.equals("**")) {
-          
+            return Op.Pow;
+        }
+
+        if (name.equals("=~")) {
+            return Op.Match;
+        }
+
+        if (n
