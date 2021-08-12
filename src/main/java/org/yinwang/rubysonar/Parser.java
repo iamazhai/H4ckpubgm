@@ -503,4 +503,8 @@ public class Parser {
             return Op.Match;
         }
 
-        if (n
+        if (name.equals("!~")) {
+            return Op.NotMatch;
+        }
+
+        if (name.equals("==") || name.equals("===")) {
