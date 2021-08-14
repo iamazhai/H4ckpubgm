@@ -512,4 +512,12 @@ public class Parser {
         }
 
         if (name.equals("<")) {
-            return Op.Lt
+            return Op.Lt;
+        }
+
+        if (name.equals(">")) {
+            return Op.Gt;
+        }
+
+
+        if (name.
