@@ -508,3 +508,8 @@ public class Parser {
         }
 
         if (name.equals("==") || name.equals("===")) {
+            return Op.Equal;
+        }
+
+        if (name.equals("<")) {
+            return Op.Lt
