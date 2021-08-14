@@ -520,4 +520,9 @@ public class Parser {
         }
 
 
-        if (name.
+        if (name.equals("&")) {
+            return Op.BitAnd;
+        }
+
+        if (name.equals("|")) {
+       
