@@ -533,4 +533,9 @@ public class Parser {
         }
 
 
-     
+        if (name.equals("in")) {
+            return Op.In;
+        }
+
+
+        if (name.equal
