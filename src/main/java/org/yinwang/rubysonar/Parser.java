@@ -525,4 +525,12 @@ public class Parser {
         }
 
         if (name.equals("|")) {
-       
+            return Op.BitOr;
+        }
+
+        if (name.equals("^")) {
+            return Op.BitXor;
+        }
+
+
+     
