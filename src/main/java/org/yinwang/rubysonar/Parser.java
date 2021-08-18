@@ -538,4 +538,9 @@ public class Parser {
         }
 
 
-        if (name.equal
+        if (name.equals("<<")) {
+            return Op.LShift;
+        }
+
+        if (name.equals("%")) {
+            retur
