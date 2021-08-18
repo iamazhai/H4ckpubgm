@@ -543,4 +543,11 @@ public class Parser {
         }
 
         if (name.equals("%")) {
-            retur
+            return Op.Mod;
+        }
+
+        if (name.equals(">>")) {
+            return Op.RShift;
+        }
+
+        if (
