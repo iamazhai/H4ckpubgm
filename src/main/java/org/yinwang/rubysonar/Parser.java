@@ -554,4 +554,8 @@ public class Parser {
             return Op.Invert;
         }
 
-        if (name.equals("and") || name.eq
+        if (name.equals("and") || name.equals("&&")) {
+            return Op.And;
+        }
+
+        if (name.equals("or") || name.equals
