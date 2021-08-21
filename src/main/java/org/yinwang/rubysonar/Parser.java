@@ -550,4 +550,8 @@ public class Parser {
             return Op.RShift;
         }
 
-        if (
+        if (name.equals("~")) {
+            return Op.Invert;
+        }
+
+        if (name.equals("and") || name.eq
