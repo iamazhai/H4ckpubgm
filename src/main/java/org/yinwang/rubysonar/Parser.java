@@ -558,4 +558,9 @@ public class Parser {
             return Op.And;
         }
 
-        if (name.equals("or") || name.equals
+        if (name.equals("or") || name.equals("||")) {
+            return Op.Or;
+        }
+
+        if (name.equals("not") || name.equals("!")) {
+            retur
