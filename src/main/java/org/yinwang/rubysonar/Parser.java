@@ -563,4 +563,11 @@ public class Parser {
         }
 
         if (name.equals("not") || name.equals("!")) {
-            retur
+            return Op.Not;
+        }
+
+        if (name.equals("!=")) {
+            return Op.NotEqual;
+        }
+
+        if (na
