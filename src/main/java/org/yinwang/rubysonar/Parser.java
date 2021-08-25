@@ -570,4 +570,9 @@ public class Parser {
             return Op.NotEqual;
         }
 
-        if (na
+        if (name.equals("<=")) {
+            return Op.LtE;
+        }
+
+        if (name.equals(">=")) {
+            return Op.GtE
