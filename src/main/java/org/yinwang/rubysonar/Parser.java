@@ -582,4 +582,9 @@ public class Parser {
             return Op.Defined;
         }
 
-        _.d
+        _.die("illegal operator: " + name);
+        return null;
+    }
+
+
+    public String prettyJso
