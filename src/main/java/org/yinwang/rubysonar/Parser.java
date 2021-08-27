@@ -575,4 +575,11 @@ public class Parser {
         }
 
         if (name.equals(">=")) {
-            return Op.GtE
+            return Op.GtE;
+        }
+
+        if (name.equals("defined")) {
+            return Op.Defined;
+        }
+
+        _.d
