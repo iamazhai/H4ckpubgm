@@ -589,4 +589,10 @@ public class Parser {
 
     public String prettyJson(String json) {
         Map<String, Object> obj = gson.fromJson(json, Map.class);
-        return gson.
+        return gson.toJson(obj);
+    }
+
+
+    @Nullable
+    public Process startInterpreter(String interpExe) {
+        Str
