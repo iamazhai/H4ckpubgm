@@ -595,4 +595,9 @@ public class Parser {
 
     @Nullable
     public Process startInterpreter(String interpExe) {
-        Str
+        String jsonizeStr;
+        Process p;
+
+        try {
+            InputStream jsonize =
+                    Thread
