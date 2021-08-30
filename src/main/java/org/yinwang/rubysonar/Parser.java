@@ -600,4 +600,6 @@ public class Parser {
 
         try {
             InputStream jsonize =
-                    Thread
+                    Thread.currentThread()
+                            .getContextClassLoader()
+                 
