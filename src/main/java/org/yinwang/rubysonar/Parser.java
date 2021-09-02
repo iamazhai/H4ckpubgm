@@ -602,4 +602,5 @@ public class Parser {
             InputStream jsonize =
                     Thread.currentThread()
                             .getContextClassLoader()
-                 
+                            .getResourceAsStream(dumpRubyResource);
+            jsonizeStr = _.readWholeStream(j
