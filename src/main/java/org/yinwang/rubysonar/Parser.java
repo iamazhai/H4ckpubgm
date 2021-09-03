@@ -603,4 +603,7 @@ public class Parser {
                     Thread.currentThread()
                             .getContextClassLoader()
                             .getResourceAsStream(dumpRubyResource);
-            jsonizeStr = _.readWholeStream(j
+            jsonizeStr = _.readWholeStream(jsonize);
+        } catch (Exception e) {
+            _.die("Failed to open resource file:" + dumpRubyResource);
+     
