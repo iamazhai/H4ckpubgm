@@ -611,3 +611,6 @@ public class Parser {
 
         try {
             FileWriter fw = new FileWriter(jsonizer);
+            fw.write(jsonizeStr);
+            fw.close();
+        } catch (Exception e) 
