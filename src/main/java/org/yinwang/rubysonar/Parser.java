@@ -606,4 +606,8 @@ public class Parser {
             jsonizeStr = _.readWholeStream(jsonize);
         } catch (Exception e) {
             _.die("Failed to open resource file:" + dumpRubyResource);
-     
+            return null;
+        }
+
+        try {
+            FileWriter fw = new FileWriter(jsonizer);
