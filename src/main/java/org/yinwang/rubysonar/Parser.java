@@ -613,4 +613,7 @@ public class Parser {
             FileWriter fw = new FileWriter(jsonizer);
             fw.write(jsonizeStr);
             fw.close();
-        } catch (Exception e) 
+        } catch (Exception e) {
+            _.die("Failed to write into: " + jsonizer);
+            return null;
+        }
