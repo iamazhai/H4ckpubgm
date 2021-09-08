@@ -617,3 +617,7 @@ public class Parser {
             _.die("Failed to write into: " + jsonizer);
             return null;
         }
+
+        try {
+            ProcessBuilder builder = new ProcessBuilder(interpExe);
+            builder.redire
