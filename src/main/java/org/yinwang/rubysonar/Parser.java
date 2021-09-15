@@ -628,3 +628,7 @@ public class Parser {
         } catch (Exception e) {
             _.die("Failed to start irb");
             return null;
+        }
+
+        if (!sendCommand("load '" + jsonizer + "'", p)) {
+            _.die("Failed to load jsonizer, ple
