@@ -620,4 +620,6 @@ public class Parser {
 
         try {
             ProcessBuilder builder = new ProcessBuilder(interpExe);
-            builder.redire
+            builder.redirectErrorStream(true);
+            builder.redirectError(new File(parserLog));
+            builder.redi
