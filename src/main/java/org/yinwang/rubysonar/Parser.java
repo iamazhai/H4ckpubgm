@@ -622,4 +622,6 @@ public class Parser {
             ProcessBuilder builder = new ProcessBuilder(interpExe);
             builder.redirectErrorStream(true);
             builder.redirectError(new File(parserLog));
-            builder.redi
+            builder.redirectOutput(new File(parserLog));
+            builder.environment().remove("RUBYLIB");
+            p 
