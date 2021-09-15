@@ -624,4 +624,7 @@ public class Parser {
             builder.redirectError(new File(parserLog));
             builder.redirectOutput(new File(parserLog));
             builder.environment().remove("RUBYLIB");
-            p 
+            p = builder.start();
+        } catch (Exception e) {
+            _.die("Failed to start irb");
+            return null;
