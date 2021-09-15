@@ -631,4 +631,13 @@ public class Parser {
         }
 
         if (!sendCommand("load '" + jsonizer + "'", p)) {
-            _.die("Failed to load jsonizer, ple
+            _.die("Failed to load jsonizer, please report bug");
+            p.destroy();
+            return null;
+        }
+
+        return p;
+    }
+
+
+    @Nu
