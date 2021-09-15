@@ -640,4 +640,7 @@ public class Parser {
     }
 
 
-    @Nu
+    @Nullable
+    public Node parseFile(String filename) {
+        file = filename;
+        Node node = par
