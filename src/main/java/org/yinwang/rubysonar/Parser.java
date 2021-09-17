@@ -649,4 +649,11 @@ public class Parser {
         } else {
 //            _.msg("failed to parse: " + filename);
 
-            Analyzer.
+            Analyzer.self.failedToParse.add(filename);
+            return null;
+        }
+    }
+
+
+    @Nullable
+    public No
