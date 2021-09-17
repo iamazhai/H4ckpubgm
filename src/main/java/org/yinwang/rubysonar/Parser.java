@@ -646,4 +646,7 @@ public class Parser {
         Node node = parseFileInner(filename, rubyProcess);
         if (node != null) {
             return node;
-        }
+        } else {
+//            _.msg("failed to parse: " + filename);
+
+            Analyzer.
