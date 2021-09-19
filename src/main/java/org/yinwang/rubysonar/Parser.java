@@ -664,4 +664,7 @@ public class Parser {
         String s1 = _.escapeWindowsPath(filename);
         String s2 = _.escapeWindowsPath(exchangeFile);
         String s3 = _.escapeWindowsPath(endMark);
-        String dumpCommand = "p
+        String dumpCommand = "parse_dump('" + s1 + "', '" + s2 + "', '" + s3 + "')";
+
+        if (!sendCommand(dumpCommand, rubyProcess)) {
+            cleanT
