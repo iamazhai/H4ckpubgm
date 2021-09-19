@@ -659,4 +659,7 @@ public class Parser {
     public Node parseFileInner(String filename, @NotNull Process rubyProcess) {
 //        _.msg("parsing: " + filename);
 
-  
+        cleanTemp();
+
+        String s1 = _.escapeWindowsPath(filename);
+        String s2 = 
