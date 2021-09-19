@@ -662,4 +662,6 @@ public class Parser {
         cleanTemp();
 
         String s1 = _.escapeWindowsPath(filename);
-        String s2 = 
+        String s2 = _.escapeWindowsPath(exchangeFile);
+        String s3 = _.escapeWindowsPath(endMark);
+        String dumpCommand = "p
