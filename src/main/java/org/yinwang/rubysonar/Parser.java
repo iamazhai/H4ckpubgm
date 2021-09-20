@@ -680,4 +680,8 @@ public class Parser {
                 cleanTemp();
                 startRubyProcesses();
                 return null;
- 
+            }
+
+            try {
+                Thread.sleep(1);
+            } catch (Exceptio
