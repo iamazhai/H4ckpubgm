@@ -667,4 +667,9 @@ public class Parser {
         String dumpCommand = "parse_dump('" + s1 + "', '" + s2 + "', '" + s3 + "')";
 
         if (!sendCommand(dumpCommand, rubyProcess)) {
-            cleanT
+            cleanTemp();
+            return null;
+        }
+
+        long waitStart = System.currentTimeMillis();
+        File 
