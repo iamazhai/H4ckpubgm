@@ -690,4 +690,8 @@ public class Parser {
             }
         }
 
-        String 
+        String json;
+        try {
+            json = _.readFile(exchangeFile);
+        } catch (Exception e) {
+            clea
