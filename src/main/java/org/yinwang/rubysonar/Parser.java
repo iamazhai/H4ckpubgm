@@ -694,4 +694,10 @@ public class Parser {
         try {
             json = _.readFile(exchangeFile);
         } catch (Exception e) {
-            clea
+            cleanTemp();
+            return null;
+        }
+
+        cleanTemp();
+
+        Map<String, Object> map = gso
