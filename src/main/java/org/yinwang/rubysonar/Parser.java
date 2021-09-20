@@ -684,4 +684,10 @@ public class Parser {
 
             try {
                 Thread.sleep(1);
-            } catch (Exceptio
+            } catch (Exception e) {
+                cleanTemp();
+                return null;
+            }
+        }
+
+        String 
