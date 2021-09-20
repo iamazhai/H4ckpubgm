@@ -677,3 +677,7 @@ public class Parser {
         while (!marker.exists()) {
             if (System.currentTimeMillis() - waitStart > TIMEOUT) {
                 _.msg("\nTimed out while parsing: " + filename);
+                cleanTemp();
+                startRubyProcesses();
+                return null;
+ 
