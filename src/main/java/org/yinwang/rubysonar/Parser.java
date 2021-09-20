@@ -675,4 +675,5 @@ public class Parser {
         File marker = new File(endMark);
 
         while (!marker.exists()) {
-            if (System.currentTimeMi
+            if (System.currentTimeMillis() - waitStart > TIMEOUT) {
+                _.msg("\nTimed out while parsing: " + filename);
