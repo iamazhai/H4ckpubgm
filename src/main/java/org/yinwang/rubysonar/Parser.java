@@ -700,4 +700,9 @@ public class Parser {
 
         cleanTemp();
 
-        Map<String, Object> map = gso
+        Map<String, Object> map = gson.fromJson(json, Map.class);
+        return convert(map);
+    }
+
+
+    private boolean sendCommand(String cmd, @NotNull Proc
