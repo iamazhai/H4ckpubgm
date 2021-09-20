@@ -672,4 +672,7 @@ public class Parser {
         }
 
         long waitStart = System.currentTimeMillis();
-        File 
+        File marker = new File(endMark);
+
+        while (!marker.exists()) {
+            if (System.currentTimeMi
