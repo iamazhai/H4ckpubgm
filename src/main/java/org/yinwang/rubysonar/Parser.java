@@ -705,4 +705,6 @@ public class Parser {
     }
 
 
-    private boolean sendCommand(String cmd, @NotNull Proc
+    private boolean sendCommand(String cmd, @NotNull Process rubyProcess) {
+        try {
+            OutputStreamWriter writer = new OutputStreamWriter(rubyProcess.getOutputSt
