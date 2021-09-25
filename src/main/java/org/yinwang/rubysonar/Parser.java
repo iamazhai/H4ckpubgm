@@ -713,4 +713,10 @@ public class Parser {
             writer.flush();
             return true;
         } catch (Exception e) {
-            _.msg("\nFailed to sen
+            _.msg("\nFailed to send command to Ruby interpreter: " + cmd);
+            return false;
+        }
+    }
+
+
+    private void cle
