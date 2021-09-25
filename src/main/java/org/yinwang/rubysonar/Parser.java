@@ -710,4 +710,7 @@ public class Parser {
             OutputStreamWriter writer = new OutputStreamWriter(rubyProcess.getOutputStream());
             writer.write(cmd);
             writer.write("\n");
-            wri
+            writer.flush();
+            return true;
+        } catch (Exception e) {
+            _.msg("\nFailed to sen
