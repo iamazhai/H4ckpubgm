@@ -719,4 +719,10 @@ public class Parser {
     }
 
 
-    private void cle
+    private void cleanTemp() {
+        new File(exchangeFile).delete();
+        new File(endMark).delete();
+    }
+
+
+   
