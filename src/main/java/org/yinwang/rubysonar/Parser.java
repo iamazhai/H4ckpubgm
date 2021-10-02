@@ -727,4 +727,7 @@ public class Parser {
 
     public static void main(String[] args) {
         Parser parser = new Parser();
-        parser.parseFile(args[0]
+        parser.parseFile(args[0]);
+    }
+
+}
