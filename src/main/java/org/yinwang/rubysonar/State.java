@@ -338,3 +338,130 @@ public class State {
                 this.insert(((Name) locator).id, locator, mt, Binding.Kind.MODULE);
                 return mt;
             }
+        } else if (locator instanceof Attribute) {
+            ModuleType mod = lookupOrCreateModule(((Attribute) locator).target, file);
+            ModuleType mod2 = new ModuleType(((Attribute) locator).attr.id, file, mod.table);
+            mod.table.insert(((Attribute) locator).attr.id, ((Attribute) locator).attr, mod2, Binding.Kind.MODULE);
+            return mod2;
+        } else {
+            String name = locator.toString();
+            return new ModuleType(name, null, this);
+        }
+    }
+
+
+    /**
+     * Look for a binding named {@code name} and if found, return its type.
+     */
+    @Nullable
+    public Type lookupType(String name) {
+        List<Binding> bs = lookup(name);
+        if (bs == null) {
+            return null;
+        } else {
+            return makeUnion(bs);
+        }
+    }
+
+
+    /**
+     * Look for a attribute named {@code attr} and if found, return its type.
+     */
+    @Nullable
+    public Type lookupAttrType(String attr) {
+        List<Binding> bs = lookupAttr(attr);
+        if (bs == null) {
+            return null;
+        } else {
+            return makeUnion(bs);
+        }
+    }
+
+
+    @Nullable
+    public Type lookupAttrTypeTagged(String attr, String tag) {
+        return lookupAttrType(makeTagId(attr, tag));
+    }
+
+
+    public static Type makeUnion(List<Binding> bs) {
+        Type t = Type.UNKNOWN;
+        for (Binding b : bs) {
+            t = UnionType.union(t, b.type);
+        }
+        return t;
+    }
+
+
+    /**
+     * Find a symbol table of a certain type in the enclosing scopes.
+     */
+    @Nullable
+    public State getStateOfType(StateType type) {
+        if (stateType == type) {
+            return this;
+        } else if (parent == null) {
+            return null;
+        } else {
+            return parent.getStateOfType(type);
+        }
+    }
+
+
+    @NotNull
+    public State getGlobalTable() {
+        return Analyzer.self.globaltable;
+    }
+
+
+    /**
+     * If {@code name} is declared as a global, return the module binding.
+     */
+    @Nullable
+    private List<Binding> getModuleBindingIfGlobal(@NotNull String name) {
+        if (isGlobalName(name)) {
+            State module = getGlobalTable();
+            if (module != this) {
+                return module.lookupLocal(name);
+            }
+        }
+        return null;
+    }
+
+
+    public void putAll(@NotNull State other) {
+        for (Map.Entry<String, List<Binding>> e : other.table.entrySet()) {
+            if (!Name.isSyntheticName(e.getKey())) {
+                this.table.put(e.getKey(), e.getValue());
+            }
+        }
+    }
+
+
+    @NotNull
+    public Set<String> keySet() {
+        return table.keySet();
+    }
+
+
+    @NotNull
+    public Collection<Binding> values() {
+        List<Binding> ret = new ArrayList<>();
+        for (List<Binding> bs : table.values()) {
+            ret.addAll(bs);
+        }
+        return ret;
+    }
+
+
+    public boolean isEmpty() {
+        return table.isEmpty();
+    }
+
+
+    @NotNull
+    public String extendPath(@NotNull String name, String sep) {
+        name = _.mainName(name);
+        if (Name.isSyntheticName(name)) {
+            return path;
+        } else if (path.equals("")) {
