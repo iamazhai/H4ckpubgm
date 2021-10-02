@@ -4,4 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Stat
+public class Stats {
+    Map<String, Object> contents = new HashMap<>();
+
+
+    public void putInt(String key, lo
