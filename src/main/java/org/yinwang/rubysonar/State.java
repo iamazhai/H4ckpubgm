@@ -229,3 +229,112 @@ public class State {
 
     @Nullable
     public List<Binding> lookupLocalTagged(String name, String tag) {
+        return lookupLocal(makeTagId(name, tag));
+    }
+
+
+    /**
+     * Look up a name (String) in the current symbol table.  If not found,
+     * recurse on the parent table.
+     */
+    @Nullable
+    public List<Binding> lookup(@NotNull String name) {
+        List<Binding> b = getModuleBindingIfGlobal(name);
+        if (b != null) {
+            return b;
+        } else {
+            List<Binding> ent = lookupLocal(name);
+            if (ent != null) {
+                return ent;
+            } else {
+                if (parent != null) {
+                    return parent.lookup(name);
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
+
+
+    @Nullable
+    public List<Binding> lookupTagged(@NotNull String name, String tag) {
+        return lookup(makeTagId(name, tag));
+    }
+
+
+    /**
+     * Look up a name in the module if it is declared as global, otherwise look
+     * it up locally.
+     */
+    @Nullable
+    public List<Binding> lookupScope(String name) {
+        List<Binding> b = getModuleBindingIfGlobal(name);
+        if (b != null) {
+            return b;
+        } else {
+            return lookupLocal(name);
+        }
+    }
+
+
+    /**
+     * Look up an attribute in the type hierarchy.  Don't look at parent link,
+     * because the enclosing scope may not be a super class. The search is
+     * "depth first, left to right" as in Python's (old) multiple inheritance
+     * rule. The new MRO can be implemented, but will probably not introduce
+     * much difference.
+     */
+    @NotNull
+    private static Set<State> looked = new HashSet<>();    // circularity prevention
+
+
+    @Nullable
+    public List<Binding> lookupAttr(String attr) {
+        if (looked.contains(this)) {
+            return null;
+        } else {
+            List<Binding> b = lookupLocal(attr);
+            if (b != null) {
+                return b;
+            } else {
+                if (supers != null && !supers.isEmpty()) {
+                    looked.add(this);
+                    b = supers.lookupAttr(attr);
+                    if (b != null) {
+                        looked.remove(this);
+                        return b;
+                    }
+                    looked.remove(this);
+                    return null;
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
+
+
+    @Nullable
+    public List<Binding> lookupAttrTagged(String attr, String tag) {
+        return lookupAttr(makeTagId(attr, tag));
+    }
+
+
+    public ModuleType lookupOrCreateModule(Node locator, String file) {
+        Type existing = Node.transformExpr(locator, this);
+        if (existing instanceof ModuleType) {
+
+            return (ModuleType) existing;
+
+        } else if (locator instanceof Name) {
+            List<Binding> bs = lookupAttr(((Name) locator).id);
+            if (bs != null && bs.size() > 0 && bs.get(0).type instanceof ModuleType) {
+
+                return (ModuleType) bs.get(0).type;
+
+            } else {
+                ModuleType mt = new ModuleType(((Name) locator).id, file, this);
+                this.insert(((Name) locator).id, locator, mt, Binding.Kind.MODULE);
+                return mt;
+            }
