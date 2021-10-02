@@ -113,3 +113,119 @@ public class State {
 
     public void setStateType(StateType type) {
         this.stateType = type;
+    }
+
+
+    public StateType getStateType() {
+        return stateType;
+    }
+
+
+    public boolean isGlobalName(@NotNull String name) {
+        return name.startsWith("$");
+    }
+
+
+    public void remove(String id) {
+        table.remove(id);
+    }
+
+
+    // create new binding and insert
+    public void insert(String id, Node node, Type type, Binding.Kind kind) {
+        Binding b = new Binding(node, type, kind);
+        if (type instanceof ModuleType) {
+
+            b.setQname(((ModuleType) type).qname);
+        } else {
+            if (type instanceof FunType) {
+                if (id.endsWith(Constants.IDSEP + "class")) {
+                    b.setQname(extendPath(id, "."));
+                } else {
+                    b.setQname(extendPath(id, "#"));
+                }
+            } else {
+                b.setQname(extendPath(id, "::"));
+            }
+        }
+        update(id, b);
+    }
+
+
+    public String makeTagId(String id, String tag) {
+        return id + Constants.IDSEP + tag;
+    }
+
+
+    // directly insert a given binding list
+    @NotNull
+    public List<Binding> update(String id, @NotNull List<Binding> bs) {
+        this.table.put(id, bs);
+        return bs;
+    }
+
+
+    @NotNull
+    public List<Binding> update(String id, @NotNull Binding b) {
+        List<Binding> bs = new ArrayList<>();
+        bs.add(b);
+        this.table.put(id, bs);
+        return bs;
+    }
+
+
+    public void insertTagged(String id, String tag, Node node, Type type, Binding.Kind kind) {
+        insert(makeTagId(id, tag), node, type, kind);
+    }
+
+
+    @NotNull
+    public List<Binding> updateTagged(String id, String tag, @NotNull List<Binding> bs) {
+        return update(makeTagId(id, tag), bs);
+    }
+
+
+    @NotNull
+    public List<Binding> updateTagged(String id, String tag, @NotNull Binding b) {
+        return update(makeTagId(id, tag), b);
+    }
+
+
+    public void updateType(String id, @NotNull Type type) {
+        List<Binding> bs = lookup(id);
+        List<Binding> replacement = new ArrayList<>();
+        if (bs != null) {
+            for (Binding b : bs) {
+                if (b != null) {
+                    replacement.add(new Binding(b.node, type, b.kind));
+                }
+            }
+        } else {
+            replacement.add(new Binding(new Name(id), type, Binding.Kind.SCOPE));
+        }
+        update(id, replacement);
+    }
+
+
+    public void setPath(@NotNull String path) {
+        this.path = path;
+    }
+
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+
+    /**
+     * Look up a name in the current symbol table only. Don't recurse on the
+     * parent table.
+     */
+    @Nullable
+    public List<Binding> lookupLocal(String name) {
+        return table.get(name);
+    }
+
+
+    @Nullable
+    public List<Binding> lookupLocalTagged(String name, String tag) {
