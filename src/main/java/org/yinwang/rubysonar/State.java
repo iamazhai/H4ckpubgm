@@ -465,3 +465,17 @@ public class State {
         if (Name.isSyntheticName(name)) {
             return path;
         } else if (path.equals("")) {
+            return name;
+        } else {
+            return path + sep + name;
+        }
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(state:" + getStateType() + ":" + table.keySet() + ")";
+    }
+
+}
