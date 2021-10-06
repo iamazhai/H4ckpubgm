@@ -8,4 +8,10 @@ public class Stats {
     Map<String, Object> contents = new HashMap<>();
 
 
-    public void putInt(String key, lo
+    public void putInt(String key, long value) {
+        contents.put(key, value);
+    }
+
+
+    public void inc(String key, long x) {
+ 
