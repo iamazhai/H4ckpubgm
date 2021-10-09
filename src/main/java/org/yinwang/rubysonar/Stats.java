@@ -18,4 +18,10 @@ public class Stats {
 
         if (old == null) {
             contents.put(key, 1);
-       
+        } else {
+            contents.put(key, old + x);
+        }
+    }
+
+
+    public void inc(String 
