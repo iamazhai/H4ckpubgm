@@ -24,4 +24,9 @@ public class Stats {
     }
 
 
-    public void inc(String 
+    public void inc(String key) {
+        inc(key, 1);
+    }
+
+
+    public Long getInt(String key)
