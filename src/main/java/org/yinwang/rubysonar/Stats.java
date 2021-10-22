@@ -33,4 +33,11 @@ public class Stats {
         Long ret = (Long) contents.get(key);
         if (ret == null) {
             return 0L;
-        } 
+        } else {
+            return ret;
+        }
+    }
+
+
+    public String print() {
+        StringBuilder sb = 
