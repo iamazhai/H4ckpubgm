@@ -40,4 +40,7 @@ public class Stats {
 
 
     public String print() {
-        StringBuilder sb = 
+        StringBuilder sb = new StringBuilder();
+
+        for (Map.Entry<String, Object> e : contents.entrySet()) {
+            sb.append("\n- " + e.getKey() + ": 
