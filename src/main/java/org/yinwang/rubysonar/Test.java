@@ -249,3 +249,21 @@ public class Test {
                 }
             } else {
                 for (File file : file_or_dir.listFiles()) {
+                    testRecursive(file.getPath(), exp, failed);
+                }
+            }
+        }
+    }
+
+
+    public static void main(String[] args) {
+        Options options = new Options(args);
+        List<String> argList = options.getArgs();
+        String inputDir = _.unifyPath(argList.get(0));
+
+        // generate expected file?
+        boolean exp = options.hasOption("exp");
+        testAll(inputDir, exp);
+    }
+
+}
