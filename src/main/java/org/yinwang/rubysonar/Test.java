@@ -148,3 +148,104 @@ public class Test {
             if (!extraDests.isEmpty()) {
                 Map<String, Object> extraRef = new LinkedHashMap<>();
                 extraRef.put("ref", refMap);
+                extraRef.put("dests", extraDests);
+                extraRefs.add(extraRef);
+            }
+        }
+
+        if (!failedRefs.isEmpty()) {
+            String failedJson = gson.toJson(failedRefs);
+            _.testmsg("failed to find refs: " + failedJson);
+            _.writeFile(failedRefsFile, failedJson);
+        }
+
+        if (!extraRefs.isEmpty()) {
+            String extraJson = gson.toJson(extraRefs);
+            _.testmsg("found extra refs: " + extraJson);
+            _.writeFile(extraRefsFile, extraJson);
+        }
+
+        return failedRefs.isEmpty() && extraRefs.isEmpty();
+    }
+
+
+    boolean checkBindingExist(@NotNull List<Binding> bs, String file, int start, int end) {
+        Iterator<Binding> iter = bs.iterator();
+        while (iter.hasNext()) {
+            Binding b = iter.next();
+            if (_.same(b.file, file) &&
+                    b.start == start &&
+                    b.end == end)
+            {
+                iter.remove();
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public static Dummy makeDummy(Map<String, Object> m) {
+        String file = _.projAbsPath((String) m.get("file"));
+        int start = (int) Math.floor((double) m.get("start"));
+        int end = (int) Math.floor((double) m.get("end"));
+        return new Dummy(file, start, end);
+    }
+
+
+    public void generateTest() {
+        runAnalysis(inputDir);
+        generateRefs();
+        _.testmsg("  * " + inputDir);
+    }
+
+
+    public boolean runTest() {
+        runAnalysis(inputDir);
+        _.testmsg("  * " + inputDir);
+        return checkRefs();
+    }
+
+
+    // ------------------------- static part -----------------------
+
+
+    public static void testAll(String path, boolean exp) {
+        List<String> failed = new ArrayList<>();
+        if (exp) {
+            _.testmsg("generating tests");
+        } else {
+            _.testmsg("verifying tests");
+        }
+
+        testRecursive(path, exp, failed);
+
+        if (exp) {
+            _.testmsg("all tests generated");
+        } else if (failed.isEmpty()) {
+            _.testmsg("all tests passed!");
+        } else {
+            _.testmsg("failed some tests: ");
+            for (String f : failed) {
+                _.testmsg("  * " + f);
+            }
+        }
+    }
+
+
+    public static void testRecursive(String path, boolean exp, List<String> failed) {
+        File file_or_dir = new File(path);
+
+        if (file_or_dir.isDirectory()) {
+            if (path.endsWith(".test")) {
+                Test test = new Test(path, exp);
+                if (exp) {
+                    test.generateTest();
+                } else {
+                    if (!test.runTest()) {
+                        failed.add(path);
+                    }
+                }
+            } else {
+                for (File file : file_or_dir.listFiles()) {
