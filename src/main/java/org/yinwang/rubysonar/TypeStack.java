@@ -9,4 +9,9 @@ import java.util.List;
 public class TypeStack {
 
     class Pair {
-        public Obj
+        public Object first;
+        public Object second;
+
+
+        public Pair(Object first, Object second) {
+            this.first =
