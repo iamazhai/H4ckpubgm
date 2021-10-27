@@ -14,4 +14,11 @@ public class TypeStack {
 
 
         public Pair(Object first, Object second) {
-            this.first =
+            this.first = first;
+            this.second = second;
+        }
+    }
+
+
+    @NotNull
+    private List<Pa
