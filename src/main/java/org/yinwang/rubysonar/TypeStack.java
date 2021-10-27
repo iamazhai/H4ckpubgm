@@ -25,4 +25,9 @@ public class TypeStack {
 
 
     public void push(Object first, Object second) {
-        s
+        stack.add(new Pair(first, second));
+    }
+
+
+    public void pop(Object first, Object second) {
+    
