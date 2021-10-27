@@ -21,4 +21,8 @@ public class TypeStack {
 
 
     @NotNull
-    private List<Pa
+    private List<Pair> stack = new ArrayList<>();
+
+
+    public void push(Object first, Object second) {
+        s
