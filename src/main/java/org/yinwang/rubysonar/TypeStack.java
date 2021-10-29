@@ -30,4 +30,9 @@ public class TypeStack {
 
 
     public void pop(Object first, Object second) {
-    
+        stack.remove(stack.size() - 1);
+    }
+
+
+    public boolean contains(Object first, Object second) {
+     
