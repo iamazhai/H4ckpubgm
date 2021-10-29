@@ -35,4 +35,6 @@ public class TypeStack {
 
 
     public boolean contains(Object first, Object second) {
-     
+        for (Pair p : stack) {
+            if (p.first == first && p.second == second ||
+                    p.first 
