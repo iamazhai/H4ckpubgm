@@ -11,4 +11,7 @@ import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 import java.net.JarURLConnection;
 import java.net.URL;
-import java.net.
+import java.net.URLConnection;
+import java.nio.charset.Charset;
+import java.security.MessageDigest;
+import java.text.Decima
