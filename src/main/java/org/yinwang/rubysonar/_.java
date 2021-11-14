@@ -33,4 +33,5 @@ public class _ {
     }
 
 
-    pu
+    public static boolean same(@Nullable Object o1, @Nullable Object o2) {
+        if (o1 == null) {
