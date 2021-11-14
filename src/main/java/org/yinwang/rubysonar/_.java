@@ -28,4 +28,9 @@ public class _ {
     public static final Charset UTF_8 = Charset.forName("UTF-8");
 
 
-    pub
+    public static String baseFileName(String filename) {
+        return new File(filename).getName();
+    }
+
+
+    pu
