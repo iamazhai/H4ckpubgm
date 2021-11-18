@@ -48,4 +48,9 @@ public class _ {
         if (tmp.endsWith(sep)) {
             return tmp;
         }
-  
+        return tmp + sep;
+    }
+
+
+    /**
+     * Returns the parent qname of {@code qname} -- everything u
