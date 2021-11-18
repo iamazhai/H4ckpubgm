@@ -40,3 +40,8 @@ public class _ {
             return o1.equals(o2);
         }
     }
+
+
+    public static String getSystemTempDir() {
+        String tmp = System.getProperty("java.io.tmpdir");
+    
