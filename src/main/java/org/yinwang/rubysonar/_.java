@@ -56,4 +56,5 @@ public class _ {
      * Returns the parent qname of {@code qname} -- everything up to the
      * last dot (exclusive), or if there are no dots, the empty string.
      */
-    public static Str
+    public static String getQnameParent(@Nullable String qname) {
+        if (qname == null || qname.isEmpty())
