@@ -61,4 +61,11 @@ public class _ {
             return "";
         }
         int index = qname.lastIndexOf(".");
-        if (index == 
+        if (index == -1) {
+            return "";
+        }
+        return qname.substring(0, index);
+    }
+
+
+    public s
