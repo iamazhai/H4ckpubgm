@@ -57,4 +57,8 @@ public class _ {
      * last dot (exclusive), or if there are no dots, the empty string.
      */
     public static String getQnameParent(@Nullable String qname) {
-        if (qname == null || qname.isEmpty())
+        if (qname == null || qname.isEmpty()) {
+            return "";
+        }
+        int index = qname.lastIndexOf(".");
+        if (index == 
