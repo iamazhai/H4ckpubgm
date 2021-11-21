@@ -68,4 +68,5 @@ public class _ {
     }
 
 
-    public s
+    public static String mainName(@NotNull String taggedName) {
+        String[] segs = taggedName.split(Constants.IDSEP_REGE
