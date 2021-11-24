@@ -72,4 +72,12 @@ public class _ {
         String[] segs = taggedName.split(Constants.IDSEP_REGEX);
         if (segs.length == 0) {
             // shouldn't happen, but just in case
-            return taggedName
+            return taggedName;
+        } else {
+            return segs[0];
+        }
+    }
+
+
+    @NotNull
+    public static String arrayToStr
