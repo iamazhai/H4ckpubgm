@@ -80,4 +80,6 @@ public class _ {
 
 
     @NotNull
-    public static String arrayToStr
+    public static String arrayToString(@NotNull Collection<String> strings) {
+        StringBuffer sb = new StringBuffer();
+        for (String
