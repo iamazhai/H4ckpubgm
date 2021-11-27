@@ -89,4 +89,6 @@ public class _ {
     }
 
 
-    publi
+    public static void writeFile(String path, String contents) {
+        PrintWriter out = null;
+        try {
