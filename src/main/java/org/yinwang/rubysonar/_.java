@@ -82,4 +82,11 @@ public class _ {
     @NotNull
     public static String arrayToString(@NotNull Collection<String> strings) {
         StringBuffer sb = new StringBuffer();
-        for (String
+        for (String s : strings) {
+            sb.append(s).append("\n");
+        }
+        return sb.toString();
+    }
+
+
+    publi
