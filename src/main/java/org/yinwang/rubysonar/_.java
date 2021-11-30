@@ -93,4 +93,7 @@ public class _ {
         PrintWriter out = null;
         try {
             out = new PrintWriter(new BufferedWriter(new FileWriter(path)));
-            out.print(content
+            out.print(contents);
+            out.flush();
+        } catch (Exception e) {
+            _.die("Failed to write: " + pat
