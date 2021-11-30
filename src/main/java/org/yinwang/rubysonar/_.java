@@ -92,3 +92,5 @@ public class _ {
     public static void writeFile(String path, String contents) {
         PrintWriter out = null;
         try {
+            out = new PrintWriter(new BufferedWriter(new FileWriter(path)));
+            out.print(content
