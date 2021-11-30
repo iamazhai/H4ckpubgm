@@ -96,4 +96,9 @@ public class _ {
             out.print(contents);
             out.flush();
         } catch (Exception e) {
-            _.die("Failed to write: " + pat
+            _.die("Failed to write: " + path);
+        } finally {
+            if (out != null) {
+                out.close();
+            }
+        }
