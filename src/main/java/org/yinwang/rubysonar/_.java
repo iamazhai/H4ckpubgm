@@ -110,4 +110,8 @@ public class _ {
         // Don't use line-oriented file read -- need to retain CRLF if present
         // so the style-run and link offsets are correct.
         byte[] content = getBytesFromFile(path);
-        if (content 
+        if (content == null) {
+            return null;
+        } else {
+            return new String(content, UTF_8);
+      
