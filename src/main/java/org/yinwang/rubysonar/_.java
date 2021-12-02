@@ -114,4 +114,9 @@ public class _ {
             return null;
         } else {
             return new String(content, UTF_8);
-      
+        }
+    }
+
+
+    @Nullable
+    public static byte[] getBytesFromFile(@NotNull String filen
