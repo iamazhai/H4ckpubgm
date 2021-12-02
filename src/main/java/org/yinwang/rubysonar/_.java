@@ -128,4 +128,6 @@ public class _ {
     }
 
 
-    static boolean i
+    static boolean isReadableFile(String path) {
+        File f = new File(path);
+        return f.canRead() && f.isFile()
