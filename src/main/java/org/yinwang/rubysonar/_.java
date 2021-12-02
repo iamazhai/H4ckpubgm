@@ -108,4 +108,6 @@ public class _ {
     @Nullable
     public static String readFile(@NotNull String path) {
         // Don't use line-oriented file read -- need to retain CRLF if present
-        // so the style-run and
+        // so the style-run and link offsets are correct.
+        byte[] content = getBytesFromFile(path);
+        if (content 
