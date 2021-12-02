@@ -102,3 +102,9 @@ public class _ {
                 out.close();
             }
         }
+    }
+
+
+    @Nullable
+    public static String readFile(@NotNull String path) {
+    
