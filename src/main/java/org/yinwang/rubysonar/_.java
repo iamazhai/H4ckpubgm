@@ -121,4 +121,11 @@ public class _ {
     @Nullable
     public static byte[] getBytesFromFile(@NotNull String filename) {
         try {
-            return FileUtils.readFileToByteArray(new File(filename))
+            return FileUtils.readFileToByteArray(new File(filename));
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
+    static boolean i
