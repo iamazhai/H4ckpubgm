@@ -119,4 +119,6 @@ public class _ {
 
 
     @Nullable
-    public static byte[] getBytesFromFile(@NotNull String filen
+    public static byte[] getBytesFromFile(@NotNull String filename) {
+        try {
+            return FileUtils.readFileToByteArray(new File(filename))
