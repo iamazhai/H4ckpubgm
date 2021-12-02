@@ -130,4 +130,9 @@ public class _ {
 
     static boolean isReadableFile(String path) {
         File f = new File(path);
-        return f.canRead() && f.isFile()
+        return f.canRead() && f.isFile();
+    }
+
+
+    @NotNull
+    public static String readWhole(@NotNull InputStream is) throws IOExceptio
