@@ -135,4 +135,8 @@ public class _ {
 
 
     @NotNull
-    public static String readWhole(@NotNull InputStream is) throws IOExceptio
+    public static String readWhole(@NotNull InputStream is) throws IOException {
+        StringBuilder sb = new StringBuilder();
+        byte[] bytes = new byte[8192];
+
+        int 
