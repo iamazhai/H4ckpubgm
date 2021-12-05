@@ -154,4 +154,9 @@ public class _ {
         } else if (urlConnection instanceof FileURLConnection) {
             FileUtils.copyDirectory(new File(originUrl.getPath()), destination);
         } else {
-            die("
+            die("Unsupported URL type: " + urlConnection);
+        }
+    }
+
+
+    public static void copyJarRes
