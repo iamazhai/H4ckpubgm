@@ -142,4 +142,9 @@ public class _ {
         int nRead;
         while ((nRead = is.read(bytes, 0, 8192)) > 0) {
             sb.append(new String(bytes, 0, nRead));
-  
+        }
+        return sb.toString();
+    }
+
+
+    public static void copyResourcesRecursively(URL originUrl, File de
