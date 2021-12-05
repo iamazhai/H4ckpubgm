@@ -147,4 +147,6 @@ public class _ {
     }
 
 
-    public static void copyResourcesRecursively(URL originUrl, File de
+    public static void copyResourcesRecursively(URL originUrl, File destination) throws Exception {
+        URLConnection urlConnection = originUrl.openConnection();
+        if 
