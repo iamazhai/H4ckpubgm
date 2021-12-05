@@ -162,4 +162,6 @@ public class _ {
     public static void copyJarResourcesRecursively(File destination, JarURLConnection jarConnection) {
         JarFile jarFile;
         try {
-    
+            jarFile = jarConnection.getJarFile();
+        } catch (Exception e) {
+            _.die("Failed to get
