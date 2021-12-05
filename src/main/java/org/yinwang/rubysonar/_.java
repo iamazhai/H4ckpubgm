@@ -139,4 +139,7 @@ public class _ {
         StringBuilder sb = new StringBuilder();
         byte[] bytes = new byte[8192];
 
-        int 
+        int nRead;
+        while ((nRead = is.read(bytes, 0, 8192)) > 0) {
+            sb.append(new String(bytes, 0, nRead));
+  
