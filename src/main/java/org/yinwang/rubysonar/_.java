@@ -149,4 +149,5 @@ public class _ {
 
     public static void copyResourcesRecursively(URL originUrl, File destination) throws Exception {
         URLConnection urlConnection = originUrl.openConnection();
-        if 
+        if (urlConnection instanceof JarURLConnection) {
+            copyJarResourcesRecursively(destination, (JarURLC
