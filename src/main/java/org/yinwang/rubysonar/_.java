@@ -152,4 +152,6 @@ public class _ {
         if (urlConnection instanceof JarURLConnection) {
             copyJarResourcesRecursively(destination, (JarURLConnection) urlConnection);
         } else if (urlConnection instanceof FileURLConnection) {
-            FileUtils
+            FileUtils.copyDirectory(new File(originUrl.getPath()), destination);
+        } else {
+            die("
