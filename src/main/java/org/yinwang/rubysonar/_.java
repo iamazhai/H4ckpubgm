@@ -164,4 +164,8 @@ public class _ {
         try {
             jarFile = jarConnection.getJarFile();
         } catch (Exception e) {
-            _.die("Failed to get
+            _.die("Failed to get jar file)");
+            return;
+        }
+
+        Enumeration<JarEntry> em = jarFile.entries()
