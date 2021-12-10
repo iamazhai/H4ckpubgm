@@ -168,4 +168,7 @@ public class _ {
             return;
         }
 
-        Enumeration<JarEntry> em = jarFile.entries()
+        Enumeration<JarEntry> em = jarFile.entries();
+        while (em.hasMoreElements()) {
+            JarEntry entry = em.nextElement();
+            if (en
