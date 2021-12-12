@@ -171,4 +171,5 @@ public class _ {
         Enumeration<JarEntry> em = jarFile.entries();
         while (em.hasMoreElements()) {
             JarEntry entry = em.nextElement();
-            if (en
+            if (entry.getName().startsWith(jarConnection.getEntryName())) {
+                String f
