@@ -177,4 +177,4 @@ public class _ {
                     InputStream entryInputStream = null;
                     try {
                         entryInputStream = jarFile.getInputStream(entry);
-      
+                        FileUtils.copyInputStreamToFile(entryInputStream, new File(destination, fileName));
