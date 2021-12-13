@@ -180,4 +180,6 @@ public class _ {
                         FileUtils.copyInputStreamToFile(entryInputStream, new File(destination, fileName));
                     } catch (Exception e) {
                         die("Failed to copy resource: " + fileName);
- 
+                    } finally {
+                        if (entryInputStream != null) {
+       
