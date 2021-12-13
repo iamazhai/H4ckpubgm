@@ -175,3 +175,6 @@ public class _ {
                 String fileName = StringUtils.removeStart(entry.getName(), jarConnection.getEntryName());
                 if (!fileName.equals("/")) {  // exclude the directory
                     InputStream entryInputStream = null;
+                    try {
+                        entryInputStream = jarFile.getInputStream(entry);
+      
