@@ -173,4 +173,5 @@ public class _ {
             JarEntry entry = em.nextElement();
             if (entry.getName().startsWith(jarConnection.getEntryName())) {
                 String fileName = StringUtils.removeStart(entry.getName(), jarConnection.getEntryName());
-                if (!fileName.equ
+                if (!fileName.equals("/")) {  // exclude the directory
+                    InputStream entryInputStream = null;
