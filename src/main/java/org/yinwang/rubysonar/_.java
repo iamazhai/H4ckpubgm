@@ -172,4 +172,5 @@ public class _ {
         while (em.hasMoreElements()) {
             JarEntry entry = em.nextElement();
             if (entry.getName().startsWith(jarConnection.getEntryName())) {
-                String f
+                String fileName = StringUtils.removeStart(entry.getName(), jarConnection.getEntryName());
+                if (!fileName.equ
