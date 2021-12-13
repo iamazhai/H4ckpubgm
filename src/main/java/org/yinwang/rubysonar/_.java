@@ -178,3 +178,6 @@ public class _ {
                     try {
                         entryInputStream = jarFile.getInputStream(entry);
                         FileUtils.copyInputStreamToFile(entryInputStream, new File(destination, fileName));
+                    } catch (Exception e) {
+                        die("Failed to copy resource: " + fileName);
+ 
