@@ -182,4 +182,6 @@ public class _ {
                         die("Failed to copy resource: " + fileName);
                     } finally {
                         if (entryInputStream != null) {
-       
+                            try {
+                                entryInputStream.close();
+          
