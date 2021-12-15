@@ -184,4 +184,6 @@ public class _ {
                         if (entryInputStream != null) {
                             try {
                                 entryInputStream.close();
-          
+                            } catch (Exception e) {
+                            }
+                        
