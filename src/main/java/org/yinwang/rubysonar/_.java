@@ -214,4 +214,8 @@ public class _ {
         try {
             algorithm = MessageDigest.getInstance("SHA-1");
         } catch (Exception e) {
-    
+            _.die("Failed to get SHA, shouldn't happen");
+            return "";
+        }
+
+        algorithm.
