@@ -221,4 +221,6 @@ public class _ {
         algorithm.reset();
         algorithm.update(fileContents);
         byte messageDigest[] = algorithm.digest();
-        S
+        StringBuilder sb = new StringBuilder();
+        for (byte aMessageDigest : messageDigest) {
+     
