@@ -201,4 +201,7 @@ public class _ {
 
 
     @NotNull
-    public sta
+    public static String getSHA(@NotNull String path) {
+        byte[] bytes = getBytesFromFile(path);
+        return getSHA(bytes);
+    
