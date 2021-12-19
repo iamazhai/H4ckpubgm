@@ -194,4 +194,5 @@ public class _ {
     }
 
 
-    public static String readResource(S
+    public static String readResource(String resource) {
+        InputStream s = Thread.currentThread().getContextClassLoader(
