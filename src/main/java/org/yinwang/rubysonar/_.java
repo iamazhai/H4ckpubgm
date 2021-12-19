@@ -204,4 +204,11 @@ public class _ {
     public static String getSHA(@NotNull String path) {
         byte[] bytes = getBytesFromFile(path);
         return getSHA(bytes);
-    
+    }
+
+
+    @NotNull
+    public static String getSHA(byte[] fileContents) {
+        MessageDigest algorithm;
+
+ 
