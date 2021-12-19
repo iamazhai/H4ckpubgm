@@ -211,4 +211,7 @@ public class _ {
     public static String getSHA(byte[] fileContents) {
         MessageDigest algorithm;
 
- 
+        try {
+            algorithm = MessageDigest.getInstance("SHA-1");
+        } catch (Exception e) {
+    
