@@ -186,4 +186,12 @@ public class _ {
                                 entryInputStream.close();
                             } catch (Exception e) {
                             }
-                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    public static String readResource(S
