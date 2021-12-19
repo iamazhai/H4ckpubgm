@@ -195,4 +195,10 @@ public class _ {
 
 
     public static String readResource(String resource) {
-        InputStream s = Thread.currentThread().getContextClassLoader(
+        InputStream s = Thread.currentThread().getContextClassLoader().getResourceAsStream(resource);
+        return readWholeStream(s);
+    }
+
+
+    @NotNull
+    public sta
