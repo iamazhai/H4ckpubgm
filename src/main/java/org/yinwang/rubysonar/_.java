@@ -218,4 +218,7 @@ public class _ {
             return "";
         }
 
-        algorithm.
+        algorithm.reset();
+        algorithm.update(fileContents);
+        byte messageDigest[] = algorithm.digest();
+        S
