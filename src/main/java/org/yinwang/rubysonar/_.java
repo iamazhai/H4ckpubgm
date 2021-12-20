@@ -223,4 +223,6 @@ public class _ {
         byte messageDigest[] = algorithm.digest();
         StringBuilder sb = new StringBuilder();
         for (byte aMessageDigest : messageDigest) {
-     
+            sb.append(String.format("%02x", 0xFF & aMessageDigest));
+        }
+        return sb.toString();
