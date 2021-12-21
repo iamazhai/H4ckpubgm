@@ -226,3 +226,8 @@ public class _ {
             sb.append(String.format("%02x", 0xFF & aMessageDigest));
         }
         return sb.toString();
+    }
+
+
+    static public String escapeQname(@NotNull String s) {
+        return s.replaceAll("[.
