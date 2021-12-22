@@ -230,4 +230,9 @@ public class _ {
 
 
     static public String escapeQname(@NotNull String s) {
-        return s.replaceAll("[.
+        return s.replaceAll("[.&@%-]", "_");
+    }
+
+
+    public static String escapeWindowsPath(String path) {
+        return path.replace
