@@ -254,4 +254,8 @@ public class _ {
                                      @Nullable String end)
     {
         StringBuilder sb = new StringBuilder();
-    
+        if (start != null && ls.size() > 1) {
+            sb.append(start);
+        }
+        int i = 0;
+        for
