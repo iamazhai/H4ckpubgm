@@ -266,4 +266,11 @@ public class _ {
             i++;
         }
         if (end != null && ls.size() > 1) {
-            sb
+            sb.append(end);
+        }
+        return sb.toString();
+    }
+
+
+    public static void msg(String m) {
+        if
