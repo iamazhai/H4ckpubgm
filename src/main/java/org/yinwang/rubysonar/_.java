@@ -258,4 +258,8 @@ public class _ {
             sb.append(start);
         }
         int i = 0;
-        for
+        for (String s : ls) {
+            if (i > 0) {
+                sb.append(sep);
+            }
+            
