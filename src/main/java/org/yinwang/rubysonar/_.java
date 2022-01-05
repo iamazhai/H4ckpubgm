@@ -273,4 +273,5 @@ public class _ {
 
 
     public static void msg(String m) {
-        if
+        if (Analyzer.self != null && !Analyzer.self.hasOption("quiet")) {
+            System.out.prin
