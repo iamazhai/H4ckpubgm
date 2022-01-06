@@ -285,3 +285,10 @@ public class _ {
         }
     }
 
+
+    public static void testmsg(String m) {
+        System.out.println(m);
+    }
+
+
+    public static void die(
