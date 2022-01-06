@@ -291,4 +291,10 @@ public class _ {
     }
 
 
-    public static void die(
+    public static void die(String msg) {
+        die(msg, null);
+    }
+
+
+    public static void die(String msg, Exception e) {
+        
