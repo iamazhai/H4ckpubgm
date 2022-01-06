@@ -280,4 +280,8 @@ public class _ {
 
 
     public static void msg_(String m) {
-        if (Analyzer.self !
+        if (Analyzer.self != null && !Analyzer.self.hasOption("quiet")) {
+            System.out.print(m);
+        }
+    }
+
