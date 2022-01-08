@@ -309,4 +309,10 @@ public class _ {
 
 
     public static String readWholeStream(InputStream in) {
-        return new Scanner(in).useDelimiter
+        return new Scanner(in).useDelimiter("\\Z").next();
+    }
+
+
+    @NotNull
+    public static String percent(long num, long total) {
+        if (to
