@@ -300,4 +300,12 @@ public class _ {
         System.err.println(msg);
 
         if (e != null) {
-            System.err.println("Exception
+            System.err.println("Exception: " + e + "\n");
+        }
+
+        Thread.dumpStack();
+        System.exit(2);
+    }
+
+
+    
