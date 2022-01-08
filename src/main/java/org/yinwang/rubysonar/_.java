@@ -297,4 +297,7 @@ public class _ {
 
 
     public static void die(String msg, Exception e) {
-        
+        System.err.println(msg);
+
+        if (e != null) {
+            System.err.println("Exception
