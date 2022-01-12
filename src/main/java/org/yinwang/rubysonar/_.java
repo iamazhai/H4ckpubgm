@@ -319,4 +319,10 @@ public class _ {
             return "100%";
         } else {
             int pct = (int) (num * 100 / total);
-  
+            return String.format("%1$3d", pct) + "%";
+        }
+    }
+
+
+    @NotNull
+    public sta
