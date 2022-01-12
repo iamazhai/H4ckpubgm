@@ -315,4 +315,8 @@ public class _ {
 
     @NotNull
     public static String percent(long num, long total) {
-        if (to
+        if (total == 0) {
+            return "100%";
+        } else {
+            int pct = (int) (num * 100 / total);
+  
