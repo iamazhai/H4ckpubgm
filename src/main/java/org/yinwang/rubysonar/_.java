@@ -325,4 +325,7 @@ public class _ {
 
 
     @NotNull
-    public sta
+    public static String formatTime(long millis) {
+        long sec = millis / 1000;
+        long min = sec / 60;
+        sec = 
