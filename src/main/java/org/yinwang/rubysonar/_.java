@@ -339,4 +339,9 @@ public class _ {
     /**
      * format number with fixed width
      */
-    public static String formatN
+    public static String formatNumber(Object n, int length) {
+        if (length == 0) {
+            length = 1;
+        }
+
+     
