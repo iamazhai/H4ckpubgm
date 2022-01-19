@@ -332,4 +332,11 @@ public class _ {
         long hr = min / 60;
         min = min % 60;
 
-        return hr + ":" + min + ":" + 
+        return hr + ":" + min + ":" + sec;
+    }
+
+
+    /**
+     * format number with fixed width
+     */
+    public static String formatN
