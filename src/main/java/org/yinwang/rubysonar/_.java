@@ -344,4 +344,5 @@ public class _ {
             length = 1;
         }
 
-     
+        if (n instanceof Integer) {
+            return String.format("%1$" + length + "d", (int) n)
