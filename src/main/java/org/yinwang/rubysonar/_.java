@@ -347,4 +347,6 @@ public class _ {
         if (n instanceof Integer) {
             return String.format("%1$" + length + "d", (int) n);
         } else if (n instanceof Long) {
-            return String.format("%1$" + length + "d", 
+            return String.format("%1$" + length + "d", (long) n);
+        } else {
+            return String.format("%1$" + length + "s", n.toString())
