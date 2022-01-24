@@ -355,4 +355,7 @@ public class _ {
 
 
     public static boolean deleteDirectory(File directory) {
-        if (directory.exis
+        if (directory.exists()) {
+            File[] files = directory.listFiles();
+            if (files != null) {
+ 
