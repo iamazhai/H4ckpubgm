@@ -349,4 +349,10 @@ public class _ {
         } else if (n instanceof Long) {
             return String.format("%1$" + length + "d", (long) n);
         } else {
-            return String.format("%1$" + length + "s", n.toString())
+            return String.format("%1$" + length + "s", n.toString());
+        }
+    }
+
+
+    public static boolean deleteDirectory(File directory) {
+        if (directory.exis
