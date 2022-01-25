@@ -360,4 +360,7 @@ public class _ {
             if (files != null) {
                 for (File f : files) {
                     if (f.isDirectory()) {
-    
+                        deleteDirectory(f);
+                    } else {
+                        f.delete();
+   
