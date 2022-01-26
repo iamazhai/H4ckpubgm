@@ -367,4 +367,9 @@ public class _ {
                 }
             }
         }
-        return di
+        return directory.delete();
+    }
+
+
+    public static String newSessionId() {
+        return UUID.randomUUID().toStrin
