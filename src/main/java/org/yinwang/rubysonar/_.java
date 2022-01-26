@@ -372,4 +372,9 @@ public class _ {
 
 
     public static String newSessionId() {
-        return UUID.randomUUID().toStrin
+        return UUID.randomUUID().toString();
+    }
+
+
+    public static File makePath(String... files) {
+        File ret = new
