@@ -388,4 +388,8 @@ public class _ {
 
 
     public static String makePathString(String... files) {
-        
+        return unifyPath(makePath(files).getPath());
+    }
+
+
+    public static String unifyP
