@@ -392,4 +392,9 @@ public class _ {
     }
 
 
-    public static String unifyP
+    public static String unifyPath(String filename) {
+        return unifyPath(new File(filename));
+    }
+
+
+    public static String unifyPath(File
