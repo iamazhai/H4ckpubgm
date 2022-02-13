@@ -401,4 +401,10 @@ public class _ {
         try {
             return file.getCanonicalPath();
         } catch (Exception e) {
-            di
+            die("Failed to get canonical path");
+            return "";
+        }
+    }
+
+
+    public static String r
