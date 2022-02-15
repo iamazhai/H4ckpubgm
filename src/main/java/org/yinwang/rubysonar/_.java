@@ -409,4 +409,9 @@ public class _ {
 
     public static String relPath(String path1, String path2) {
         String a = unifyPath(path1);
-        String b = unifyPath(pa
+        String b = unifyPath(path2);
+
+        String[] as = a.split("[/\\\\]");
+        String[] bs = b.split("[/\\\\]");
+
+        
