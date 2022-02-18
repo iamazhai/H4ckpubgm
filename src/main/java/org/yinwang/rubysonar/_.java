@@ -414,4 +414,6 @@ public class _ {
         String[] as = a.split("[/\\\\]");
         String[] bs = b.split("[/\\\\]");
 
-        
+        int i;
+        for (i = 0; i < Math.min(as.length, bs.length); i++) {
+            if (!as[i].equals(bs[
