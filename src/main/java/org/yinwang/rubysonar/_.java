@@ -416,4 +416,13 @@ public class _ {
 
         int i;
         for (i = 0; i < Math.min(as.length, bs.length); i++) {
-            if (!as[i].equals(bs[
+            if (!as[i].equals(bs[i])) {
+                break;
+            }
+        }
+
+        int ups = as.length - i - 1;
+
+        File res = null;
+
+    
