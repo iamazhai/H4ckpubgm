@@ -433,4 +433,8 @@ public class _ {
             res = new File(res, bs[y]);
         }
 
-        if
+        if (res == null) {
+            return null;
+        } else {
+            return res.getPath();
+    
