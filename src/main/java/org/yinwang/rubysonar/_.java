@@ -425,4 +425,8 @@ public class _ {
 
         File res = null;
 
+        for (int x = 0; x < ups; x++) {
+            res = new File(res, "..");
+        }
+
     
