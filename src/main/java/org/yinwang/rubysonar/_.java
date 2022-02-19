@@ -429,4 +429,8 @@ public class _ {
             res = new File(res, "..");
         }
 
-    
+        for (int y = i; y < bs.length; y++) {
+            res = new File(res, bs[y]);
+        }
+
+        if
