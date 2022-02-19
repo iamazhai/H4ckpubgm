@@ -437,4 +437,9 @@ public class _ {
             return null;
         } else {
             return res.getPath();
-    
+        }
+    }
+
+
+    public static String projRelPath(String file) {
+        if (file.startsWith(Analyz
