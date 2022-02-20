@@ -442,4 +442,5 @@ public class _ {
 
 
     public static String projRelPath(String file) {
-        if (file.startsWith(Analyz
+        if (file.startsWith(Analyzer.self.projectDir)) {
+            return file.substring(Analyzer.self.projectDir.length() +
