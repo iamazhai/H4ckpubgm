@@ -450,4 +450,6 @@ public class _ {
     }
 
 
-    public static String projAbsPa
+    public static String projAbsPath(String file) {
+        if (file.startsWith("/") || file.startsWith(Analyzer.self.projectDir)) {
+            
