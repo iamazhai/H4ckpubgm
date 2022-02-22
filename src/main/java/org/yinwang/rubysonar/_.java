@@ -454,4 +454,10 @@ public class _ {
         if (file.startsWith("/") || file.startsWith(Analyzer.self.projectDir)) {
             return file;
         } else {
-            return makePathString(Analyzer.self.projectDi
+            return makePathString(Analyzer.self.projectDir, file);
+        }
+    }
+
+
+    @NotNull
+    public static File joinPath(@NotNull File dir,
