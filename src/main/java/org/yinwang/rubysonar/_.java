@@ -460,4 +460,9 @@ public class _ {
 
 
     @NotNull
-    public static File joinPath(@NotNull File dir,
+    public static File joinPath(@NotNull File dir, String file) {
+        return joinPath(dir.getAbsolutePath(), file);
+    }
+
+
+    @NotNull
