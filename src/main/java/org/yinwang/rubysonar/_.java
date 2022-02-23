@@ -473,4 +473,6 @@ public class _ {
     }
 
 
-    public static String locateTmp(S
+    public static String locateTmp(String file) {
+        String tmpDir = getSystemTempDir();
+        return makePathString(tm
