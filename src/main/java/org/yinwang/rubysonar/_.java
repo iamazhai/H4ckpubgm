@@ -475,4 +475,8 @@ public class _ {
 
     public static String locateTmp(String file) {
         String tmpDir = getSystemTempDir();
-        return makePathString(tm
+        return makePathString(tmpDir, "rubysonar", file + "." + Analyzer.self.sid);
+    }
+
+
+    public static String banner(String msg)
