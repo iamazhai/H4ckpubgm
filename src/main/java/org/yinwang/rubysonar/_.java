@@ -485,3 +485,7 @@ public class _ {
 
 
     public static String printMem(long bytes) {
+        double dbytes = (double) bytes;
+        DecimalFormat df = new DecimalFormat("#.##");
+
+        if (dbytes < 10
