@@ -479,4 +479,9 @@ public class _ {
     }
 
 
-    public static String banner(String msg)
+    public static String banner(String msg) {
+        return "---------------- " + msg + " ----------------";
+    }
+
+
+    public static String printMem(long bytes) {
