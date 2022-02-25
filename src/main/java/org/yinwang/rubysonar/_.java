@@ -488,4 +488,7 @@ public class _ {
         double dbytes = (double) bytes;
         DecimalFormat df = new DecimalFormat("#.##");
 
-        if (dbytes < 10
+        if (dbytes < 1024) {
+            return df.format(bytes);
+        } else if (dbytes < 1024 * 1024) {
+    
