@@ -491,4 +491,6 @@ public class _ {
         if (dbytes < 1024) {
             return df.format(bytes);
         } else if (dbytes < 1024 * 1024) {
-    
+            return df.format(dbytes / 1024);
+        } else if (dbytes < 1024 * 1024 * 1024) {
+            return df.form
