@@ -497,4 +497,10 @@ public class _ {
         } else if (dbytes < 1024 * 1024 * 1024 * 1024L) {
             return df.format(dbytes / 1024 / 1024 / 1024) + "G";
         } else {
-            return "Too big
+            return "Too big to show you";
+        }
+    }
+
+
+    public static String getGCStats() {
+        long totalGC = 
