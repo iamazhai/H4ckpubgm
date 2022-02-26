@@ -495,4 +495,6 @@ public class _ {
         } else if (dbytes < 1024 * 1024 * 1024) {
             return df.format(dbytes / 1024 / 1024) + "M";
         } else if (dbytes < 1024 * 1024 * 1024 * 1024L) {
-            ret
+            return df.format(dbytes / 1024 / 1024 / 1024) + "G";
+        } else {
+            return "Too big
