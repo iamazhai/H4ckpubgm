@@ -503,4 +503,7 @@ public class _ {
 
 
     public static String getGCStats() {
-        long totalGC = 
+        long totalGC = 0;
+        long gcTime = 0;
+
+        for (GarbageCollectorMXBean gc : ManagementFactory.getGarba
