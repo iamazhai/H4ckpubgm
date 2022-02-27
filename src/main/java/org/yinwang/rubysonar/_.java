@@ -506,4 +506,8 @@ public class _ {
         long totalGC = 0;
         long gcTime = 0;
 
-        for (GarbageCollectorMXBean gc : ManagementFactory.getGarba
+        for (GarbageCollectorMXBean gc : ManagementFactory.getGarbageCollectorMXBeans()) {
+            long count = gc.getCollectionCount();
+
+            if (count >= 0) {
+    
