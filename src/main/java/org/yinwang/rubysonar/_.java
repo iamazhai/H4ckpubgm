@@ -515,4 +515,9 @@ public class _ {
 
             long time = gc.getCollectionTime();
 
-            if (time >= 0
+            if (time >= 0) {
+                gcTime += time;
+            }
+        }
+
+        StringBuilder sb = new
