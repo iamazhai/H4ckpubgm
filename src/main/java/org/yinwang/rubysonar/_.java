@@ -510,4 +510,9 @@ public class _ {
             long count = gc.getCollectionCount();
 
             if (count >= 0) {
-    
+                totalGC += count;
+            }
+
+            long time = gc.getCollectionTime();
+
+            if (time >= 0
