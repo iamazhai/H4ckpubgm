@@ -523,4 +523,7 @@ public class _ {
         StringBuilder sb = new StringBuilder();
 
         sb.append(banner("memory stats"));
-        sb.append("\n- total collection
+        sb.append("\n- total collections: " + totalGC);
+        sb.append("\n- total collection time: " + formatTime(gcTime));
+
+        Runtime runtim
