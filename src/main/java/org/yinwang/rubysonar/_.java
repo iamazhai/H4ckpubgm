@@ -520,4 +520,7 @@ public class _ {
             }
         }
 
-        StringBuilder sb = new
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(banner("memory stats"));
+        sb.append("\n- total collection
