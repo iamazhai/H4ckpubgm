@@ -527,4 +527,9 @@ public class _ {
         sb.append("\n- total collection time: " + formatTime(gcTime));
 
         Runtime runtime = Runtime.getRuntime();
-        sb.append("\n- total memory: " + _.printMem(runtime
+        sb.append("\n- total memory: " + _.printMem(runtime.totalMemory()));
+
+        return sb.toString();
+    }
+
+}
