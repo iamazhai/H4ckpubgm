@@ -6,4 +6,9 @@ import org.yinwang.rubysonar.types.ModuleType;
 import org.yinwang.rubysonar.types.Type;
 
 
-public class 
+public class Assign extends Node {
+
+    @NotNull
+    public Node target;
+    @NotNull
+    public Node value
