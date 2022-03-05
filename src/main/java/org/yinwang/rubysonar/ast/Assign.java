@@ -18,4 +18,12 @@ public class Assign extends Node {
         super(file, start, end);
         this.target = target;
         this.value = value;
-        addChildren(ta
+        addChildren(target);
+        addChildren(value);
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(@NotNull State s) {
+      
