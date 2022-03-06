@@ -29,4 +29,5 @@ public class Assign extends Node {
         Type valueType = transformExpr(value, s);
         if (target instanceof Name && ((Name) target).isInstanceVar()) {
             Type thisType = s.lookupType(Constants.INSTNAME);
-            thisType
+            thisType = thisType != null ? thisType : s.lookupType(Constants.SELFNAME);
+            if (thisType ==
