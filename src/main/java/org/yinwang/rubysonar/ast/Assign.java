@@ -27,4 +27,6 @@ public class Assign extends Node {
     @Override
     public Type transform(@NotNull State s) {
         Type valueType = transformExpr(value, s);
-        if (target instanceof Name && ((Name) t
+        if (target instanceof Name && ((Name) target).isInstanceVar()) {
+            Type thisType = s.lookupType(Constants.INSTNAME);
+            thisType
