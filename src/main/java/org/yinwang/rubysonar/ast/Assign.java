@@ -26,4 +26,5 @@ public class Assign extends Node {
     @NotNull
     @Override
     public Type transform(@NotNull State s) {
-      
+        Type valueType = transformExpr(value, s);
+        if (target instanceof Name && ((Name) t
