@@ -30,4 +30,5 @@ public class Assign extends Node {
         if (target instanceof Name && ((Name) target).isInstanceVar()) {
             Type thisType = s.lookupType(Constants.INSTNAME);
             thisType = thisType != null ? thisType : s.lookupType(Constants.SELFNAME);
-            if (thisType ==
+            if (thisType == null) {
+                Analyzer.self.putProblem(this, "Instance variable assignment not within class"
