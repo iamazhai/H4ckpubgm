@@ -31,4 +31,6 @@ public class Assign extends Node {
             Type thisType = s.lookupType(Constants.INSTNAME);
             thisType = thisType != null ? thisType : s.lookupType(Constants.SELFNAME);
             if (thisType == null) {
-                Analyzer.self.putProblem(this, "Instance variable assignment not within class"
+                Analyzer.self.putProblem(this, "Instance variable assignment not within class");
+            } else if (thisType instanceof ModuleType) {
+                thisType.table.insertTagged(((Name
