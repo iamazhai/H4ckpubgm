@@ -35,4 +35,6 @@ public class Assign extends Node {
             } else if (thisType instanceof ModuleType) {
                 thisType.table.insertTagged(((Name) target).id, "class", target, valueType, Binding.Kind.ATTRIBUTE);
             } else {
-                thisTyp
+                thisType.table.insert(((Name) target).id, target, valueType, Binding.Kind.ATTRIBUTE);
+            }
+        } e
