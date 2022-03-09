@@ -37,4 +37,5 @@ public class Assign extends Node {
             } else {
                 thisType.table.insert(((Name) target).id, target, valueType, Binding.Kind.ATTRIBUTE);
             }
-        } e
+        } else if (s.stateType == State.StateType.CLASS &&
+                target instanceof Name && ((Name) tar
