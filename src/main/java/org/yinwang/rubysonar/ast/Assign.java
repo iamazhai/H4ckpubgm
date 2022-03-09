@@ -33,4 +33,6 @@ public class Assign extends Node {
             if (thisType == null) {
                 Analyzer.self.putProblem(this, "Instance variable assignment not within class");
             } else if (thisType instanceof ModuleType) {
-                thisType.table.insertTagged(((Name
+                thisType.table.insertTagged(((Name) target).id, "class", target, valueType, Binding.Kind.ATTRIBUTE);
+            } else {
+                thisTyp
