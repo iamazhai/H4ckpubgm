@@ -41,4 +41,8 @@ public class Assign extends Node {
                 target instanceof Name && ((Name) target).id.toUpperCase().equals(((Name) target).id))
         {
             // constant
-            s.insertTagged(((Name) target).id, "class", target, valueType, Binding.Kind.CON
+            s.insertTagged(((Name) target).id, "class", target, valueType, Binding.Kind.CONSTANT);
+        } else {
+            Binder.bind(s, target, valueType);
+        }
+        return valu
