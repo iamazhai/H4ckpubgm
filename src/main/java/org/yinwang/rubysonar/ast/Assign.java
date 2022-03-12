@@ -45,4 +45,11 @@ public class Assign extends Node {
         } else {
             Binder.bind(s, target, valueType);
         }
-        return valu
+        return valueType;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(" + target + 
