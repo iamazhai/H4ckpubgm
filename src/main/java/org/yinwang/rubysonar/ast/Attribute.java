@@ -77,3 +77,55 @@ public class Attribute extends Node {
         if (target == null) {
             return transformExpr(attr, s);
         }
+
+        Type targetType = transformExpr(target, s);
+        if (targetType instanceof UnionType) {
+            Set<Type> types = ((UnionType) targetType).types;
+            Type retType = Type.UNKNOWN;
+            for (Type tt : types) {
+                retType = UnionType.union(retType, getAttrType(tt));
+            }
+            return retType;
+        } else {
+            return getAttrType(targetType);
+        }
+    }
+
+
+    private Type getAttrType(@NotNull Type targetType) {
+        List<Binding> bs;
+        if (targetType instanceof ClassType || targetType instanceof ModuleType) {
+            // look for class methods only
+            bs = targetType.table.lookupAttrTagged(attr.id, "class");
+            if (bs == null) {
+                bs = targetType.table.lookupAttr(attr.id);
+            }
+        } else {
+            bs = targetType.table.lookupAttr(attr.id);
+        }
+
+        if (bs == null) {
+            Analyzer.self.putProblem(attr, "attribute not found in type: " + targetType);
+            return Type.UNKNOWN;
+        } else {
+            for (Binding b : bs) {
+                Analyzer.self.putRef(attr, b);
+                if (parent != null && (parent instanceof Call) &&
+                        b.type instanceof FunType && targetType instanceof InstanceType)
+                {  // method call
+                    ((FunType) b.type).setSelfType(targetType);
+                }
+            }
+
+            return State.makeUnion(bs);
+        }
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(" + target + "." + getAttributeName() + ")";
+    }
+
+}
