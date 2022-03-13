@@ -52,4 +52,8 @@ public class Assign extends Node {
     @NotNull
     @Override
     public String toString() {
-        return "(" + target + 
+        return "(" + target + " = " + value + ")";
+    }
+
+
+}
