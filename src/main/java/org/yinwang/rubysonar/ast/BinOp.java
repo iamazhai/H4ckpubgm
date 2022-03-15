@@ -28,4 +28,7 @@ public class BinOp extends Node {
     @Override
     public Type transform(State s) {
         Type ltype = transformExpr(left, s);
-        Type rtype
+        Type rtype = transformExpr(right, s);
+
+        if (ltype != Type.UNKNOWN) {
+            return ltype;
