@@ -20,4 +20,10 @@ public class BinOp extends Node {
         this.left = left;
         this.right = right;
         this.op = op;
- 
+        addChildren(left, right);
+    }
+
+
+    @NotNull
+    @Override
+    public Type trans
