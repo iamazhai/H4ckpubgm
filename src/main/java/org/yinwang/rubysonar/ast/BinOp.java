@@ -35,4 +35,12 @@ public class BinOp extends Node {
         } else if (rtype != Type.UNKNOWN) {
             return rtype;
         } else {
-            return
+            return Type.UNKNOWN;
+        }
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(" +
