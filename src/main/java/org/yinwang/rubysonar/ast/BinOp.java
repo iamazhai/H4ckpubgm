@@ -43,4 +43,7 @@ public class BinOp extends Node {
     @NotNull
     @Override
     public String toString() {
-        return "(" +
+        return "(" + left + " " + op + " " + right + ")";
+    }
+
+}
