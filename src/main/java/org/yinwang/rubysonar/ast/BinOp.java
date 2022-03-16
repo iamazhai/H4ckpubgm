@@ -32,3 +32,7 @@ public class BinOp extends Node {
 
         if (ltype != Type.UNKNOWN) {
             return ltype;
+        } else if (rtype != Type.UNKNOWN) {
+            return rtype;
+        } else {
+            return
