@@ -9,4 +9,10 @@ import org.yinwang.rubysonar.types.UnionType;
 import java.util.List;
 
 
-public cl
+public class Block extends Node {
+
+    @NotNull
+    public List<Node> seq;
+
+
+    public Block(@NotNull List<Node> seq
