@@ -24,4 +24,8 @@ public class Block extends Node {
 
     @NotNull
     @Override
-    public Type transform(@NotNull State stat
+    public Type transform(@NotNull State state) {
+
+        boolean returned = false;
+        Type retType = Type.UNKNOWN;
+        boolean wasSt
