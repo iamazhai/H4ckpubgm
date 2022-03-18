@@ -28,4 +28,7 @@ public class Block extends Node {
 
         boolean returned = false;
         Type retType = Type.UNKNOWN;
-        boolean wasSt
+        boolean wasStatic = Analyzer.self.staticContext;
+
+        for (Node n : seq) {
+            Type t = transf
