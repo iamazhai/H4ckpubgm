@@ -18,4 +18,10 @@ public class Block extends Node {
     public Block(@NotNull List<Node> seq, String file, int start, int end) {
         super(file, start, end);
         this.seq = seq;
-       
+        addChildren(seq);
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(@NotNull State stat
