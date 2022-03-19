@@ -31,4 +31,6 @@ public class Block extends Node {
         boolean wasStatic = Analyzer.self.staticContext;
 
         for (Node n : seq) {
-            Type t = transf
+            Type t = transformExpr(n, state);
+            if (n == seq.get(seq.size() - 1)) {
+                // ret
