@@ -36,4 +36,5 @@ public class Block extends Node {
                 // return last value
                 retType = UnionType.remove(t, Type.CONT);
             } else if (!returned) {
-      
+                retType = UnionType.union(retType, t);
+                if (!t.isUnknownType() && !
