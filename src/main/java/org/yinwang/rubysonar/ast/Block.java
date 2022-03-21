@@ -43,4 +43,9 @@ public class Block extends Node {
                 }
             } else if (state.getStateType() != State.StateType.GLOBAL &&
                     state.getStateType() != State.StateType.MODULE)
-    
+            {
+                Analyzer.self.putProblem(n, "unreachable code");
+            }
+        }
+
+        Analyzer.self.
