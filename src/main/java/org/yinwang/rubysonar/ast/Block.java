@@ -39,4 +39,6 @@ public class Block extends Node {
                 retType = UnionType.union(retType, t);
                 if (!t.isUnknownType() && !UnionType.contains(t, Type.CONT)) {
                     returned = true;
-                    re
+                    retType = UnionType.remove(retType, Type.CONT);
+                }
+            } else if (state.getStateTyp
