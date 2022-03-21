@@ -48,4 +48,10 @@ public class Block extends Node {
             }
         }
 
-        Analyzer.self.
+        Analyzer.self.setStaticContext(wasStatic);
+        return retType;
+    }
+
+
+    public boolean isEmpty() {
+        r
