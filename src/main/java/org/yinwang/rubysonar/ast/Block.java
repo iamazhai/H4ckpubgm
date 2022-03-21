@@ -41,4 +41,6 @@ public class Block extends Node {
                     returned = true;
                     retType = UnionType.remove(retType, Type.CONT);
                 }
-            } else if (state.getStateTyp
+            } else if (state.getStateType() != State.StateType.GLOBAL &&
+                    state.getStateType() != State.StateType.MODULE)
+    
