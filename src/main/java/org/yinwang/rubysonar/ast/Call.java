@@ -7,4 +7,10 @@ import org.yinwang.rubysonar.types.*;
 
 import java.util.*;
 
-import static org.yinwang.rubysonar.Binding.Kind
+import static org.yinwang.rubysonar.Binding.Kind.SCOPE;
+
+
+public class Call extends Node {
+
+    public Node func;
+    public List<Node>
