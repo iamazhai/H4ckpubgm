@@ -13,4 +13,8 @@ import static org.yinwang.rubysonar.Binding.Kind.SCOPE;
 public class Call extends Node {
 
     public Node func;
-    public List<Node>
+    public List<Node> args;
+    @Nullable
+    public List<Keyword> keywords;
+    public Node kwargs;
+    publi
