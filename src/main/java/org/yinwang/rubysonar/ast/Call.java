@@ -22,4 +22,8 @@ public class Call extends Node {
 
 
     public Call(Node func, List<Node> args, @Nullable List<Keyword> keywords,
-                Node kwargs, Node starargs, Node blockarg, String file, int start, in
+                Node kwargs, Node starargs, Node blockarg, String file, int start, int end)
+    {
+        super(file, start, end);
+        this.func = func;
+        this.args = args;
