@@ -27,3 +27,7 @@ public class Call extends Node {
         super(file, start, end);
         this.func = func;
         this.args = args;
+        this.keywords = keywords;
+        this.kwargs = kwargs;
+        this.starargs = starargs;
+        this.blocka
