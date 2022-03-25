@@ -30,4 +30,6 @@ public class Call extends Node {
         this.keywords = keywords;
         this.kwargs = kwargs;
         this.starargs = starargs;
-        this.blocka
+        this.blockarg = blockarg;
+        addChildren(func, kwargs, starargs, blockarg);
+        addChildren(args);
