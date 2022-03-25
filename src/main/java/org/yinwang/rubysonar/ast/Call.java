@@ -33,3 +33,9 @@ public class Call extends Node {
         this.blockarg = blockarg;
         addChildren(func, kwargs, starargs, blockarg);
         addChildren(args);
+        addChildren(keywords);
+    }
+
+
+    /**
+     * Most of the work here is done by the stati
