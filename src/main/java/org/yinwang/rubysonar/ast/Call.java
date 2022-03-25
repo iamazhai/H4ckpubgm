@@ -38,4 +38,5 @@ public class Call extends Node {
 
 
     /**
-     * Most of the work here is done by the stati
+     * Most of the work here is done by the static method invoke, which is also
+     * used by Analyzer.applyUncalled. By using a static method we av
