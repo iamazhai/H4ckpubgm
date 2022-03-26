@@ -46,4 +46,7 @@ public class Call extends Node {
     @Override
     public Type transform(State s) {
         if (func instanceof Name) {
-            Name fn = (Name
+            Name fn = (Name) func;
+
+            // handle 'require' and 'load'
+            if (fn.id.equals("require") || fn.id.equals("load")) {
