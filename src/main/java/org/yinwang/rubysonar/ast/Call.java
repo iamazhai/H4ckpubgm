@@ -39,4 +39,9 @@ public class Call extends Node {
 
     /**
      * Most of the work here is done by the static method invoke, which is also
-     * used by Analyzer.applyUncalled. By using a static method we av
+     * used by Analyzer.applyUncalled. By using a static method we avoid building
+     * a NCall node for those dummy calls.
+     */
+    @NotNull
+    @Override
+    pub
