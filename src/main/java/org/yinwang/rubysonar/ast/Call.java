@@ -44,4 +44,6 @@ public class Call extends Node {
      */
     @NotNull
     @Override
-    pub
+    public Type transform(State s) {
+        if (func instanceof Name) {
+            Name fn = (Name
