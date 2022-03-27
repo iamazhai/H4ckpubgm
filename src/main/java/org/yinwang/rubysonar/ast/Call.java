@@ -52,4 +52,6 @@ public class Call extends Node {
             if (fn.id.equals("require") || fn.id.equals("load")) {
                 if (args != null && args.size() > 0) {
                     Node arg1 = args.get(0);
-      
+                    if (arg1 instanceof Str) {
+                        Analyzer.self.requireFile(((Str) arg1).value);
+ 
