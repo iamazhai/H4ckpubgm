@@ -57,4 +57,8 @@ public class Call extends Node {
                         return Type.TRUE;
                     }
                 }
-                Analyzer.sel
+                Analyzer.self.putProblem(this, "failed to require file");
+                return Type.FALSE;
+            }
+
+ 
