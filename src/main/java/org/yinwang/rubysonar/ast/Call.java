@@ -54,4 +54,7 @@ public class Call extends Node {
                     Node arg1 = args.get(0);
                     if (arg1 instanceof Str) {
                         Analyzer.self.requireFile(((Str) arg1).value);
- 
+                        return Type.TRUE;
+                    }
+                }
+                Analyzer.sel
