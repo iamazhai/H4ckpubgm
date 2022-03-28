@@ -63,4 +63,6 @@ public class Call extends Node {
 
             // handle 'include'
             if (fn.id.equals("include") || fn.id.equals("extend")) {
-             
+                if (args != null && args.size() > 0) {
+                    Node arg1 = args.get(0);
+                    Type
