@@ -61,4 +61,6 @@ public class Call extends Node {
                 return Type.FALSE;
             }
 
- 
+            // handle 'include'
+            if (fn.id.equals("include") || fn.id.equals("extend")) {
+             
