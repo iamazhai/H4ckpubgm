@@ -68,4 +68,8 @@ public class Call extends Node {
                     Type mod = transformExpr(arg1, s);
                     s.putAll(mod.table);
                     return Type.TRUE;
-    
+                }
+                Analyzer.self.putProblem(this, "failed to include module");
+            }
+
+  
