@@ -78,4 +78,9 @@ public class Call extends Node {
             }
 
             if (fn.id.equals("attr_accessor")) {
-  
+                return Type.CONT;
+            }
+        }
+
+        // Class.new
+        Name 
