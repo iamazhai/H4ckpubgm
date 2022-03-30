@@ -73,4 +73,9 @@ public class Call extends Node {
             }
 
             if (fn.id.equals("module_function")) {
-                Analyzer.self.setStaticContext(tru
+                Analyzer.self.setStaticContext(true);
+                return Type.CONT;
+            }
+
+            if (fn.id.equals("attr_accessor")) {
+  
