@@ -85,4 +85,7 @@ public class Call extends Node {
         // Class.new
         Name newName = null;
         if (func instanceof Attribute) {
-            Attribute afun = (Attribute) f
+            Attribute afun = (Attribute) func;
+            if (afun.attr.id.equals("new")) {
+                func = afun.target;
+                newName 
