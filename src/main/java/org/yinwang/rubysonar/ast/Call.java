@@ -83,4 +83,6 @@ public class Call extends Node {
         }
 
         // Class.new
-        Name 
+        Name newName = null;
+        if (func instanceof Attribute) {
+            Attribute afun = (Attribute) f
