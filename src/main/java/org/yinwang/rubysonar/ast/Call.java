@@ -94,4 +94,7 @@ public class Call extends Node {
                     Type inst = afun.target.transform(s);
                     if (inst instanceof InstanceType) {
                         return ((InstanceType) inst).classType;
-          
+                    } else {
+                        return Type.UNKNOWN;
+                    }
+                } els
