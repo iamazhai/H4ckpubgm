@@ -97,4 +97,8 @@ public class Call extends Node {
                     } else {
                         return Type.UNKNOWN;
                     }
-                } els
+                } else {
+                    return Type.UNKNOWN;
+                }
+            }
+       
