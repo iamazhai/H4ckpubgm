@@ -101,4 +101,8 @@ public class Call extends Node {
                     return Type.UNKNOWN;
                 }
             }
-       
+        }
+
+        Type fun = transformExpr(func, s);
+        List<Type> pos = resolveList(args, s);
+        M
