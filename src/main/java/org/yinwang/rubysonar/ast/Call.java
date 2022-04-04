@@ -114,4 +114,5 @@ public class Call extends Node {
         }
 
         Type kw = kwargs == null ? null : transformExpr(kwargs, s);
-        Type 
+        Type star = starargs == null ? null : transformExpr(starargs, s);
+        Type block = blockarg == null ? null
