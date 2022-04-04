@@ -105,4 +105,7 @@ public class Call extends Node {
 
         Type fun = transformExpr(func, s);
         List<Type> pos = resolveList(args, s);
-        M
+        Map<String, Type> hash = new HashMap<>();
+
+        if (keywords != null) {
+            for (Keyword kw : keywor
