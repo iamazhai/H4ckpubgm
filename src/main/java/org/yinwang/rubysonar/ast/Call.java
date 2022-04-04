@@ -108,4 +108,7 @@ public class Call extends Node {
         Map<String, Type> hash = new HashMap<>();
 
         if (keywords != null) {
-            for (Keyword kw : keywor
+            for (Keyword kw : keywords) {
+                hash.put(kw.getArg(), transformExpr(kw.getValue(), s));
+            }
+   
