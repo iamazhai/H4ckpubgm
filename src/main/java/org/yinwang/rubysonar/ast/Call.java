@@ -111,4 +111,7 @@ public class Call extends Node {
             for (Keyword kw : keywords) {
                 hash.put(kw.getArg(), transformExpr(kw.getValue(), s));
             }
-   
+        }
+
+        Type kw = kwargs == null ? null : transformExpr(kwargs, s);
+        Type 
