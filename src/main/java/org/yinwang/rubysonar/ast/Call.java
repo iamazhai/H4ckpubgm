@@ -121,4 +121,5 @@ public class Call extends Node {
             Set<Type> types = ((UnionType) fun).types;
             Type retType = Type.UNKNOWN;
             for (Type ft : types) {
-  
+                Type t = resolveCall(ft, newName, pos, hash, kw, star, block, s);
+           
