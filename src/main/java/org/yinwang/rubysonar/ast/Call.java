@@ -122,4 +122,8 @@ public class Call extends Node {
             Type retType = Type.UNKNOWN;
             for (Type ft : types) {
                 Type t = resolveCall(ft, newName, pos, hash, kw, star, block, s);
-           
+                retType = UnionType.union(retType, t);
+            }
+            return retType;
+        } else {
+     
