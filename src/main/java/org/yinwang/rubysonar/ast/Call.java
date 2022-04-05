@@ -118,4 +118,7 @@ public class Call extends Node {
         Type block = blockarg == null ? null : transformExpr(blockarg, s);
 
         if (fun instanceof UnionType) {
-            Set<Type>
+            Set<Type> types = ((UnionType) fun).types;
+            Type retType = Type.UNKNOWN;
+            for (Type ft : types) {
+  
