@@ -115,4 +115,7 @@ public class Call extends Node {
 
         Type kw = kwargs == null ? null : transformExpr(kwargs, s);
         Type star = starargs == null ? null : transformExpr(starargs, s);
-        Type block = blockarg == null ? null
+        Type block = blockarg == null ? null : transformExpr(blockarg, s);
+
+        if (fun instanceof UnionType) {
+            Set<Type>
