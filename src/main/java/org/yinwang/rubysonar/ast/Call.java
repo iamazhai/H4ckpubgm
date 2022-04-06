@@ -126,4 +126,10 @@ public class Call extends Node {
             }
             return retType;
         } else {
-     
+            return resolveCall(fun, newName, pos, hash, kw, star, block, s);
+        }
+    }
+
+
+    @NotNull
+    
