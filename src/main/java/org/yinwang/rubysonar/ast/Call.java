@@ -134,4 +134,6 @@ public class Call extends Node {
     @NotNull
     private Type resolveCall(@NotNull Type fun,
                              Name newName,
-                 
+                             List<Type> pos,
+                             Map<String, Type> hash,
+             
