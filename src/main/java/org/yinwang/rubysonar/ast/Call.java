@@ -136,4 +136,7 @@ public class Call extends Node {
                              Name newName,
                              List<Type> pos,
                              Map<String, Type> hash,
-             
+                             Type kw,
+                             Type star,
+                             Type block,
+    
