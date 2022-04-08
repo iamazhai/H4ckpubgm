@@ -139,4 +139,7 @@ public class Call extends Node {
                              Type kw,
                              Type star,
                              Type block,
-    
+                             State s)
+    {
+        if (fun instanceof FunType) {
+            FunType ft = (FunType
