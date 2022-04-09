@@ -145,4 +145,5 @@ public class Call extends Node {
             FunType ft = (FunType) fun;
             return apply(ft, pos, hash, kw, star, block, this);
         } else if (fun instanceof ClassType) {
-  
+            // constructor
+            InstanceType inst = new InstanceType(fun, ne
