@@ -142,4 +142,7 @@ public class Call extends Node {
                              State s)
     {
         if (fun instanceof FunType) {
-            FunType ft = (FunType
+            FunType ft = (FunType) fun;
+            return apply(ft, pos, hash, kw, star, block, this);
+        } else if (fun instanceof ClassType) {
+  
