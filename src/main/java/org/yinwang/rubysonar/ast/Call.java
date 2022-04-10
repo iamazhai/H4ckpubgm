@@ -153,4 +153,6 @@ public class Call extends Node {
                 return inst;
             } else {
                 Type selfType = s.lookupType(Constants.INSTNAME);
-             
+                if (selfType != null) {
+                    selfType.table.putAll(inst.table);
+                }
