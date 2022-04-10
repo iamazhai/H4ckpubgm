@@ -146,4 +146,8 @@ public class Call extends Node {
             return apply(ft, pos, hash, kw, star, block, this);
         } else if (fun instanceof ClassType) {
             // constructor
-            InstanceType inst = new InstanceType(fun, ne
+            InstanceType inst = new InstanceType(fun, newName, this, pos);
+            ((ClassType) fun).setCanon(inst);
+
+            if (!isSuperCall()) {
+       
