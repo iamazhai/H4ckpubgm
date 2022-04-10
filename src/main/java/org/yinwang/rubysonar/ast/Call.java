@@ -156,3 +156,7 @@ public class Call extends Node {
                 if (selfType != null) {
                     selfType.table.putAll(inst.table);
                 }
+                return Type.CONT;
+            }
+        } else {
+            addWarni
