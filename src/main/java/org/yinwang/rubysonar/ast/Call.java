@@ -150,4 +150,7 @@ public class Call extends Node {
             ((ClassType) fun).setCanon(inst);
 
             if (!isSuperCall()) {
-       
+                return inst;
+            } else {
+                Type selfType = s.lookupType(Constants.INSTNAME);
+             
