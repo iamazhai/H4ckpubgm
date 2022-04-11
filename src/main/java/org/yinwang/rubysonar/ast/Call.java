@@ -159,4 +159,7 @@ public class Call extends Node {
                 return Type.CONT;
             }
         } else {
-            addWarni
+            addWarning("calling non-function and non-class: " + fun);
+            return Type.UNKNOWN;
+        }
+   
