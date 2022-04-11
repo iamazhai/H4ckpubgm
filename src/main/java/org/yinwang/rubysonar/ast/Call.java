@@ -169,4 +169,7 @@ public class Call extends Node {
     public static Type apply(@NotNull FunType func,
                              @Nullable List<Type> pos,
                              Map<String, Type> hash,
-                             Typ
+                             Type kw,
+                             Type star,
+                             Type block,
+     
