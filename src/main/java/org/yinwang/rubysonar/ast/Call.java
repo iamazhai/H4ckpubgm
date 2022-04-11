@@ -162,4 +162,9 @@ public class Call extends Node {
             addWarning("calling non-function and non-class: " + fun);
             return Type.UNKNOWN;
         }
-   
+    }
+
+
+    @NotNull
+    public static Type apply(@NotNull FunType func,
+                             @Nu
