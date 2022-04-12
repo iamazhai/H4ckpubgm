@@ -176,4 +176,6 @@ public class Call extends Node {
     {
         Analyzer.self.removeUncalled(func);
 
-        if (fu
+        if (func.func != null && !func.func.called) {
+            Analyzer.self.nCalled++;
+            func.func.called = true;
