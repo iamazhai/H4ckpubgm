@@ -172,4 +172,8 @@ public class Call extends Node {
                              Type kw,
                              Type star,
                              Type block,
-     
+                             @Nullable Node call)
+    {
+        Analyzer.self.removeUncalled(func);
+
+        if (fu
