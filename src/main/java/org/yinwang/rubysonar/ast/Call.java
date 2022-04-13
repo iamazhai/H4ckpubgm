@@ -179,3 +179,8 @@ public class Call extends Node {
         if (func.func != null && !func.func.called) {
             Analyzer.self.nCalled++;
             func.func.called = true;
+        }
+
+        if (func.func == null) {
+            // func without definition (possibly builtins)
+         
