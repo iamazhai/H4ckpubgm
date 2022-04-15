@@ -190,4 +190,9 @@ public class Call extends Node {
         }
 
         if (call != null) {
-     
+            Analyzer.self.pushStack(call);
+        }
+
+        List<Type> pTypes = new ArrayList<>();
+
+        if (pos != n
