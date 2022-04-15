@@ -185,4 +185,9 @@ public class Call extends Node {
             // func without definition (possibly builtins)
             return func.getReturnType();
         } else if (call != null && Analyzer.self.inStack(call)) {
-         
+            func.setSelfType(null);
+            return Type.UNKNOWN;
+        }
+
+        if (call != null) {
+     
