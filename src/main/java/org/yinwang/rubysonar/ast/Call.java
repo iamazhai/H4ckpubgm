@@ -195,4 +195,8 @@ public class Call extends Node {
 
         List<Type> pTypes = new ArrayList<>();
 
-        if (pos != n
+        if (pos != null) {
+            pTypes.addAll(pos);
+        }
+
+        State funcTable = new State(func.env, State.StateType
