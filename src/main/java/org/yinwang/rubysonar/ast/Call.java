@@ -202,4 +202,6 @@ public class Call extends Node {
         State funcTable = new State(func.env, State.StateType.FUNCTION);
 
         if (!func.table.path.isEmpty()) {
-            funcTable.path = func.table.p
+            funcTable.path = func.table.path;
+        } else if (func.table.parent != null) {
+            funcTable.setPath(func.tab
