@@ -199,4 +199,7 @@ public class Call extends Node {
             pTypes.addAll(pos);
         }
 
-        State funcTable = new State(func.env, State.StateType
+        State funcTable = new State(func.env, State.StateType.FUNCTION);
+
+        if (!func.table.path.isEmpty()) {
+            funcTable.path = func.table.p
