@@ -211,4 +211,6 @@ public class Call extends Node {
 
         // bind a special this name to the table
         if (func.selfType != null) {
-            Binder.bind(funcTable, new Name(Constants.INSTNAME), func.selfType, S
+            Binder.bind(funcTable, new Name(Constants.INSTNAME), func.selfType, SCOPE);
+        } else if (func.cls != null) {
+            Binder.bind(funcTable, new Name(Constants.INSTNAME), func.cls
