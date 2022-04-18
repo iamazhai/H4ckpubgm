@@ -206,4 +206,8 @@ public class Call extends Node {
         } else if (func.table.parent != null) {
             funcTable.setPath(func.table.parent.extendPath(func.func.name.id, "#"));
         } else {
-            funcTa
+            funcTable.setPath(func.func.name.id);
+        }
+
+        // bind a special this name to the table
+        if (func.selfType
