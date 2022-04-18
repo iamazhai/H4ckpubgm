@@ -204,4 +204,6 @@ public class Call extends Node {
         if (!func.table.path.isEmpty()) {
             funcTable.path = func.table.path;
         } else if (func.table.parent != null) {
-            funcTable.setPath(func.tab
+            funcTable.setPath(func.table.parent.extendPath(func.func.name.id, "#"));
+        } else {
+            funcTa
