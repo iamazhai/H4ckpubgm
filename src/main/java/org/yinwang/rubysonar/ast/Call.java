@@ -216,4 +216,6 @@ public class Call extends Node {
             Binder.bind(funcTable, new Name(Constants.INSTNAME), func.cls.getCanon(), SCOPE);
         }
 
-        Type fromType = bindParams(call, func.func, funcTable, func.func.
+        Type fromType = bindParams(call, func.func, funcTable, func.func.args,
+                func.func.vararg, func.func.kwarg,
+                pTypes, func.defaultType
