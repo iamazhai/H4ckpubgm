@@ -213,4 +213,7 @@ public class Call extends Node {
         if (func.selfType != null) {
             Binder.bind(funcTable, new Name(Constants.INSTNAME), func.selfType, SCOPE);
         } else if (func.cls != null) {
-            Binder.bind(funcTable, new Name(Constants.INSTNAME), func.cls
+            Binder.bind(funcTable, new Name(Constants.INSTNAME), func.cls.getCanon(), SCOPE);
+        }
+
+        Type fromType = bindParams(call, func.func, funcTable, func.func.
