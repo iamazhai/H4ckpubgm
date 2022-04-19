@@ -218,4 +218,7 @@ public class Call extends Node {
 
         Type fromType = bindParams(call, func.func, funcTable, func.func.args,
                 func.func.vararg, func.func.kwarg,
-                pTypes, func.defaultType
+                pTypes, func.defaultTypes, hash, kw, star, block);
+
+        Type cachedTo = func.getMapping(fromType);
+        if (cachedTo != null && !(call
