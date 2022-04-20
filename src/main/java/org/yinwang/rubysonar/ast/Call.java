@@ -226,4 +226,5 @@ public class Call extends Node {
             return cachedTo;
         } else {
             Type toType;
-    
+            if (func.isClassMethod) {
+                boolean wasStatic = Analyzer.self.staticCont
