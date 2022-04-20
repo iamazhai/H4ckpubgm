@@ -222,4 +222,8 @@ public class Call extends Node {
 
         Type cachedTo = func.getMapping(fromType);
         if (cachedTo != null && !(call != null && (call instanceof Call) && ((Call) call).isSuperCall())) {
-            func.set
+            func.setSelfType(null);
+            return cachedTo;
+        } else {
+            Type toType;
+    
