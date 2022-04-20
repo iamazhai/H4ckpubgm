@@ -221,4 +221,5 @@ public class Call extends Node {
                 pTypes, func.defaultTypes, hash, kw, star, block);
 
         Type cachedTo = func.getMapping(fromType);
-        if (cachedTo != null && !(call
+        if (cachedTo != null && !(call != null && (call instanceof Call) && ((Call) call).isSuperCall())) {
+            func.set
