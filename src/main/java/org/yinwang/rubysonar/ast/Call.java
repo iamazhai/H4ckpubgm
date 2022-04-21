@@ -230,4 +230,6 @@ public class Call extends Node {
                 boolean wasStatic = Analyzer.self.staticContext;
                 Analyzer.self.setStaticContext(true);
                 toType = transformExpr(func.func.body, funcTable);
-                Analyzer.self.setStaticContext(wasStatic)
+                Analyzer.self.setStaticContext(wasStatic);
+            } else {
+                toType = transformExpr(func.func.body, funcTab
