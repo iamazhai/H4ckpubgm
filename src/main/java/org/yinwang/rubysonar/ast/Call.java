@@ -232,4 +232,8 @@ public class Call extends Node {
                 toType = transformExpr(func.func.body, funcTable);
                 Analyzer.self.setStaticContext(wasStatic);
             } else {
-                toType = transformExpr(func.func.body, funcTab
+                toType = transformExpr(func.func.body, funcTable);
+            }
+
+            if (missingReturn(toType)) {
+                Analyzer.self.p
