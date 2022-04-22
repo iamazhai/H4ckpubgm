@@ -244,4 +244,11 @@ public class Call extends Node {
             }
 
             func.addMapping(fromType, toType);
-            fu
+            func.setSelfType(null);
+            return toType;
+        }
+    }
+
+
+    @NotNull
+    static private Type bind
