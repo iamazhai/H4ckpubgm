@@ -240,4 +240,8 @@ public class Call extends Node {
 
                 if (call != null) {
                     Analyzer.self.putProblem(call, "Call not always return a value");
-   
+                }
+            }
+
+            func.addMapping(fromType, toType);
+            fu
