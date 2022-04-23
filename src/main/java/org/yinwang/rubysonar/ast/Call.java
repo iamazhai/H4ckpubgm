@@ -255,4 +255,5 @@ public class Call extends Node {
                                    @NotNull Function func,
                                    @NotNull State funcTable,
                                    @Nullable List<Node> args,
-      
+                                   @Nullable Name rest,
+                                   @Nullable Na
