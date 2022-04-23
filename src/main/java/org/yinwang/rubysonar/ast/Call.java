@@ -253,4 +253,6 @@ public class Call extends Node {
     @NotNull
     static private Type bindParams(@Nullable Node call,
                                    @NotNull Function func,
-              
+                                   @NotNull State funcTable,
+                                   @Nullable List<Node> args,
+      
