@@ -262,4 +262,7 @@ public class Call extends Node {
                                    @Nullable Map<String, Type> hash,
                                    @Nullable Type kw,
                                    @Nullable Type star,
- 
+                                   @Nullable Type block)
+    {
+        TupleType fromType = new TupleType();
+        int
