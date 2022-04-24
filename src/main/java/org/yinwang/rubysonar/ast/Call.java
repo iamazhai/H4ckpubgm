@@ -258,4 +258,6 @@ public class Call extends Node {
                                    @Nullable Name rest,
                                    @Nullable Name restKw,
                                    @Nullable List<Type> pTypes,
-                                  
+                                   @Nullable List<Type> dTypes,
+                                   @Nullable Map<String, Type> hash,
+               
