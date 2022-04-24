@@ -260,4 +260,6 @@ public class Call extends Node {
                                    @Nullable List<Type> pTypes,
                                    @Nullable List<Type> dTypes,
                                    @Nullable Map<String, Type> hash,
-               
+                                   @Nullable Type kw,
+                                   @Nullable Type star,
+ 
