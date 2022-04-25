@@ -265,4 +265,5 @@ public class Call extends Node {
                                    @Nullable Type block)
     {
         TupleType fromType = new TupleType();
-        int
+        int pSize = args == null ? 0 : args.size();
+        int aSize = pTypes == null ? 0 : pTypes.size();
