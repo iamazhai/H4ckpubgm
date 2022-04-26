@@ -271,4 +271,9 @@ public class Call extends Node {
         int nPos = pSize - dSize;
 
         if (star != null && star instanceof ListType) {
-            star = ((ListType) star).toTupleType
+            star = ((ListType) star).toTupleType();
+        }
+
+        for (int i = 0, j = 0; i < pSize; i++) {
+            Node arg = args.get(i);
+      
