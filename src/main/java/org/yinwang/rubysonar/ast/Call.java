@@ -279,4 +279,5 @@ public class Call extends Node {
             Type aType;
             if (i < aSize) {
                 aType = pTypes.get(i);
-           
+            } else if (i - nPos >= 0 && i - nPos < dSize) {
+                aType = dTypes.get(i - nPos
