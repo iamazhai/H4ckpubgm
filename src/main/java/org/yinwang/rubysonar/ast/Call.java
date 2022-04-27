@@ -280,4 +280,6 @@ public class Call extends Node {
             if (i < aSize) {
                 aType = pTypes.get(i);
             } else if (i - nPos >= 0 && i - nPos < dSize) {
-                aType = dTypes.get(i - nPos
+                aType = dTypes.get(i - nPos);
+            } else {
+                if (hash != null && args.get(i) instanceof Name &&
