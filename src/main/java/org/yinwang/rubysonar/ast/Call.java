@@ -283,3 +283,6 @@ public class Call extends Node {
                 aType = dTypes.get(i - nPos);
             } else {
                 if (hash != null && args.get(i) instanceof Name &&
+                        hash.containsKey(((Name) args.get(i)).id))
+                {
+                  
