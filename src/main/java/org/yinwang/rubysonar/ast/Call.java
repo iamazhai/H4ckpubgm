@@ -276,4 +276,7 @@ public class Call extends Node {
 
         for (int i = 0, j = 0; i < pSize; i++) {
             Node arg = args.get(i);
-      
+            Type aType;
+            if (i < aSize) {
+                aType = pTypes.get(i);
+           
