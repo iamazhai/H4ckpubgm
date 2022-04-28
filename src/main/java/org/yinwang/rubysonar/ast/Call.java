@@ -288,4 +288,6 @@ public class Call extends Node {
                     aType = hash.get(((Name) args.get(i)).id);
                     hash.remove(((Name) args.get(i)).id);
                 } else {
-                    if (star != null && s
+                    if (star != null && star instanceof TupleType &&
+                            j < ((TupleType) star).eltTypes.size())
+               
