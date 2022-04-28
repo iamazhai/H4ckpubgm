@@ -290,4 +290,7 @@ public class Call extends Node {
                 } else {
                     if (star != null && star instanceof TupleType &&
                             j < ((TupleType) star).eltTypes.size())
-               
+                    {
+                        aType = ((TupleType) star).get(j++);
+                    } else {
+      
