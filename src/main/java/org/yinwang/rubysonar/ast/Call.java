@@ -286,4 +286,6 @@ public class Call extends Node {
                         hash.containsKey(((Name) args.get(i)).id))
                 {
                     aType = hash.get(((Name) args.get(i)).id);
-                    hash.remove(((Name) args.get
+                    hash.remove(((Name) args.get(i)).id);
+                } else {
+                    if (star != null && s
