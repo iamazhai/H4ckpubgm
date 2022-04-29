@@ -295,4 +295,5 @@ public class Call extends Node {
                     } else {
                         aType = Type.UNKNOWN;
                         if (call != null) {
-                  
+                            Analyzer.self.putProblem(args.get(i),
+                                    "unable to bind ar
