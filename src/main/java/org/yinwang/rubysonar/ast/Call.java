@@ -293,4 +293,6 @@ public class Call extends Node {
                     {
                         aType = ((TupleType) star).get(j++);
                     } else {
-      
+                        aType = Type.UNKNOWN;
+                        if (call != null) {
+                  
