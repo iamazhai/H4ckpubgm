@@ -301,4 +301,5 @@ public class Call extends Node {
                     }
                 }
             }
-   
+            Binder.bind(funcTable, arg, aType, Binding.Kind.PARAMETER);
+            fromType.a
