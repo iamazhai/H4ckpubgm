@@ -302,4 +302,9 @@ public class Call extends Node {
                 }
             }
             Binder.bind(funcTable, arg, aType, Binding.Kind.PARAMETER);
-            fromType.a
+            fromType.add(aType);
+        }
+
+        if (restKw != null) {
+            if (hash != null && !hash.isEmpty()) {
+                Type ha
