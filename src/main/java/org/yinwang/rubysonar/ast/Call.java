@@ -311,4 +311,7 @@ public class Call extends Node {
                 Type dict = new DictType(Type.STR, hashType);
                 Binder.bind(
                         funcTable,
-                        restKw
+                        restKw,
+                        dict,
+                        Binding.Kind.PARAMETER);
+                fromType.a
