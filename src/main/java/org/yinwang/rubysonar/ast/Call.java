@@ -308,4 +308,7 @@ public class Call extends Node {
         if (restKw != null) {
             if (hash != null && !hash.isEmpty()) {
                 Type hashType = UnionType.newUnion(hash.values());
-                Type dict = new DictType(Type.S
+                Type dict = new DictType(Type.STR, hashType);
+                Binder.bind(
+                        funcTable,
+                        restKw
