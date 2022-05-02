@@ -314,4 +314,6 @@ public class Call extends Node {
                         restKw,
                         dict,
                         Binding.Kind.PARAMETER);
-                fromType.a
+                fromType.add(dict);
+            } else {
+                Binder.bind(funcTable, restKw, Type.UNKNOWN, Binding
