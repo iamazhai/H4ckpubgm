@@ -316,4 +316,9 @@ public class Call extends Node {
                         Binding.Kind.PARAMETER);
                 fromType.add(dict);
             } else {
-                Binder.bind(funcTable, restKw, Type.UNKNOWN, Binding
+                Binder.bind(funcTable, restKw, Type.UNKNOWN, Binding.Kind.PARAMETER);
+            }
+        }
+
+        if (rest != null) {
+            if (pTypes.size() > pSize
