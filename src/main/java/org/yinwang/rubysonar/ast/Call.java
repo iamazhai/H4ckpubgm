@@ -321,4 +321,7 @@ public class Call extends Node {
         }
 
         if (rest != null) {
-            if (pTypes.size() > pSize
+            if (pTypes.size() > pSize) {
+                if (func.afterRest != null) {
+                    int nAfter = func.afterRest.size();
+           
