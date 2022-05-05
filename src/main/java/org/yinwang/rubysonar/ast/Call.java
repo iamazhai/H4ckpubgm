@@ -325,4 +325,6 @@ public class Call extends Node {
                 if (func.afterRest != null) {
                     int nAfter = func.afterRest.size();
                     for (int i = 0; i < nAfter; i++) {
-                        Binder.bind(funcTable, func.afterRest
+                        Binder.bind(funcTable, func.afterRest.get(i),
+                                pTypes.get(pTypes.size() - nAfter + i),
+                              
