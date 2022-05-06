@@ -328,4 +328,7 @@ public class Call extends Node {
                         Binder.bind(funcTable, func.afterRest.get(i),
                                 pTypes.get(pTypes.size() - nAfter + i),
                                 Binding.Kind.PARAMETER);
-                        fromType.add(pTypes.get(pTypes.size() - nAfter + i
+                        fromType.add(pTypes.get(pTypes.size() - nAfter + i));
+                    }
+                    if (pTypes.size() - nAfter > 0 && pTypes.size() - nAfter >= pSize) {
+         
