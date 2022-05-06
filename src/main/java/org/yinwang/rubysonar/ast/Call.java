@@ -327,4 +327,5 @@ public class Call extends Node {
                     for (int i = 0; i < nAfter; i++) {
                         Binder.bind(funcTable, func.afterRest.get(i),
                                 pTypes.get(pTypes.size() - nAfter + i),
-                              
+                                Binding.Kind.PARAMETER);
+                        fromType.add(pTypes.get(pTypes.size() - nAfter + i
