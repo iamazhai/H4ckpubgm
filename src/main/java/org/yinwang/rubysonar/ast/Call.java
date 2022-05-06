@@ -332,4 +332,5 @@ public class Call extends Node {
                     }
                     if (pTypes.size() - nAfter > 0 && pTypes.size() - nAfter >= pSize) {
                         Type restType = new TupleType(pTypes.subList(pSize, pTypes.size() - nAfter));
-        
+                        Binder.bind(funcTable, rest, restType, Binding.Kind.PARAMETER);
+   
