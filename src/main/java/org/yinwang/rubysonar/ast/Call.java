@@ -331,4 +331,5 @@ public class Call extends Node {
                         fromType.add(pTypes.get(pTypes.size() - nAfter + i));
                     }
                     if (pTypes.size() - nAfter > 0 && pTypes.size() - nAfter >= pSize) {
-         
+                        Type restType = new TupleType(pTypes.subList(pSize, pTypes.size() - nAfter));
+        
