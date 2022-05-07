@@ -336,4 +336,5 @@ public class Call extends Node {
                         fromType.add(restType);
                     }
                 } else {
-                   
+                    Type restType = new TupleType(pTypes.subList(pSize, pTypes.size()));
+                    Binder
