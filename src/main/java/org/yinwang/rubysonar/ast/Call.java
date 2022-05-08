@@ -339,4 +339,6 @@ public class Call extends Node {
                     Type restType = new TupleType(pTypes.subList(pSize, pTypes.size()));
                     Binder.bind(funcTable, rest, restType, Binding.Kind.PARAMETER);
                     fromType.add(restType);
-     
+                }
+            } else {
+                Binder.bind(funcTable, rest, Type.UN
