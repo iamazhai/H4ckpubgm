@@ -341,4 +341,9 @@ public class Call extends Node {
                     fromType.add(restType);
                 }
             } else {
-                Binder.bind(funcTable, rest, Type.UN
+                Binder.bind(funcTable, rest, Type.UNKNOWN, Binding.Kind.PARAMETER);
+                fromType.add(Type.UNKNOWN);
+            }
+        }
+
+        if (func.blockarg !
