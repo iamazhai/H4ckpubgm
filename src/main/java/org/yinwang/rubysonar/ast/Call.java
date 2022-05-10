@@ -360,4 +360,6 @@ public class Call extends Node {
     }
 
 
-    stati
+    static boolean missingReturn(@NotNull Type toType) {
+        boolean hasNone = false;
+        boolean 
