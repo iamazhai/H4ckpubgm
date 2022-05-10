@@ -352,4 +352,12 @@ public class Call extends Node {
                 fromType.add(block);
             } else {
                 Binder.bind(funcTable, func.blockarg, Type.UNKNOWN, Binding.Kind.PARAMETER);
-         
+                fromType.add(Type.UNKNOWN);
+            }
+        }
+
+        return fromType;
+    }
+
+
+    stati
