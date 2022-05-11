@@ -368,4 +368,10 @@ public class Call extends Node {
             for (Type t : ((UnionType) toType).types) {
                 if (t == Type.NIL || t == Type.CONT) {
                     hasNone = true;
-          
+                } else {
+                    hasOther = true;
+                }
+            }
+        }
+
+       
