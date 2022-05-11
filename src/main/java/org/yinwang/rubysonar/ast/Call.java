@@ -374,4 +374,9 @@ public class Call extends Node {
             }
         }
 
-       
+        return hasNone && hasOther;
+    }
+
+
+    public boolean isSuperCall() {
+      
