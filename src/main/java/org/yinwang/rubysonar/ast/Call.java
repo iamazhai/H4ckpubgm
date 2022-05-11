@@ -362,4 +362,8 @@ public class Call extends Node {
 
     static boolean missingReturn(@NotNull Type toType) {
         boolean hasNone = false;
-        boolean 
+        boolean hasOther = false;
+
+        if (toType instanceof UnionType) {
+            for (Type t : ((UnionType) toType).types) {
+ 
