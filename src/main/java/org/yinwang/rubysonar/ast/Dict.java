@@ -3,4 +3,12 @@ package org.yinwang.rubysonar.ast;
 import org.jetbrains.annotations.NotNull;
 import org.yinwang.rubysonar.State;
 import org.yinwang.rubysonar.types.DictType;
-import org.yinwang.rubysonar.ty
+import org.yinwang.rubysonar.types.Type;
+
+import java.util.List;
+
+
+public class Dict extends Node {
+
+    public List<Node> keys;
+    publi
