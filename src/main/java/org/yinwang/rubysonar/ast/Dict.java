@@ -11,4 +11,7 @@ import java.util.List;
 public class Dict extends Node {
 
     public List<Node> keys;
-    publi
+    public List<Node> values;
+
+
+    public Dict(List<Node> keys, List<Node> values, String file, int start, 
