@@ -18,4 +18,11 @@ public class Dict extends Node {
         super(file, start, end);
         this.keys = keys;
         this.values = values;
-        add
+        addChildren(keys);
+        addChildren(values);
+    }
+
+
+    @NotNull
+    @Override
+    public Type trans
