@@ -34,4 +34,8 @@ public class Dict extends Node {
 
     @NotNull
     @Override
-   
+    public String toString() {
+        return "(dict)";
+    }
+
+}
