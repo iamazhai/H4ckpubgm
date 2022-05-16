@@ -27,4 +27,11 @@ public class Dict extends Node {
     @Override
     public Type transform(State s) {
         Type keyType = resolveUnion(keys, s);
-        Type valType = resol
+        Type valType = resolveUnion(values, s);
+        return new DictType(keyType, valType);
+    }
+
+
+    @NotNull
+    @Override
+   
