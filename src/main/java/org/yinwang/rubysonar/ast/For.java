@@ -30,4 +30,7 @@ public class For extends Node {
 
     @NotNull
     @Override
-    public Type transfo
+    public Type transform(@NotNull State s) {
+        Binder.bindIter(s, target, iter, Binding.Kind.SCOPE);
+
+        Typ
