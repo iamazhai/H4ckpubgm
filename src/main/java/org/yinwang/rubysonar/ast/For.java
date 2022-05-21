@@ -37,4 +37,7 @@ public class For extends Node {
         if (body == null) {
             ret = Type.UNKNOWN;
         } else {
-            ret = transf
+            ret = transformExpr(body, s);
+        }
+        if (orelse != null) {
+            ret = UnionType.union(ret, transformExpr(o
