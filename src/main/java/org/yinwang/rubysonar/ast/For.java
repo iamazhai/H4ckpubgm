@@ -40,4 +40,12 @@ public class For extends Node {
             ret = transformExpr(body, s);
         }
         if (orelse != null) {
-            ret = UnionType.union(ret, transformExpr(o
+            ret = UnionType.union(ret, transformExpr(orelse, s));
+        }
+        return ret;
+    }
+
+
+    @NotNull
+    @Override
+    public String t
