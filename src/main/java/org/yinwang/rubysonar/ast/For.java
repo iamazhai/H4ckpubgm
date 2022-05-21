@@ -33,4 +33,8 @@ public class For extends Node {
     public Type transform(@NotNull State s) {
         Binder.bindIter(s, target, iter, Binding.Kind.SCOPE);
 
-        Typ
+        Type ret;
+        if (body == null) {
+            ret = Type.UNKNOWN;
+        } else {
+            ret = transf
