@@ -52,3 +52,13 @@ public class Handler extends Node {
 
         return ret;
     }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(handler:" + exceptions + ":" + binder + ")";
+    }
+
+
+}
