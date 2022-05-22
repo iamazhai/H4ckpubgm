@@ -100,3 +100,52 @@ public class Function extends Node {
         return Type.CONT;
     }
 
+
+    private static int lambdaCounter = 0;
+
+
+    @NotNull
+    public static String genLambdaName() {
+        lambdaCounter = lambdaCounter + 1;
+        return "lambda%" + lambdaCounter;
+    }
+
+
+    public String getArgList() {
+
+        List<String> argList = new ArrayList<>();
+        if (args != null) {
+            for (Node n : args) {
+                argList.add(n.toDisplay());
+            }
+        }
+
+        if (vararg != null) {
+            argList.add("*" + vararg.toDisplay());
+        }
+
+        if (afterRest != null) {
+            for (Node a : afterRest) {
+                argList.add(a.toDisplay());
+            }
+        }
+
+        if (kwarg != null) {
+            argList.add("**" + kwarg.toDisplay());
+        }
+
+        if (blockarg != null) {
+            argList.add("&" + blockarg.toDisplay());
+        }
+
+        return _.joinWithSep(argList, ",", null, null);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(func:" + locator + ")";
+    }
+
+}
