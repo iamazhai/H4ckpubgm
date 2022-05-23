@@ -13,4 +13,11 @@ public class Index extends Node {
     public Index(Node n, String file, int start, int end) {
         super(file, start, end);
         this.value = n;
-        addCh
+        addChildren(n);
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        return tr
