@@ -20,4 +20,11 @@ public class Index extends Node {
     @NotNull
     @Override
     public Type transform(State s) {
-        return tr
+        return transformExpr(value, s);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        retu
