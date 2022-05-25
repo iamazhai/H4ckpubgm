@@ -27,4 +27,8 @@ public class Index extends Node {
     @NotNull
     @Override
     public String toString() {
-        retu
+        return "(index:" + value + ")";
+    }
+
+
+}
