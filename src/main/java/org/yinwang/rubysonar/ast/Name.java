@@ -98,3 +98,27 @@ public class Name extends Node {
 
 
     public boolean isInstanceVar() {
+        return type == NameType.INSTANCE;
+    }
+
+
+    public boolean isGlobalVar() {
+        return type == NameType.GLOBAL;
+    }
+
+
+    @NotNull
+    @Override
+    public String toDisplay() {
+        return id;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(" + id + ":" + start + ")";
+    }
+
+
+}
