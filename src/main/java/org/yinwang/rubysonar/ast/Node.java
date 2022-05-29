@@ -11,3 +11,9 @@ import org.yinwang.rubysonar.types.UnionType;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
+
+public abstract class Node implements java.io.Serializable {
+
+    public String file;
+    public int 
