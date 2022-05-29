@@ -16,4 +16,11 @@ import java.util.List;
 public abstract class Node implements java.io.Serializable {
 
     public String file;
-    public int 
+    public int start = -1;
+    public int end = -1;
+    public String name;
+    public String path;
+    public Node parent = null;
+
+
+    p
