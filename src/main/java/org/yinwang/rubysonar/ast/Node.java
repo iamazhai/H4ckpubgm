@@ -34,4 +34,12 @@ public abstract class Node implements java.io.Serializable {
     }
 
 
-    public void setParent(Node
+    public void setParent(Node parent) {
+
+        this.parent = parent;
+    }
+
+
+    @NotNull
+    public Node getAstRoot() {
+    
