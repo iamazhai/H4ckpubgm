@@ -28,4 +28,10 @@ public abstract class Node implements java.io.Serializable {
 
 
     public Node(String file, int start, int end) {
-        this.fil
+        this.file = file;
+        this.start = start;
+        this.end = end;
+    }
+
+
+    public void setParent(Node
