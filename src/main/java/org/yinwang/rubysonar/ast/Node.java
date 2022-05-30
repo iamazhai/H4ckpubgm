@@ -42,4 +42,7 @@ public abstract class Node implements java.io.Serializable {
 
     @NotNull
     public Node getAstRoot() {
-    
+        if (parent == null) {
+            return this;
+        }
+        return parent.getAstRoot();
