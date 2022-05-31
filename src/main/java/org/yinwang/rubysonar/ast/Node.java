@@ -46,3 +46,9 @@ public abstract class Node implements java.io.Serializable {
             return this;
         }
         return parent.getAstRoot();
+    }
+
+
+    public void addChildren(@Nullable Node... nodes) {
+        if (nodes != null) {
+            for 
