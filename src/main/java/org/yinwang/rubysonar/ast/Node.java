@@ -60,4 +60,7 @@ public abstract class Node implements java.io.Serializable {
     }
 
 
-    public void addChildren(@Nullable Collection<?
+    public void addChildren(@Nullable Collection<? extends Node> nodes) {
+        if (nodes != null) {
+            for (Node n : nodes) {
+   
