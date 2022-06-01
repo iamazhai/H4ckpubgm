@@ -51,4 +51,7 @@ public abstract class Node implements java.io.Serializable {
 
     public void addChildren(@Nullable Node... nodes) {
         if (nodes != null) {
-            for 
+            for (Node n : nodes) {
+                if (n != null) {
+                    n.setParent(this);
+   
