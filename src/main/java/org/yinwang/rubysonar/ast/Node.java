@@ -76,4 +76,7 @@ public abstract class Node implements java.io.Serializable {
     }
 
 
-    @No
+    @NotNull
+    public static Type transformExpr(@NotNull Node n, State s) {
+        return n.transform(s);
+ 
