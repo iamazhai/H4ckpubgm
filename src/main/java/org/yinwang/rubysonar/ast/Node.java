@@ -68,4 +68,12 @@ public abstract class Node implements java.io.Serializable {
                 }
             }
         }
-    
+    }
+
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+
+    @No
