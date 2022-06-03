@@ -97,4 +97,7 @@ public abstract class Node implements java.io.Serializable {
 
 
     @NotNull
-    protected Type resolveUnion(@NotNull Collection<? extends
+    protected Type resolveUnion(@NotNull Collection<? extends Node> nodes, State s) {
+        Type result = Type.UNKNOWN;
+        for (Node node : nodes) {
+     
