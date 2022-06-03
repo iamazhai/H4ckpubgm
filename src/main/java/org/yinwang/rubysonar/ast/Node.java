@@ -87,4 +87,9 @@ public abstract class Node implements java.io.Serializable {
 
 
     protected void addWarning(String msg) {
-        Analyzer.
+        Analyzer.self.putProblem(this, msg);
+    }
+
+
+    protected void addError(String msg) {
+        Analyzer.self.putProb
