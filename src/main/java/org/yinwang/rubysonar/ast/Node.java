@@ -92,4 +92,9 @@ public abstract class Node implements java.io.Serializable {
 
 
     protected void addError(String msg) {
-        Analyzer.self.putProb
+        Analyzer.self.putProblem(this, msg);
+    }
+
+
+    @NotNull
+    protected Type resolveUnion(@NotNull Collection<? extends
