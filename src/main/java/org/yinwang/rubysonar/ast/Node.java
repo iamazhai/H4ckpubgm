@@ -103,3 +103,9 @@ public abstract class Node implements java.io.Serializable {
             Type nodeType = transformExpr(node, s);
             result = UnionType.union(result, nodeType);
         }
+        return result;
+    }
+
+
+    @Nullable
+    static protected List<Type> resolveList(@N
