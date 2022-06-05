@@ -108,4 +108,7 @@ public abstract class Node implements java.io.Serializable {
 
 
     @Nullable
-    static protected List<Type> resolveList(@N
+    static protected List<Type> resolveList(@Nullable Collection<? extends Node> nodes, State s) {
+        if (nodes == null) {
+            return null;
+   
