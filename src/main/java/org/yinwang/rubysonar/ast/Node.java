@@ -114,4 +114,11 @@ public abstract class Node implements java.io.Serializable {
         } else {
             List<Type> ret = new ArrayList<>();
             for (Node n : nodes) {
-            
+                ret.add(transformExpr(n, s));
+            }
+            return ret;
+        }
+    }
+
+
+    // nodes are equal if th
