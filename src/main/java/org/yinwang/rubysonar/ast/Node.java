@@ -127,4 +127,6 @@ public abstract class Node implements java.io.Serializable {
         if (!(obj instanceof Node)) {
             return false;
         } else {
-            Node node = 
+            Node node = (Node) obj;
+            return (this.start == node.start &&
+                    this.end == n
