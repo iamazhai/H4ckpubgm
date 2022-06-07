@@ -129,4 +129,11 @@ public abstract class Node implements java.io.Serializable {
         } else {
             Node node = (Node) obj;
             return (this.start == node.start &&
-                    this.end == n
+                    this.end == node.end &&
+                    _.same(this.file, node.file));
+        }
+    }
+
+
+    @Override
+  
