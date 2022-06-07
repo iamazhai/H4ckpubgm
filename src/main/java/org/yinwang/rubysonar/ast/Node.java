@@ -123,4 +123,8 @@ public abstract class Node implements java.io.Serializable {
 
     // nodes are equal if they are from the same file and same starting point
     @Override
-    public boolean equals(Object obj
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Node)) {
+            return false;
+        } else {
+            Node node = 
