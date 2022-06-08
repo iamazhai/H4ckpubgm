@@ -148,4 +148,8 @@ public abstract class Node implements java.io.Serializable {
 
     @NotNull
     @Override
-    public String
+    public String toString() {
+        return "(node:" + file + ":" + name + ":" + start + ")";
+    }
+
+}
