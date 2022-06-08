@@ -136,4 +136,9 @@ public abstract class Node implements java.io.Serializable {
 
 
     @Override
-  
+    public int hashCode() {
+        return (file + ":" + start + ":" + end).hashCode();
+    }
+
+
+    publi
