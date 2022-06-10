@@ -39,4 +39,12 @@ public enum Op {
     NotEq,
     LtE,
     GtE,
-   
+    NotIn,
+
+    // ruby
+    Defined,
+    Match,
+    NotMatch;
+
+
+    public static Op invert(Op op)
