@@ -29,4 +29,14 @@ public enum Op {
     RShift,
     Invert,
 
-    // 
+    // boolean
+    And,
+    Or,
+    Not,
+
+    // synthetic
+    NotEqual,
+    NotEq,
+    LtE,
+    GtE,
+   
