@@ -18,3 +18,15 @@ public enum Op {
     Eqv,
     Equal,
     Lt,
+    Gt,
+
+    // bit
+    BitAnd,
+    BitOr,
+    BitXor,
+    In,
+    LShift,
+    RShift,
+    Invert,
+
+    // 
