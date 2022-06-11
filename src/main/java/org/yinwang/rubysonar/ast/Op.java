@@ -47,4 +47,10 @@ public enum Op {
     NotMatch;
 
 
-    public static Op invert(Op op)
+    public static Op invert(Op op) {
+        if (op == Op.Lt) {
+            return Op.Gt;
+        }
+
+        if (op == Op.Gt) {
+         
