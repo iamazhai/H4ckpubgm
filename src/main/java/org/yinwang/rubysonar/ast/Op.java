@@ -65,4 +65,8 @@ public enum Op {
         }
 
         if (op == Op.Or) {
-            retu
+            return Op.And;
+        }
+
+        _.die("invalid operator name for invert: " + op);
+        return null
