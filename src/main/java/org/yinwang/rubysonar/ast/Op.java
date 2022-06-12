@@ -60,4 +60,9 @@ public enum Op {
             return Op.Eq;
         }
 
-        i
+        if (op == Op.And) {
+            return Op.Or;
+        }
+
+        if (op == Op.Or) {
+            retu
