@@ -69,4 +69,8 @@ public enum Op {
         }
 
         _.die("invalid operator name for invert: " + op);
-        return null
+        return null;  // unreacheable
+    }
+
+
+}
