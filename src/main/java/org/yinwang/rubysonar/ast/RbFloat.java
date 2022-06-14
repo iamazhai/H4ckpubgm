@@ -19,4 +19,11 @@ public class RbFloat extends Node {
 
     @NotNull
     @Override
-   
+    public Type transform(State s) {
+        return Type.FLOAT;
+    }
+
+
+    @NotNull
+    @Override
+    pu
