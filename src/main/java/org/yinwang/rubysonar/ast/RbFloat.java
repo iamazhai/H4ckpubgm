@@ -7,4 +7,8 @@ import org.yinwang.rubysonar.types.Type;
 
 public class RbFloat extends Node {
 
-    publi
+    public double value;
+
+
+    public RbFloat(String s, String file, int start, int end) {
+        super(file, start, e
