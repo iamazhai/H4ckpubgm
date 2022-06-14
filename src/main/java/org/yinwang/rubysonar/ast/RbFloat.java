@@ -26,4 +26,8 @@ public class RbFloat extends Node {
 
     @NotNull
     @Override
-    pu
+    public String toString() {
+        return "(float:" + value + ")";
+    }
+
+}
