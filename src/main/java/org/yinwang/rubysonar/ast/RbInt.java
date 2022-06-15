@@ -53,3 +53,18 @@ public class RbInt extends Node {
         }
     }
 
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        return Type.INT;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(int:" + value + ")";
+    }
+
+}
