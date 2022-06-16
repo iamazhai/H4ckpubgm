@@ -7,4 +7,8 @@ import org.yinwang.rubysonar.types.Type;
 
 public class Starred extends Node {
 
-    public
+    public Node value;
+
+
+    public Starred(Node n, String file, int start, int end) {
+        super(file, start
