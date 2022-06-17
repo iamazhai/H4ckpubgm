@@ -18,4 +18,10 @@ public class Starred extends Node {
 
 
     @NotNull
-    @Overrid
+    @Override
+    public Type transform(State s) {
+        return transformExpr(value, s);
+    }
+
+
+    @NotNull
