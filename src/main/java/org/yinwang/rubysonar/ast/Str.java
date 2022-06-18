@@ -11,4 +11,6 @@ public class Str extends Node {
     public String value;
 
 
-    pub
+    public Str(@NotNull Object value, String file, int start, int end) {
+        super(file, start, end);
+        this.val
