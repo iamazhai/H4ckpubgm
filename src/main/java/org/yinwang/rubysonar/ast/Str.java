@@ -27,4 +27,6 @@ public class Str extends Node {
     @NotNull
     @Override
     public String toString() {
-        String su
+        String summary;
+        if (value.length() > 10) {
+            summary = value.sub
