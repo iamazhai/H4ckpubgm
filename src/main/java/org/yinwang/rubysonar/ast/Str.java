@@ -20,4 +20,11 @@ public class Str extends Node {
     @NotNull
     @Override
     public Type transform(State s) {
-        retu
+        return new StrType(value);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        String su
