@@ -13,4 +13,11 @@ public class Str extends Node {
 
     public Str(@NotNull Object value, String file, int start, int end) {
         super(file, start, end);
-        this.val
+        this.value = value.toString();
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        retu
