@@ -33,4 +33,7 @@ public class Str extends Node {
         } else {
             summary = value;
         }
-        return "'" + summary
+        return "'" + summary + "'";
+    }
+
+}
