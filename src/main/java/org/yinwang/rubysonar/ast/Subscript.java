@@ -49,3 +49,48 @@ public class Subscript extends Node {
             if (vt instanceof ListType) {
                 return getListSubscript(vt, st, s);
             } else if (vt instanceof TupleType) {
+                return getListSubscript(((TupleType) vt).toListType(), st, s);
+            } else if (vt instanceof DictType) {
+                DictType dt = (DictType) vt;
+                if (!dt.keyType.equals(st)) {
+                    addWarning("Possible KeyError (wrong type for subscript)");
+                }
+                return ((DictType) vt).valueType;
+            } else if (vt.isStrType()) {
+                if (st != null && (st instanceof ListType || st.isNumType())) {
+                    return vt;
+                } else {
+                    addWarning("Possible KeyError (wrong type for subscript)");
+                    return Type.UNKNOWN;
+                }
+            } else {
+                return Type.UNKNOWN;
+            }
+        }
+    }
+
+
+    @NotNull
+    private Type getListSubscript(@NotNull Type vt, @Nullable Type st, State s) {
+        if (vt instanceof ListType) {
+            if (st != null && st instanceof ListType) {
+                return vt;
+            } else if (st == null || st.isNumType()) {
+                return ((ListType) vt).eltType;
+            } else {
+                addError("The type can't be subscripted: " + vt);
+                return Type.UNKNOWN;
+            }
+        } else {
+            return Type.UNKNOWN;
+        }
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return value + "[" + slice + "]";
+    }
+
+}
