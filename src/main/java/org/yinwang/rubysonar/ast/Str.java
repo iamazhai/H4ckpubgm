@@ -29,4 +29,8 @@ public class Str extends Node {
     public String toString() {
         String summary;
         if (value.length() > 10) {
-            summary = value.sub
+            summary = value.substring(0, 10) + "...";
+        } else {
+            summary = value;
+        }
+        return "'" + summary
