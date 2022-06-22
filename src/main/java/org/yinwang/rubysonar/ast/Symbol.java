@@ -9,4 +9,8 @@ import org.yinwang.rubysonar.types.Type;
 public class Symbol extends Node {
 
     @NotNull
-    public final St
+    public final String id;  // identifier
+
+
+    public Symbol(@NotNull String id, String file, int start, int end) {
+      
