@@ -13,4 +13,11 @@ public class Symbol extends Node {
 
 
     public Symbol(@NotNull String id, String file, int start, int end) {
-      
+        super(file, start, end);
+        this.id = id;
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(@NotNull State s) {
