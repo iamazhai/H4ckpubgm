@@ -21,3 +21,11 @@ public class Symbol extends Node {
     @NotNull
     @Override
     public Type transform(@NotNull State s) {
+        return new SymbolType(id);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+    
