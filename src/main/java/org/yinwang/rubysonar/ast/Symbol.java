@@ -28,4 +28,11 @@ public class Symbol extends Node {
     @NotNull
     @Override
     public String toString() {
-    
+        return ":" + id;
+    }
+
+
+    @NotNull
+    @Override
+    public String toDisplay() {
+      
