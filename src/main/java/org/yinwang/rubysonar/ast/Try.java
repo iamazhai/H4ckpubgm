@@ -14,4 +14,6 @@ public class Try extends Node {
     public Node finalbody;
 
 
-    public Try(Node rescue, Node body, No
+    public Try(Node rescue, Node body, Node orelse, Node finalbody,
+               String file, int start, int end)
+    {
