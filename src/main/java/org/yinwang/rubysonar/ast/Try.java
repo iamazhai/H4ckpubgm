@@ -17,3 +17,7 @@ public class Try extends Node {
     public Try(Node rescue, Node body, Node orelse, Node finalbody,
                String file, int start, int end)
     {
+        super(file, start, end);
+        this.rescue = rescue;
+        this.body = body;
+        this.orelse = 
