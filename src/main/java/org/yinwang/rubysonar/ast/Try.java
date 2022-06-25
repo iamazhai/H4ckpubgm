@@ -9,4 +9,9 @@ import org.yinwang.rubysonar.types.UnionType;
 public class Try extends Node {
 
     public Node rescue;
-    publi
+    public Node body;
+    public Node orelse;
+    public Node finalbody;
+
+
+    public Try(Node rescue, Node body, No
