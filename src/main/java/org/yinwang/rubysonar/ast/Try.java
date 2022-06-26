@@ -26,3 +26,8 @@ public class Try extends Node {
         addChildren(body, orelse);
     }
 
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        Type tp1 = Type.UNKNOWN;
