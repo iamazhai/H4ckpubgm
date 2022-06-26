@@ -20,4 +20,9 @@ public class Try extends Node {
         super(file, start, end);
         this.rescue = rescue;
         this.body = body;
-        this.orelse = 
+        this.orelse = orelse;
+        this.finalbody = finalbody;
+        addChildren(rescue);
+        addChildren(body, orelse);
+    }
+
