@@ -47,4 +47,8 @@ public class Try extends Node {
             tp2 = transformExpr(orelse, s);
         }
 
-        if (finalbody != null) 
+        if (finalbody != null) {
+            tpFinal = transformExpr(finalbody, s);
+        }
+
+        return new UnionType(tp1, 
