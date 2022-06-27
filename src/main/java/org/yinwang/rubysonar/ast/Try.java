@@ -43,4 +43,8 @@ public class Try extends Node {
             tp1 = transformExpr(body, s);
         }
 
-        if (orelse 
+        if (orelse != null) {
+            tp2 = transformExpr(orelse, s);
+        }
+
+        if (finalbody != null) 
