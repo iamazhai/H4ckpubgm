@@ -36,4 +36,11 @@ public class Try extends Node {
         Type tpFinal = Type.UNKNOWN;
 
         if (rescue != null) {
-            tph = UnionType.union(tph, transformExpr(resc
+            tph = UnionType.union(tph, transformExpr(rescue, s));
+        }
+
+        if (body != null) {
+            tp1 = transformExpr(body, s);
+        }
+
+        if (orelse 
