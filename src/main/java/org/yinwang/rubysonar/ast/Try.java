@@ -51,4 +51,10 @@ public class Try extends Node {
             tpFinal = transformExpr(finalbody, s);
         }
 
-        return new UnionType(tp1, 
+        return new UnionType(tp1, tp2, tph, tpFinal);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString()
