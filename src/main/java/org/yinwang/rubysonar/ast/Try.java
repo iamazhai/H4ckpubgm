@@ -57,4 +57,9 @@ public class Try extends Node {
 
     @NotNull
     @Override
-    public String toString()
+    public String toString() {
+        return "(try:" + rescue + ":" + body + ":" + orelse + ")";
+    }
+
+
+}
