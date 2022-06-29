@@ -15,4 +15,11 @@ public class UnaryOp extends Node {
         super(file, start, end);
         this.op = op;
         this.operand = operand;
-        addChildren(ope
+        addChildren(operand);
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        return tran
