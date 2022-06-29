@@ -8,4 +8,8 @@ import org.yinwang.rubysonar.types.Type;
 public class UnaryOp extends Node {
 
     public Op op;
+    public Node operand;
+
+
+    public UnaryOp(Op op, Node operand, String file, int start, int end) {
     
