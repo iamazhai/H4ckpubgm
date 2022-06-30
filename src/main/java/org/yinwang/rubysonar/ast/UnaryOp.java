@@ -29,4 +29,7 @@ public class UnaryOp extends Node {
     @NotNull
     @Override
     public String toString() {
-        return "(" + op + " " 
+        return "(" + op + " " + operand + ")";
+    }
+
+}
