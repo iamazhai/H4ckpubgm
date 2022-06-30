@@ -22,4 +22,11 @@ public class UnaryOp extends Node {
     @NotNull
     @Override
     public Type transform(State s) {
-        return tran
+        return transformExpr(operand, s);
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(" + op + " " 
