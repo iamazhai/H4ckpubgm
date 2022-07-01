@@ -14,3 +14,29 @@ public class Url extends Node {
 
     private String url;
 
+
+    public Url(String url) {
+        this.url = url;
+    }
+
+
+    public String getURL() {
+        return url;
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        return Type.STR;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(url:" + url + ")";
+    }
+
+
+}
