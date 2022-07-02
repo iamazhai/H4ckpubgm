@@ -7,4 +7,9 @@ import org.yinwang.rubysonar.types.Type;
 
 public class Void extends Node {
 
-  
+    public Void(String file, int start, int end) {
+        super(file, start, end);
+    }
+
+
+    @No
