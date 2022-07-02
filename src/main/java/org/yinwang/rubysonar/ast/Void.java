@@ -12,4 +12,11 @@ public class Void extends Node {
     }
 
 
-    @No
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        return Type.CONT;
+    }
+
+
+ 
