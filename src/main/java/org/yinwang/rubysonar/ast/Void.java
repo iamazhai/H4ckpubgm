@@ -19,4 +19,11 @@ public class Void extends Node {
     }
 
 
- 
+    @NotNull
+    @Override
+    public String toString() {
+        return "(void)";
+    }
+
+
+}
