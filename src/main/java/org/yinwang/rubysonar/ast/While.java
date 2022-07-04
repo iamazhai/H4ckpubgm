@@ -6,4 +6,11 @@ import org.yinwang.rubysonar.types.Type;
 import org.yinwang.rubysonar.types.UnionType;
 
 
-public class Whil
+public class While extends Node {
+
+    public Node test;
+    public Node body;
+    public Node orelse;
+
+
+    public While(Node test, Node
