@@ -13,4 +13,6 @@ public class While extends Node {
     public Node orelse;
 
 
-    public While(Node test, Node
+    public While(Node test, Node body, Node orelse, String file, int start, int end) {
+        super(file, start, end);
+       
