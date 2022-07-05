@@ -15,4 +15,7 @@ public class While extends Node {
 
     public While(Node test, Node body, Node orelse, String file, int start, int end) {
         super(file, start, end);
-       
+        this.test = test;
+        this.body = body;
+        this.orelse = orelse;
+        addChildren(test, body, 
