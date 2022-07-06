@@ -18,4 +18,11 @@ public class While extends Node {
         this.test = test;
         this.body = body;
         this.orelse = orelse;
-        addChildren(test, body, 
+        addChildren(test, body, orelse);
+    }
+
+
+    @NotNull
+    @Override
+    public Type transform(State s) {
+        transformExpr(test, s)
