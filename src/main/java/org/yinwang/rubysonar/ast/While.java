@@ -30,3 +30,7 @@ public class While extends Node {
 
         if (body != null) {
             t = transformExpr(body, s);
+        }
+
+        if (orelse != null) {
+            t = UnionType.union(t, transformExpr(orels
