@@ -33,4 +33,14 @@ public class While extends Node {
         }
 
         if (orelse != null) {
-            t = UnionType.union(t, transformExpr(orels
+            t = UnionType.union(t, transformExpr(orelse, s));
+        }
+
+        return t;
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+ 
