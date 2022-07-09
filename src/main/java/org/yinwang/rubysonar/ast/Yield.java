@@ -6,4 +6,10 @@ import org.yinwang.rubysonar.types.ListType;
 import org.yinwang.rubysonar.types.Type;
 
 
-public class Yiel
+public class Yield extends Node {
+
+    public Node value;
+
+
+    public Yield(Node n, String file, int start, int end) {
+    
