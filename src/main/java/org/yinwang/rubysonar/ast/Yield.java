@@ -12,4 +12,10 @@ public class Yield extends Node {
 
 
     public Yield(Node n, String file, int start, int end) {
-    
+        super(file, start, end);
+        this.value = n;
+        addChildren(n);
+    }
+
+
+    @NotNull
