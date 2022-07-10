@@ -19,3 +19,7 @@ public class Yield extends Node {
 
 
     @NotNull
+    @Override
+    public Type transform(State s) {
+        if (value != null) {
+            
