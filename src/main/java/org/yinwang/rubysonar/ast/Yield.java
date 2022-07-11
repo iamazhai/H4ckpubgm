@@ -22,4 +22,7 @@ public class Yield extends Node {
     @Override
     public Type transform(State s) {
         if (value != null) {
-            
+            return new ListType(transformExpr(value, s));
+        } else {
+            return Type.NIL;
+  
