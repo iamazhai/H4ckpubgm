@@ -25,4 +25,11 @@ public class Yield extends Node {
             return new ListType(transformExpr(value, s));
         } else {
             return Type.NIL;
-  
+        }
+    }
+
+
+    @NotNull
+    @Override
+    public String toString() {
+        return "(yi
