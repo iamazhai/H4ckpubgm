@@ -104,3 +104,74 @@ public class Demo {
 
         List<Style> styles = new ArrayList<>();
         styles.addAll(linker.getStyles(path));
+
+        String styledSource = new StyleApplier(path, source, styles).apply();
+//        String outline = new HtmlOutline(analyzer).generate(path);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("<html><head title=\"")
+                .append(path)
+                .append("\">")
+
+                .append("<style type='text/css'>\n")
+                .append(CSS)
+                .append("</style>\n")
+
+                .append("<script language=\"JavaScript\" type=\"text/javascript\">\n")
+                .append(Analyzer.self.hasOption("debug") ? JS_DEBUG : JS)
+                .append("</script>\n")
+
+                .append("</head>\n<body>\n")
+
+                .append("<pre>")
+                .append(addLineNumbers(styledSource))
+                .append("</pre>")
+
+                .append("</body></html>");
+        return sb.toString();
+    }
+
+
+    @NotNull
+    private String addLineNumbers(@NotNull String source) {
+        StringBuilder result = new StringBuilder((int) (source.length() * 1.2));
+        int count = 1;
+        for (String line : source.split("\n")) {
+            result.append("<span class='lineno'>");
+            result.append(String.format("%1$4d", count++));
+            result.append("</span> ");
+            result.append(line);
+            result.append("\n");
+        }
+        return result.toString();
+    }
+
+
+    private static void usage() {
+        _.msg("Usage:  java -jar rubysonar-2.0-SNAPSHOT.jar <file-or-dir> <output-dir>");
+        _.msg("Example that generates an index for Python 2.7 standard library:");
+        _.msg(" java -jar rubysonar-2.0-SNAPSHOT.jar /usr/lib/python2.7 ./html");
+        System.exit(0);
+    }
+
+
+    @NotNull
+    private static File checkFile(String path) {
+        File f = new File(path);
+        if (!f.canRead()) {
+            _.die("Path not found or not readable: " + path);
+        }
+        return f;
+    }
+
+
+    public static void main(@NotNull String[] args) throws Exception {
+        Options options = new Options(args);
+        List<String> argList = options.getArgs();
+        String fileOrDir = argList.get(0);
+        OUTPUT_DIR = new File(argList.get(1));
+
+        new Demo().start(fileOrDir, options.getOptionsMap());
+        _.msg(_.getGCStats());
+    }
+}
