@@ -15,4 +15,9 @@ public class Style implements Comparable<Style> {
     public enum Type {
         KEYWORD,
         COMMENT,
-       
+        STRING,
+        DOC_STRING,
+        IDENTIFIER,
+        BUILTIN,
+        NUMBER,
+        CONSTANT,
