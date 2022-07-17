@@ -24,4 +24,7 @@ public class Style implements Comparable<Style> {
         FUNCTION,       // function name
         PARAMETER,      // function parameter
         LOCAL,          // local variable
-        DECORATOR,      // fu
+        DECORATOR,      // function decorator
+        CLASS,          // class name
+        ATTRIBUTE,      // object attribute
+        LINK,  
