@@ -20,4 +20,6 @@ public class Style implements Comparable<Style> {
         IDENTIFIER,
         BUILTIN,
         NUMBER,
-        CONSTANT,
+        CONSTANT,       // ALL_CAPS identifier
+        FUNCTION,       // function name
+        PARAMETER,      // function
