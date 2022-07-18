@@ -34,3 +34,12 @@ public class Style implements Comparable<Style> {
 
         ERROR,
         WARNING,
+        INFO
+    }
+
+
+    public Type type;
+    public int start;
+    public int end;
+
+    pu
