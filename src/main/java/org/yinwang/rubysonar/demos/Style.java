@@ -42,4 +42,6 @@ public class Style implements Comparable<Style> {
     public int start;
     public int end;
 
-    pu
+    public String message;  // optional hover text
+    @Nullable
+    public String url;      // internal or e
