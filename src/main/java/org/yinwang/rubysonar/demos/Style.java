@@ -69,4 +69,6 @@ public class Style implements Comparable<Style> {
         }
         Style other = (Style) o;
         return other.type == this.type
-                && othe
+                && other.start == this.start
+                && other.end == this.end
+                && _.same(other.message, th
