@@ -71,4 +71,9 @@ public class Style implements Comparable<Style> {
         return other.type == this.type
                 && other.start == this.start
                 && other.end == this.end
-                && _.same(other.message, th
+                && _.same(other.message, this.message)
+                && _.same(other.url, this.url);
+    }
+
+
+    public int compareTo(@NotNull Style other) {
