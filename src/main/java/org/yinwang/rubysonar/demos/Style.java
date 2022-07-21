@@ -59,4 +59,10 @@ public class Style implements Comparable<Style> {
 
     public int end() {
         return end;
-  
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Style)) {
+            r
