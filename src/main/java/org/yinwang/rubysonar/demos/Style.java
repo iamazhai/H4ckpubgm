@@ -65,4 +65,8 @@ public class Style implements Comparable<Style> {
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Style)) {
-            r
+            return false;
+        }
+        Style other = (Style) o;
+        return other.type == this.type
+                && othe
