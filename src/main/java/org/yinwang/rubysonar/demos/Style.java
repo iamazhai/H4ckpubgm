@@ -80,4 +80,8 @@ public class Style implements Comparable<Style> {
         if (this.equals(other)) {
             return 0;
         } else if (this.start < other.start) {
-     
+            return -1;
+        } else if (this.start > other.start) {
+            return 1;
+        } else {
+ 
