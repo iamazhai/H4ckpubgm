@@ -23,4 +23,11 @@ public class BoolType extends Type {
     }
 
 
-    public BoolType(State s1, State s
+    public BoolType(State s1, State s2) {
+        this.value = Value.Undecided;
+        this.s1 = s1;
+        this.s2 = s2;
+    }
+
+
+    public void setValue(
