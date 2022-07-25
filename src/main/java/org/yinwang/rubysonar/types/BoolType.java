@@ -15,4 +15,12 @@ public class BoolType extends Type {
 
     public Value value;
     public State s1;
-    public State
+    public State s2;
+
+
+    public BoolType(Value value) {
+        this.value = value;
+    }
+
+
+    public BoolType(State s1, State s
