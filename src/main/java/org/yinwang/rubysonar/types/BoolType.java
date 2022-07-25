@@ -8,4 +8,11 @@ public class BoolType extends Type {
 
     public enum Value {
         True,
-        False
+        False,
+        Undecided
+    }
+
+
+    public Value value;
+    public State s1;
+    public State
