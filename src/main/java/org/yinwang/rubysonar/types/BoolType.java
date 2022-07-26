@@ -30,4 +30,11 @@ public class BoolType extends Type {
     }
 
 
-    public void setValue(
+    public void setValue(Value value) {
+        this.value = value;
+    }
+
+
+    public void setS1(State s1) {
+        this.s1 = s1;
+  
