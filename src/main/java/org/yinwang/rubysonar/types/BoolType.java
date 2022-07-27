@@ -45,4 +45,10 @@ public class BoolType extends Type {
     }
 
 
-    public BoolType 
+    public BoolType swap() {
+        return new BoolType(s2, s1);
+    }
+
+
+    @Override
+    public boolean equals(Object ot
