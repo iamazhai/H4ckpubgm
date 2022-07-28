@@ -51,4 +51,10 @@ public class BoolType extends Type {
 
 
     @Override
-    public boolean equals(Object ot
+    public boolean equals(Object other) {
+        return (other instanceof BoolType);
+    }
+
+
+    @Override
+    protected String printT
