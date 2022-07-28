@@ -59,4 +59,9 @@ public class BoolType extends Type {
     @Override
     protected String printType(CyclicTypeRecorder ctr) {
         if (Analyzer.self.hasOption("debug")) {
-            return "b
+            return "bool(" + value + ")";
+        } else {
+            return "bool";
+        }
+    }
+}
