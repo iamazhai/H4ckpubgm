@@ -57,4 +57,6 @@ public class BoolType extends Type {
 
 
     @Override
-    protected String printT
+    protected String printType(CyclicTypeRecorder ctr) {
+        if (Analyzer.self.hasOption("debug")) {
+            return "b
