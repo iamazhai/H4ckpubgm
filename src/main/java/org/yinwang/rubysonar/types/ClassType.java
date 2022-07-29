@@ -8,4 +8,8 @@ import org.yinwang.rubysonar.State;
 public class ClassType extends Type {
 
     public String name;
-    public InstanceType
+    public InstanceType canon;
+    public Type superclass;
+
+
+    public ClassType(@NotNull String name, @Nullable State parent)
