@@ -15,4 +15,7 @@ public class ClassType extends Type {
     public ClassType(@NotNull String name, @Nullable State parent) {
         this.name = name;
         this.setTable(new State(parent, State.StateType.CLASS));
-        table.setTyp
+        table.setType(this);
+        if (parent != null) {
+            table.setPath(parent.extendPath(name, "::"));
+        } 
