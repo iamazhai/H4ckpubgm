@@ -18,4 +18,10 @@ public class ClassType extends Type {
         table.setType(this);
         if (parent != null) {
             table.setPath(parent.extendPath(name, "::"));
-        } 
+        } else {
+            table.setPath(name);
+        }
+    }
+
+
+    public ClassType(@NotNull St
