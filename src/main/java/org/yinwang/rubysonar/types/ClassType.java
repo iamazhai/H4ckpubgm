@@ -26,4 +26,10 @@ public class ClassType extends Type {
 
     public ClassType(@NotNull String name, State parent, @Nullable ClassType superClass) {
         this(name, parent);
-        if (superClas
+        if (superClass != null) {
+            addSuper(superClass);
+        }
+    }
+
+
+    public void setName(String na
