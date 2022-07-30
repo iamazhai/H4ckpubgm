@@ -24,4 +24,6 @@ public class ClassType extends Type {
     }
 
 
-    public ClassType(@NotNull St
+    public ClassType(@NotNull String name, State parent, @Nullable ClassType superClass) {
+        this(name, parent);
+        if (superClas
