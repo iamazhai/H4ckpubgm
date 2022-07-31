@@ -32,4 +32,10 @@ public class ClassType extends Type {
     }
 
 
-    public void setName(String na
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public void addSuper(@NotNull Type superclass) {
+   
