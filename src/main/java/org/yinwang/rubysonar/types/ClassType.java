@@ -40,4 +40,9 @@ public class ClassType extends Type {
     public void addSuper(@NotNull Type superclass) {
         this.superclass = superclass;
         table.setSuper(superclass.table);
-        table.
+        table.updateType("super", superclass);
+    }
+
+
+    public InstanceType getCanon() {
+        if (canon == n
