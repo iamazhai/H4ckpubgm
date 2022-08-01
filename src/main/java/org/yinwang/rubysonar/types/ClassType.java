@@ -45,4 +45,11 @@ public class ClassType extends Type {
 
 
     public InstanceType getCanon() {
-        if (canon == n
+        if (canon == null) {
+            canon = new InstanceType(this);
+        }
+        return canon;
+    }
+
+
+    pu
