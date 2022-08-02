@@ -52,4 +52,10 @@ public class ClassType extends Type {
     }
 
 
-    pu
+    public void setCanon(InstanceType inst) {
+        canon = inst;
+    }
+
+
+    @Override
+    public boolean equals
