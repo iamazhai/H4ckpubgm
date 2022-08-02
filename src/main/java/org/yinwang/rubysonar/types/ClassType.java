@@ -58,4 +58,10 @@ public class ClassType extends Type {
 
 
     @Override
-    public boolean equals
+    public boolean equals(Object other) {
+        return this == other;
+    }
+
+
+    @Override
+    protected Strin
