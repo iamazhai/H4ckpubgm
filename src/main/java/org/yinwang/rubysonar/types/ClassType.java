@@ -64,4 +64,9 @@ public class ClassType extends Type {
 
 
     @Override
-    protected Strin
+    protected String printType(CyclicTypeRecorder ctr) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("<").append(name).append(">");
+        return sb.toString();
+    }
+}
