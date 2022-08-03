@@ -11,4 +11,9 @@ public class DictType extends Type {
 
     public DictType(Type key0, Type val0) {
         keyType = key0;
-        valueType = val
+        valueType = val0;
+    }
+
+
+    public void add(@NotNull Type key, @NotNull Type val) {
+        keyType = UnionType.
