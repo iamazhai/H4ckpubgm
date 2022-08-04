@@ -21,4 +21,7 @@ public class DictType extends Type {
     }
 
 
- 
+    @NotNull
+    public TupleType toTupleType(int n) {
+        TupleType ret = new TupleType();
+   
