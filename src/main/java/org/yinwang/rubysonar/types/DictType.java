@@ -28,4 +28,9 @@ public class DictType extends Type {
             ret.add(keyType);
         }
         return ret;
-   
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        if (typeStack.contain
