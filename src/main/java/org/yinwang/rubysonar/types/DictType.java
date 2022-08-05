@@ -33,4 +33,7 @@ public class DictType extends Type {
 
     @Override
     public boolean equals(Object other) {
-        if (typeStack.contain
+        if (typeStack.contains(this, other)) {
+            return true;
+        } else if (other instanceof DictType) {
+            t
