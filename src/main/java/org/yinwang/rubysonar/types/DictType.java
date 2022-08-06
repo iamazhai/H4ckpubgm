@@ -40,4 +40,13 @@ public class DictType extends Type {
             DictType co = (DictType) other;
             boolean ret = (co.keyType.equals(keyType) &&
                     co.valueType.equals(valueType));
-            typeStack.pop(this, o
+            typeStack.pop(this, other);
+            return ret;
+        } else {
+            return false;
+        }
+    }
+
+
+    @Override
+    pub
