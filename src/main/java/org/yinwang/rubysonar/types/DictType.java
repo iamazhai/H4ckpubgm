@@ -36,4 +36,6 @@ public class DictType extends Type {
         if (typeStack.contains(this, other)) {
             return true;
         } else if (other instanceof DictType) {
-            t
+            typeStack.push(this, other);
+            DictType co = (DictType) other;
+            boolean ret = (co.keyType.equals
