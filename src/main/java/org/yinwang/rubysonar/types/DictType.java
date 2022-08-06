@@ -38,4 +38,6 @@ public class DictType extends Type {
         } else if (other instanceof DictType) {
             typeStack.push(this, other);
             DictType co = (DictType) other;
-            boolean ret = (co.keyType.equals
+            boolean ret = (co.keyType.equals(keyType) &&
+                    co.valueType.equals(valueType));
+            typeStack.pop(this, o
