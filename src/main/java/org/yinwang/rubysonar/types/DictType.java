@@ -49,4 +49,10 @@ public class DictType extends Type {
 
 
     @Override
-    pub
+    public int hashCode() {
+        return "DictType".hashCode();
+    }
+
+
+    @Override
+    protected String printTy
