@@ -58,4 +58,7 @@ public class DictType extends Type {
     protected String printType(@NotNull CyclicTypeRecorder ctr) {
 //        StringBuilder sb = new StringBuilder();
 //
-//        Integer num
+//        Integer num = ctr.visit(this);
+//        if (num != null) {
+//            sb.append("#").append(num);
+//       
