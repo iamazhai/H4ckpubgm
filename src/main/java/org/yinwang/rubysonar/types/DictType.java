@@ -55,4 +55,7 @@ public class DictType extends Type {
 
 
     @Override
-    protected String printTy
+    protected String printType(@NotNull CyclicTypeRecorder ctr) {
+//        StringBuilder sb = new StringBuilder();
+//
+//        Integer num
