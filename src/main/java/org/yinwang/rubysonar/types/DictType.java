@@ -61,4 +61,7 @@ public class DictType extends Type {
 //        Integer num = ctr.visit(this);
 //        if (num != null) {
 //            sb.append("#").append(num);
-//       
+//        } else {
+//            ctr.push(this);
+//            sb.append("{");
+//            sb.ap
