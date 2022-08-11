@@ -173,3 +173,61 @@ public class FunType extends Type {
         if (from.eltTypes.size() > 0) {
             if (cls != null) {
                 simplified.add(cls.getCanon());
+            } else {
+                simplified.add(from.get(0));
+            }
+        }
+
+        for (int i = 1; i < from.eltTypes.size(); i++) {
+            simplified.add(from.get(i));
+        }
+        return simplified;
+    }
+
+
+    @Override
+    protected String printType(@NotNull CyclicTypeRecorder ctr) {
+
+        if (arrows.isEmpty()) {
+            return "? -> ?";
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        Integer num = ctr.visit(this);
+        if (num != null) {
+            sb.append("#").append(num);
+        } else {
+            int newNum = ctr.push(this);
+
+            int i = 0;
+            Set<String> seen = new HashSet<>();
+
+            for (Map.Entry<Type, Type> e : arrows.entrySet()) {
+                Type from = e.getKey();
+                String as = from.printType(ctr) + " -> " + e.getValue().printType(ctr);
+
+                if (!seen.contains(as)) {
+                    if (i != 0) {
+                        if (Analyzer.self.multilineFunType) {
+                            sb.append("\n| ");
+                        } else {
+                            sb.append(" | ");
+                        }
+                    }
+
+                    sb.append(as);
+                    seen.add(as);
+                }
+
+                i++;
+            }
+
+            if (ctr.isUsed(this)) {
+                sb.append("=#").append(newNum).append(": ");
+            }
+            ctr.pop(this);
+        }
+        return sb.toString();
+    }
+}
