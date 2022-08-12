@@ -7,3 +7,8 @@ public class IntType extends Type {
     public boolean equals(Object other) {
         return other instanceof IntType;
     }
+
+
+    @Override
+    protected String printType(Type.CyclicTypeRecorder ctr) {
+      
