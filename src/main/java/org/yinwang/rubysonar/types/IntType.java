@@ -11,4 +11,6 @@ public class IntType extends Type {
 
     @Override
     protected String printType(Type.CyclicTypeRecorder ctr) {
-      
+        return "int";
+    }
+}
