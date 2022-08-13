@@ -87,3 +87,20 @@ public class ListType extends Type {
 
     @Override
     protected String printType(@NotNull CyclicTypeRecorder ctr) {
+        StringBuilder sb = new StringBuilder();
+
+        Integer num = ctr.visit(this);
+        if (num != null) {
+            sb.append("#").append(num);
+        } else {
+            ctr.push(this);
+            sb.append("[");
+            sb.append(eltType.printType(ctr));
+            sb.append("]");
+            ctr.pop(this);
+        }
+
+        return sb.toString();
+    }
+
+}
