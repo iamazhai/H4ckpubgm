@@ -10,4 +10,9 @@ public class SymbolType extends Type {
 
     public SymbolType(@NotNull String name) {
         this.name = name;
- 
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        return other instanceof Symbo
