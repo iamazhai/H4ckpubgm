@@ -15,4 +15,10 @@ public class SymbolType extends Type {
 
     @Override
     public boolean equals(Object other) {
-        return other instanceof Symbo
+        return other instanceof SymbolType;
+    }
+
+
+    @Override
+    protected String printType(CyclicTypeRecorder ctr) {
+        retu
