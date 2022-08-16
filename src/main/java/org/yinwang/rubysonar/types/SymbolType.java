@@ -21,4 +21,6 @@ public class SymbolType extends Type {
 
     @Override
     protected String printType(CyclicTypeRecorder ctr) {
-        retu
+        return "symbol";
+    }
+}
