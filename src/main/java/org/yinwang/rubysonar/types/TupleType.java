@@ -92,3 +92,48 @@ public class TupleType extends Type {
 
         } else {
             return false;
+        }
+    }
+
+
+    @Override
+    public int hashCode() {
+        return "TupleType".hashCode();
+    }
+
+
+    @Override
+    protected String printType(@NotNull CyclicTypeRecorder ctr) {
+        StringBuilder sb = new StringBuilder();
+
+        Integer num = ctr.visit(this);
+        if (num != null) {
+            sb.append("#").append(num);
+        } else {
+            int newNum = ctr.push(this);
+            boolean first = true;
+            if (eltTypes.size() != 1) {
+                sb.append("(");
+            }
+
+            for (Type t : eltTypes) {
+                if (!first) {
+                    sb.append(", ");
+                }
+                sb.append(t.printType(ctr));
+                first = false;
+            }
+
+            if (ctr.isUsed(this)) {
+                sb.append("=#").append(newNum).append(":");
+            }
+
+            if (eltTypes.size() != 1) {
+                sb.append(")");
+            }
+            ctr.pop(this);
+        }
+        return sb.toString();
+    }
+
+}
