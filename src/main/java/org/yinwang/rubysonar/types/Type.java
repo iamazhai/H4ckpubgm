@@ -14,4 +14,6 @@ import java.util.Set;
 public abstract class Type {
 
     @NotNull
-    public State t
+    public State table = new State(Analyzer.self.globaltable, State.StateType.INSTANCE);
+    public String file = null;
+    publ
