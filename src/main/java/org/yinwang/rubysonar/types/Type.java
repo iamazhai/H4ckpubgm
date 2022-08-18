@@ -16,4 +16,11 @@ public abstract class Type {
     @NotNull
     public State table = new State(Analyzer.self.globaltable, State.StateType.INSTANCE);
     public String file = null;
-    publ
+    public boolean mutated = false;
+
+
+    @NotNull
+    protected static TypeStack typeStack = new TypeStack();
+
+
+   
