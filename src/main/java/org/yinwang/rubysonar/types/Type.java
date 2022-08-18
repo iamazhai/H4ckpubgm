@@ -23,4 +23,10 @@ public abstract class Type {
     protected static TypeStack typeStack = new TypeStack();
 
 
-   
+    public Type() {
+    }
+
+
+    public void setTable(@NotNull State table) {
+        this.table = table;
+ 
