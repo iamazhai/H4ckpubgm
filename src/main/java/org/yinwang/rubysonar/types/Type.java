@@ -29,4 +29,12 @@ public abstract class Type {
 
     public void setTable(@NotNull State table) {
         this.table = table;
- 
+    }
+
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+
+    public boole
