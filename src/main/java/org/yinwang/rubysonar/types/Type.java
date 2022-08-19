@@ -48,4 +48,5 @@ public abstract class Type {
 
 
     public boolean isUndecidedBool() {
-        return this instanceof
+        return this instanceof BoolType && ((BoolType) this).value == BoolType.Value.Undecided &&
+                ((BoolTyp
