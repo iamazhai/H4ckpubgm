@@ -37,4 +37,10 @@ public abstract class Type {
     }
 
 
-    public boole
+    public boolean isMutated() {
+        return mutated;
+    }
+
+
+    public void setMutated(boolean mutated) {
+        this
