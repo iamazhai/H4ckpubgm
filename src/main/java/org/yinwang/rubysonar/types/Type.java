@@ -43,4 +43,9 @@ public abstract class Type {
 
 
     public void setMutated(boolean mutated) {
-        this
+        this.mutated = mutated;
+    }
+
+
+    public boolean isUndecidedBool() {
+        return this instanceof
