@@ -59,4 +59,10 @@ public abstract class Type {
 
 
     public boolean isStrType() {
-   
+        return this == STR;
+    }
+
+
+    public boolean isUnknownType() {
+        return this == Type.UNKNOWN;
+    
