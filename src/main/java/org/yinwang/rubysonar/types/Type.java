@@ -65,4 +65,9 @@ public abstract class Type {
 
     public boolean isUnknownType() {
         return this == Type.UNKNOWN;
-    
+    }
+
+
+    /**
+     * Internal class to support printing in the presence of type-graph cycles.
+  
