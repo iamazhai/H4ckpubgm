@@ -54,4 +54,9 @@ public abstract class Type {
 
 
     public boolean isNumType() {
-        return 
+        return this instanceof IntType || this instanceof FloatType;
+    }
+
+
+    public boolean isStrType() {
+   
