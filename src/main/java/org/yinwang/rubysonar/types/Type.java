@@ -70,4 +70,8 @@ public abstract class Type {
 
     /**
      * Internal class to support printing in the presence of type-graph cycles.
-  
+     */
+    protected class CyclicTypeRecorder {
+        int count = 0;
+        @NotNull
+        private M
