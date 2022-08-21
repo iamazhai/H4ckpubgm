@@ -76,4 +76,10 @@ public abstract class Type {
         @NotNull
         private Map<Type, Integer> elements = new HashMap<>();
         @NotNull
-        private Set<Type> used = new HashSet
+        private Set<Type> used = new HashSet<>();
+
+
+        public Integer push(Type t) {
+            count += 1;
+            elements.put(t, count);
+           
