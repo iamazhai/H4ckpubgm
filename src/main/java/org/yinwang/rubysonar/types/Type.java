@@ -82,4 +82,10 @@ public abstract class Type {
         public Integer push(Type t) {
             count += 1;
             elements.put(t, count);
+            return count;
+        }
+
+
+        public void pop(Type t) {
+            elements.remove(t);
            
