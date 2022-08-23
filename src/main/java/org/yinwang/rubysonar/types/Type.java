@@ -93,4 +93,7 @@ public abstract class Type {
 
 
         public Integer visit(Type t) {
-           
+            Integer i = elements.get(t);
+            if (i != null) {
+                used.add(t);
+   
