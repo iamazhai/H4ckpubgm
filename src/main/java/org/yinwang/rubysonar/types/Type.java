@@ -103,4 +103,12 @@ public abstract class Type {
 
         public boolean isUsed(Type t) {
             return used.contains(t);
-        
+        }
+    }
+
+
+    protected abstract String printType(CyclicTypeRecorder ctr);
+
+
+    @NotNull
+    @Over
