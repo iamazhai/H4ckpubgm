@@ -96,4 +96,11 @@ public abstract class Type {
             Integer i = elements.get(t);
             if (i != null) {
                 used.add(t);
-   
+            }
+            return i;
+        }
+
+
+        public boolean isUsed(Type t) {
+            return used.contains(t);
+        
