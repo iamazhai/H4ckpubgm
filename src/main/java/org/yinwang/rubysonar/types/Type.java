@@ -117,4 +117,5 @@ public abstract class Type {
     }
 
 
-    pu
+    public static InstanceType UNKNOWN = new InstanceType(new ClassType("?", null, null));
+    public static InstanceType 
