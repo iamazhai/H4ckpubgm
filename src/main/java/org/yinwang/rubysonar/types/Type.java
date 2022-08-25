@@ -123,4 +123,5 @@ public abstract class Type {
     public static StrType STR = new StrType(null);
     public static IntType INT = new IntType();
     public static FloatType FLOAT = new FloatType();
-    public static 
+    public static BoolType BOOL = new BoolType(BoolType.Value.Undecided);
+    public static BoolType TRUE = new Bool
