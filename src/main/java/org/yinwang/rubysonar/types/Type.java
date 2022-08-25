@@ -119,4 +119,6 @@ public abstract class Type {
 
     public static InstanceType UNKNOWN = new InstanceType(new ClassType("?", null, null));
     public static InstanceType CONT = new InstanceType(new ClassType("nil", null, null));
-    public static InstanceType NIL = 
+    public static InstanceType NIL = new InstanceType(new ClassType("nil", null, null));
+    public static StrType STR = new StrType(null);
+    publi
