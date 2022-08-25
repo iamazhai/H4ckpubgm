@@ -121,4 +121,6 @@ public abstract class Type {
     public static InstanceType CONT = new InstanceType(new ClassType("nil", null, null));
     public static InstanceType NIL = new InstanceType(new ClassType("nil", null, null));
     public static StrType STR = new StrType(null);
-    publi
+    public static IntType INT = new IntType();
+    public static FloatType FLOAT = new FloatType();
+    public static 
