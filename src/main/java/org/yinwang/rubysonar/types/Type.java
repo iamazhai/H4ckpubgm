@@ -125,4 +125,5 @@ public abstract class Type {
     public static FloatType FLOAT = new FloatType();
     public static BoolType BOOL = new BoolType(BoolType.Value.Undecided);
     public static BoolType TRUE = new BoolType(BoolType.Value.True);
-    public static BoolType FALSE = new BoolType(BoolType.Value.F
+    public static BoolType FALSE = new BoolType(BoolType.Value.False);
+}
