@@ -117,3 +117,79 @@ public class UnionType extends Type {
         for (Type type : types) {
             if (!type.isUnknownType() && type != Type.NIL) {
                 return type;
+            }
+        }
+        return null;
+    }
+
+
+    @Override
+    public boolean equals(Object other) {
+        if (typeStack.contains(this, other)) {
+            return true;
+        } else if (other instanceof UnionType) {
+            Set<Type> types1 = types;
+            Set<Type> types2 = ((UnionType) other).types;
+            if (types1.size() != types2.size()) {
+                return false;
+            } else {
+                typeStack.push(this, other);
+                for (Type t : types2) {
+                    if (!types1.contains(t)) {
+                        typeStack.pop(this, other);
+                        return false;
+                    }
+                }
+                for (Type t : types1) {
+                    if (!types2.contains(t)) {
+                        typeStack.pop(this, other);
+                        return false;
+                    }
+                }
+                typeStack.pop(this, other);
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
+
+    @Override
+    public int hashCode() {
+        return "UnionType".hashCode();
+    }
+
+
+    @Override
+    protected String printType(@NotNull CyclicTypeRecorder ctr) {
+        StringBuilder sb = new StringBuilder();
+
+        Integer num = ctr.visit(this);
+        if (num != null) {
+            sb.append("#").append(num);
+        } else {
+            int newNum = ctr.push(this);
+            boolean first = true;
+            sb.append("{");
+
+            for (Type t : types) {
+                if (!first) {
+                    sb.append(" | ");
+                }
+                sb.append(t.printType(ctr));
+                first = false;
+            }
+
+            if (ctr.isUsed(this)) {
+                sb.append("=#").append(newNum).append(":");
+            }
+
+            sb.append("}");
+            ctr.pop(this);
+        }
+
+        return sb.toString();
+    }
+
+}
