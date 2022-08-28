@@ -334,3 +334,111 @@ class AstSimplifier
               :body => convert(exp[5])
           }
         when :do_block
+          {
+              :type => :lambda,
+              :params => convert(exp[1]),
+              :body => convert(exp[2])
+          }
+        when :lambda
+          {
+              :type => :lambda,
+              :params => convert(exp[1]),
+              :body => convert(exp[2])
+          }
+        when :brace_block
+          {
+              :type => :lambda,
+              :params => convert(exp[1]),
+              :body => convert(exp[2])
+          }
+        when :params
+          ret = {:type => :params}
+          if exp[1]
+            ret[:positional] = convert_array(exp[1])
+          end
+          if exp[2]
+            # keyword arguments (converted into positionals and defaults)
+            unless ret[:positional]
+              ret[:positional] = []
+            end
+            exp[2].each { |x| ret[:positional].push(convert(x[0])) }
+            ret[:defaults] = exp[2].map { |x| convert(x[1]) }
+          end
+          if exp[3] and exp[3] != 0
+            ret[:rest] = convert(exp[3])
+          end
+          if exp[4]
+            ret[:after_rest] = convert_array(exp[4])
+          end
+          if exp[6]
+            ret[:rest_kw] = convert(exp[6])
+          end
+          if exp[7]
+            ret[:blockarg] = convert(exp[7])
+          end
+          ret
+        when :block_var
+          params = convert(exp[1])
+          if exp[2]
+            params[:block_var] = convert_array(exp[2])
+          end
+          params
+        when :class
+          ret = {
+              :type => :class,
+              :static => false,
+              :name => convert(exp[1]),
+              :body => convert(exp[3]),
+          }
+          if exp[2]
+            ret[:super] = convert(exp[2])
+          end
+          ret
+        when :sclass
+          {
+              :type => :class,
+              :static => true,
+              :name => convert(exp[1]),
+              :body => convert(exp[2]),
+          }
+        when :method_add_block
+          call = convert(exp[1])
+          if call[:args]
+            call[:args][:blockarg] = convert(exp[2])
+          else
+            call[:args] = {
+              :blockarg => convert(exp[2])
+            }
+          end
+          call
+        when :method_add_arg
+          call = convert(exp[1])
+          call[:args] = convert(exp[2])
+          call
+        when :vcall
+          {
+              :type => :call,
+              :func => convert(exp[1])
+          }
+        when :command
+          {
+              :type => :call,
+              :func => convert(exp[1]),
+              :args => convert(exp[2])
+          }
+        when :command_call
+          if exp[2] == :'.' or exp[2] == :'::'
+            func = {
+                :type => :attribute,
+                :value => convert(exp[1]),
+                :attr => convert(exp[3])
+            }
+          else
+            func = convert(exp[1])
+          end
+          {
+              :type => :call,
+              :func => func,
+              :args => convert(exp[4])
+          }
+        when :super, :zsuper
