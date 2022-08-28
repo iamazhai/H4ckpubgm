@@ -442,3 +442,106 @@ class AstSimplifier
               :args => convert(exp[4])
           }
         when :super, :zsuper
+          {
+              :type => :call,
+              :func => {:type => :name, :id => :super},
+              :args => convert(exp[1])
+          }
+        when :call, :fcall
+          if exp[3] != :call and (exp[2] == :'.' or exp[2] == :'::')
+            func = {
+                :type => :attribute,
+                :value => convert(exp[1]),
+                :attr => convert(exp[3])
+            }
+          else
+            func = convert(exp[1])
+          end
+          {
+              :type => :call,
+              :func => func
+          }
+        when :args_new, :mlhs_new, :mrhs_new, :words_new, :word_new, :qwords_new, :qsymbols_new, :symbols_new
+          {
+              :type => :args,
+              :positional => []
+          }
+        when :args_add, :mlhs_add, :mrhs_add, :word_add, :words_add, :qwords_add, :qsymbols_add, :symbols_add
+          args = convert(exp[1])
+          args[:positional].push(convert(exp[2]))
+          args
+        when :args_add_star, :mrhs_add_star, :mlhs_add_star
+          args = convert(exp[1])
+          if exp[2]
+            args[:star] = convert(exp[2])
+          end
+          args
+        when :args_add_block
+          args = convert(exp[1])
+          if exp[2]
+            args[:blockarg] = convert(exp[2])
+          end
+          args
+        when :assign, :massign
+          {
+              :type => :assign,
+              :target => convert(exp[1]),
+              :value => convert(exp[2])
+          }
+        when :opassign
+          # convert x+=1 into x=x+1
+          operation = convert([:binary, exp[1], exp[2][1][0..-2], exp[3]])
+          {
+              :type => :assign,
+              :target => convert(exp[1]),
+              :value => operation
+          }
+        when :dot2, :dot3
+          {
+              :type => exp[0],
+              :from => convert(exp[1]),
+              :to => convert(exp[2])
+          }
+        when :alias, :var_alias
+          {
+              :type => :assign,
+              :target => convert(exp[1]),
+              :value => convert(exp[2])
+          }
+        when :undef
+          {
+              :type => :undef,
+              :names => convert_array(exp[1]),
+          }
+        when :if, :if_mod, :elsif, :ifop
+          ret = {
+              :type => :if,
+              :test => convert(exp[1]),
+              :body => convert(exp[2]),
+          }
+          if exp[3]
+            ret[:else] = convert(exp[3])
+          end
+          if exp[0] == :if_mod
+            ret[:mod] = true
+          end
+          ret
+        when :case
+          if exp[1]
+            value = convert(exp[1])
+          else
+            value = nil
+          end
+          convert_when(exp[2], value)
+        when :while, :while_mod
+          if exp[0] == :while_mod
+            mod = true
+          else
+            mod = false
+          end
+          {
+              :type => :while,
+              :test => convert(exp[1]),
+              :body => convert(exp[2]),
+              :mod => mod
+          }
