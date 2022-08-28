@@ -235,3 +235,102 @@ class AstSimplifier
     node
   end
 
+
+  # ------------------- conversion --------------------
+  # convert and simplify ruby's "sexp" into a hash
+  # exp -> hash
+  def convert(exp)
+    if exp == nil
+      {}
+    elsif exp == false
+      {
+          :type => :name,
+          :id => 'false',
+      }
+    elsif exp == true
+      {
+          :type => :name,
+          :id => 'true',
+      }
+    else
+      case exp[0]
+        when :program
+          {
+              :type => :program,
+              :body => convert(exp[1]),
+              :filename => @filename
+          }
+        when :module
+          {
+              :type => :module,
+              :name => convert(exp[1]),
+              :body => convert(exp[2]),
+              :filename => @filename
+          }
+        when :@ident, :@op
+          {
+              :type => :name,
+              :id => exp[1],
+              :location => exp[2],
+          }
+        when :@gvar
+          {
+              :type => :gvar,
+              :id => exp[1],
+              :location => exp[2]
+          }
+        when :dyna_symbol
+          # ignore dynamic symbols for now
+          {
+              :type => :name,
+              :id => '#dyna_symbol'
+          }
+        when :symbol
+          sym = convert(exp[1])
+          sym[:type] = :symbol
+          sym
+        when :@cvar
+          {
+              :type => :cvar,
+              :id => exp[1][2..-1],
+              :location => exp[2]
+          }
+        when :@ivar
+          {
+              :type => :ivar,
+              :id => exp[1][1..-1],
+              :location => exp[2]
+          }
+        when :@const, :@kw, :@backtick
+          #:@const and :@kw are just names
+          {
+              :type => :name,
+              :id => exp[1],
+              :location => exp[2]
+          }
+        when :@label
+          {
+              :type => :name,
+              :id => exp[1][0..-2],
+              :location => exp[2]
+          }
+        when :def
+          {
+              :type => :def,
+              :name => convert(exp[1]),
+              :params => convert(exp[2]),
+              :body => convert(exp[3])
+          }
+        when :defs
+          name = {
+              :type => :attribute,
+              :value => convert(exp[1]),
+              :attr => convert(exp[3])
+          }
+          {
+              :type => :def,
+              :name => name,
+              :params => convert(exp[4]),
+              :body => convert(exp[5])
+          }
+        when :do_block
