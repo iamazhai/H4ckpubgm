@@ -545,3 +545,91 @@ class AstSimplifier
               :body => convert(exp[2]),
               :mod => mod
           }
+        when :until, :until_mod
+          if exp[0] == :until_mod
+            mod = true
+          else
+            mod = false
+          end
+          {
+              :type => :while,
+              :test => negate(convert(exp[1])),
+              :body => convert(exp[2]),
+              :mod => mod
+          }
+        when :unless, :unless_mod
+          if exp[0] == :unless_mod
+            mod = true
+          else
+            mod = false
+          end
+          ret = {
+              :type => :if,
+              :test => negate(convert(exp[1])),
+              :body => convert(exp[2]),
+              :mod => mod
+          }
+          if exp[3]
+            ret[:else] = convert(exp[3])
+          end
+          ret
+        when :for
+          {
+              :type => :for,
+              :target => convert(exp[1]),
+              :iter => convert(exp[2]),
+              :body => convert(exp[3])
+          }
+        when :begin
+          bodystmt = exp[1]
+          {
+              :type => :begin,
+              :body => convert(bodystmt[1]),
+              :rescue => convert(bodystmt[2]),
+              :else => convert(bodystmt[3]),
+              :ensure => convert(bodystmt[4])
+          }
+        when :rescue
+          ret = {:type => :rescue}
+          if exp[1]
+            if exp[1][0].is_a? Array
+              ret[:exceptions] = convert_array(exp[1])
+            else
+              ret[:expections] = convert(exp[1])[:positional]
+            end
+          end
+          if exp[2]
+            ret[:binder] = convert(exp[2])
+          end
+          if exp[3]
+            ret[:handler] = convert(exp[3])
+          end
+          if exp[4]
+            ret[:else] = convert(exp[4])
+          end
+          ret
+        when :rescue_mod
+          {
+              :type => :begin,
+              :body => convert(exp[1]),
+              :rescue => convert(exp[2]),
+              :mod => true
+          }
+        when :stmts_new
+          {
+              :type => :block,
+              :stmts => []
+          }
+        when :stmts_add
+          block = convert(exp[1])
+          stmt = convert(exp[2])
+          block[:stmts].push(stmt)
+          block
+        when :bodystmt
+          block = convert(exp[1])
+          if exp[2]
+            res = convert(exp[2])
+            block[:stmts].push(res)
+          end
+          block
+        when :binary
