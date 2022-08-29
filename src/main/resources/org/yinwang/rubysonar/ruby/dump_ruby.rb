@@ -734,3 +734,108 @@ class AstSimplifier
               :type => :attribute,
               :value => convert(exp[1]),
               :attr => convert(exp[3])
+          }
+        when :void_stmt
+          {
+              :type => :void
+          }
+        when :yield0
+          {
+              :type => :yield
+          }
+        when :return0
+          {
+              :type => :return
+          }
+        when :break
+          {
+              :type => :break
+          }
+        when :retry
+          {
+              :type => :retry
+          }
+        when :redo
+          {
+              :type => :redo
+          }
+        when :defined
+          {
+              :type => :unary,
+              :op => op(:defined),
+              :operand => convert(exp[1])
+          }
+        when :return, :yield
+          {
+              :type => exp[0],
+              :value => args_to_array(convert(exp[1]))
+          }
+        when :string_embexpr
+          {
+              :type => :string_embexpr,
+              :value => convert(exp[1])
+          }
+        when :var_ref,
+            :var_field,
+            :const_ref,
+            :top_const_ref,
+            :top_const_field,
+            :paren,
+            :else,
+            :ensure,
+            :arg_paren,
+            :mlhs_paren,
+            :rest_param,
+            :blockarg,
+            :symbol_literal,
+            :regexp_literal,
+            :param_error,
+            :string_literal,
+            :xstring_literal,
+            :string_dvar,
+            :mrhs_new_from_args,
+            :assoc_splat,
+            :next,
+            :END,
+            :BEGIN
+          # superflous wrappers that contains one object, just remove it
+          convert(exp[1])
+        else
+          banner('unknown')
+          puts "#{exp}"
+          exp
+      end
+    end
+  end
+
+
+  def convert_array(arr)
+    arr.map { |x| convert(x) }
+  end
+
+
+  def convert_when(exp, value)
+    if exp[0] == :when
+      if value
+        test = {
+            :type => :binary,
+            :op => op(:in),
+            :left => value,
+            :right => args_to_array(convert(exp[1]))
+        }
+      else
+        test = args_to_array(convert(exp[1]))
+      end
+      ret = {
+          :type => :if,
+          :test => test,
+          :body => convert(exp[2]),
+      }
+      if exp[3]
+        ret[:else] = convert_when(exp[3], value)
+      end
+      ret
+    elsif exp[0] == :else
+      convert(exp[1])
+    end
+  end
