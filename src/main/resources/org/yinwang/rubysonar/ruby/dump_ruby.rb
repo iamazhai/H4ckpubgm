@@ -633,3 +633,104 @@ class AstSimplifier
           end
           block
         when :binary
+          {
+              :type => :binary,
+              :left => convert(exp[1]),
+              :op => op(exp[2]),
+              :right => convert(exp[3])
+          }
+        when :array
+          args = convert(exp[1])
+          {
+              :type => :array,
+              :elts => args[:positional]
+          }
+        when :aref, :aref_field
+          args = convert(exp[2])
+          {
+              :type => :subscript,
+              :value => convert(exp[1]),
+              :slice => args[:positional]
+          }
+        when :unary
+          {
+              :type => :unary,
+              :op => op(exp[1]),
+              :operand => convert(exp[2])
+          }
+        when :@int
+          {
+              :type => :int,
+              :value => exp[1],
+              :location => exp[2]
+          }
+        when :@float
+          {
+              :type => :float,
+              :value => exp[1],
+              :location => exp[2]
+          }
+        when :regexp_literal
+          regexp = convert(exp[1])
+          regexp[:regexp_end] = convert(exp[2])
+          regexp
+        when :regexp_new
+          {
+              :type => :regexp,
+          }
+        when :regexp_add
+          {
+              :type => :regexp,
+              :pattern => convert(exp[2]),
+          }
+        when :@regexp_end
+          make_string(exp[1], exp[2])
+        when :@backref
+          make_string(exp[1], exp[2])
+        when :@tstring_content, :@CHAR
+          make_string(exp[1], exp[2])
+        when :string_content, :xstring_new
+          make_string('')
+        when :string_add, :xstring_add, :qwords_add
+          if not exp[1] or exp[1] == [:string_content] or exp[1] == [:xstring_new]
+            convert(exp[2])
+          else
+            {
+                :type => :binary,
+                :op => op(:+),
+                :left => convert(exp[1]),
+                :right => convert(exp[2])
+            }
+          end
+        when :string_concat, :xstring_concat
+          convert([:binary, exp[1], :+, exp[2]])
+        when :hash
+          if exp[1]
+            convert(exp[1])
+          else
+            {
+                :type => :hash,
+            }
+          end
+        when :assoclist_from_args, :bare_assoc_hash
+          {
+              :type => :hash,
+              :entries => convert_array(exp[1])
+          }
+        when :assoc_new
+          {
+              :type => :assoc,
+              :key => convert(exp[1]),
+              :value => convert(exp[2])
+          }
+        when :const_path_ref, :const_path_field
+          {
+              :type => :attribute,
+              :value => convert(exp[1]),
+              :attr => convert(exp[2])
+          }
+        when :field
+          {
+              :type => :attribute,
+              :value => convert(exp[1]),
+              :attr => convert(exp[3])
