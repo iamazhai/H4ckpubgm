@@ -25,3 +25,43 @@
     },
     "dests": [
       {
+        "name": "v",
+        "file": "test1.rb",
+        "start": 49,
+        "end": 50
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "m",
+      "file": "test1.rb",
+      "start": 52,
+      "end": 53
+    },
+    "dests": [
+      {
+        "name": "m",
+        "file": "test1.rb",
+        "start": 19,
+        "end": 20
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "k",
+      "file": "test1.rb",
+      "start": 54,
+      "end": 55
+    },
+    "dests": [
+      {
+        "name": "k",
+        "file": "test1.rb",
+        "start": 47,
+        "end": 48
+      }
+    ]
+  }
+]
