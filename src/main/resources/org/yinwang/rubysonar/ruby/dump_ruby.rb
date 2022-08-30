@@ -839,3 +839,86 @@ class AstSimplifier
       convert(exp[1])
     end
   end
+
+
+  def args_to_array(args)
+    if args[:type] == :args
+      {
+          :type => :array,
+          :elts => args[:positional]
+      }
+    else
+      args
+    end
+  end
+
+
+  def make_string(content, location=nil)
+    ret = {
+        :type => :string,
+        :id => content.force_encoding('utf-8'),
+    }
+    if location
+      ret[:location] = location
+    end
+    ret
+  end
+
+
+  def op(name)
+    {
+        :type => :op,
+        :name => name
+    }
+  end
+
+
+  def negate(exp)
+    {
+        :type => :unary,
+        :op => op(:not),
+        :operand => exp
+    }
+  end
+
+end
+
+def hash_max_nest(hash)
+  if hash.is_a?(Array)
+    hash.map{ |e| hash_max_nest(e).to_i }.max.to_i + 1
+  elsif hash.is_a?(Hash)
+    hash.values.map{ |s| hash_max_nest(s).to_i }.max.to_i + 1
+  else
+    0
+  end
+end
+
+def parse_dump(input, output, endmark)
+  begin
+    simplifier = AstSimplifier.new(input)
+    hash = simplifier.simplify
+    json_string = JSON.pretty_generate(hash, max_nesting: hash_max_nest(hash))
+    out = File.open(output, 'wb')
+    out.write(json_string)
+    out.close
+  ensure
+    end_file = File.open(endmark, 'wb')
+    end_file.close
+  end
+end
+
+
+$options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: dump_ruby.rb [options]"
+
+  opts.on("-d", "--debug", "debug run") do |v|
+    $options[:debug] = v
+  end
+
+end.parse!
+
+
+if ARGV.length > 0
+  parse_dump(ARGV[0], ARGV[1], ARGV[2])
+end
