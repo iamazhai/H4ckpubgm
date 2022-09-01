@@ -1,0 +1,93 @@
+
+[
+  {
+    "ref": {
+      "name": "bar",
+      "file": "blockarg.rb",
+      "start": 96,
+      "end": 99
+    },
+    "dests": [
+      {
+        "name": "bar",
+        "file": "blockarg.rb",
+        "start": 59,
+        "end": 62
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "foo",
+      "file": "blockarg.rb",
+      "start": 76,
+      "end": 79
+    },
+    "dests": [
+      {
+        "name": "foo",
+        "file": "blockarg.rb",
+        "start": 4,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "blockarg.rb",
+      "start": 80,
+      "end": 81
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "blockarg.rb",
+        "start": 63,
+        "end": 64
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "block",
+      "file": "blockarg.rb",
+      "start": 84,
+      "end": 89
+    },
+    "dests": [
+      {
+        "name": "block",
+        "file": "blockarg.rb",
+        "start": 67,
+        "end": 72
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "block",
+      "file": "blockarg.rb",
+      "start": 21,
+      "end": 26
+    },
+    "dests": [
+      {
+        "name": "block",
+        "file": "blockarg.rb",
+        "start": 12,
+        "end": 17
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "blockarg.rb",
+      "start": 110,
+      "end": 111
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "blockarg.rb",

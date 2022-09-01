@@ -15,4 +15,4 @@ bar(42) { |x| x }
 
 def baz(*args, &block)
   foo(*args, &block)
-e
+end
