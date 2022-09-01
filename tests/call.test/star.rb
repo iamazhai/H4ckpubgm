@@ -1,1 +1,3 @@
-def foo(
+def foo(f, *rest)
+  f(*rest)
+end
