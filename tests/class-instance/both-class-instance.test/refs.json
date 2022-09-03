@@ -9,4 +9,13 @@
     "dests": [
       {
         "name": "C",
-        "file": "both-class-
+        "file": "both-class-instance.rb",
+        "start": 82,
+        "end": 83
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "C",
+      "fil
