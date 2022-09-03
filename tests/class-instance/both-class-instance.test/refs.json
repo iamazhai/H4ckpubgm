@@ -3,4 +3,10 @@
     "ref": {
       "name": "self",
       "file": "both-class-instance.rb",
-      "start":
+      "start": 95,
+      "end": 99
+    },
+    "dests": [
+      {
+        "name": "C",
+        "file": "both-class-
