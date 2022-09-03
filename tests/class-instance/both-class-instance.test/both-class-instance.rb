@@ -13,4 +13,4 @@ end
 
 puts C.foo   # refer to the first foo
 co = C.new
-puts co.foo  # refer to the seco
+puts co.foo  # refer to the second foo
