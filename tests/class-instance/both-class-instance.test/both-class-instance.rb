@@ -7,4 +7,10 @@ class C
   end
 
   def foo
-    "instance 
+    "instance method foo"
+  end
+end
+
+puts C.foo   # refer to the first foo
+co = C.new
+puts co.foo  # refer to the seco
