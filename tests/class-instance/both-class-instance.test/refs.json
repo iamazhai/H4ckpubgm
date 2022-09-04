@@ -18,4 +18,9 @@
   {
     "ref": {
       "name": "C",
-      "fil
+      "file": "both-class-instance.rb",
+      "start": 204,
+      "end": 205
+    },
+    "dests": [
+      {
