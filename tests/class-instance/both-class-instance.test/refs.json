@@ -41,4 +41,10 @@
     "dests": [
       {
         "name": "foo",
-        "file": "both-cla
+        "file": "both-class-instance.rb",
+        "start": 108,
+        "end": 111
+      }
+    ]
+  },
+  {
