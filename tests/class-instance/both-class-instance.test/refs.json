@@ -24,3 +24,10 @@
     },
     "dests": [
       {
+        "name": "C",
+        "file": "both-class-instance.rb",
+        "start": 82,
+        "end": 83
+      }
+    ]
+  },
