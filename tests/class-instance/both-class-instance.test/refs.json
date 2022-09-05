@@ -31,3 +31,8 @@
       }
     ]
   },
+  {
+    "ref": {
+      "name": "foo",
+      "file": "both-class-instance.rb",
+      "start":
