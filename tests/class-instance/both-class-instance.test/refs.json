@@ -52,4 +52,9 @@
       "name": "C",
       "file": "both-class-instance.rb",
       "start": 242,
-   
+      "end": 243
+    },
+    "dests": [
+      {
+        "name": "C",
+        "file": "bot
