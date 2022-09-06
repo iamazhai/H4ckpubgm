@@ -48,3 +48,8 @@
     ]
   },
   {
+    "ref": {
+      "name": "C",
+      "file": "both-class-instance.rb",
+      "start": 242,
+   
