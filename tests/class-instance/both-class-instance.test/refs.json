@@ -57,4 +57,12 @@
     "dests": [
       {
         "name": "C",
-        "file": "bot
+        "file": "both-class-instance.rb",
+        "start": 82,
+        "end": 83
+      }
+    ]
+  },
+  {
+    "ref": {
+   
