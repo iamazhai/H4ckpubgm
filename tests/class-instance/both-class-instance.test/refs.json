@@ -70,4 +70,8 @@
       "start": 253,
       "end": 255
     },
- 
+    "dests": [
+      {
+        "name": "co",
+        "file": "both-class-instance.rb",
+        "start": 237,
