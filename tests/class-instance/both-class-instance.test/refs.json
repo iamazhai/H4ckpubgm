@@ -65,4 +65,9 @@
   },
   {
     "ref": {
-   
+      "name": "co",
+      "file": "both-class-instance.rb",
+      "start": 253,
+      "end": 255
+    },
+ 
