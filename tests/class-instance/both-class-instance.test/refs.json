@@ -82,4 +82,10 @@
   {
     "ref": {
       "name": "foo",
-      "file": "both-class-i
+      "file": "both-class-instance.rb",
+      "start": 256,
+      "end": 259
+    },
+    "dests": [
+      {
+        "name": "fo
