@@ -75,3 +75,11 @@
         "name": "co",
         "file": "both-class-instance.rb",
         "start": 237,
+        "end": 239
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "foo",
+      "file": "both-class-i
