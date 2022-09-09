@@ -13,4 +13,15 @@ class A
 end
 
 puts A.cm
-puts
+puts A.im   # should not be found
+
+
+# -----------------------------------
+class B
+end
+
+def B.cm
+  "B" 
+end
+
+put
