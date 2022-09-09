@@ -24,4 +24,14 @@ def B.cm
   "B" 
 end
 
-put
+puts B.cm
+
+
+# -----------------------------------
+class C
+  class << self
+    def cm
+      "C"
+    end
+  end
+en
