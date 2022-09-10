@@ -1,0 +1,14 @@
+
+[
+  {
+    "ref": {
+      "name": "self",
+      "file": "classmethods.rb",
+      "start": 97,
+      "end": 101
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "classmethods.rb",
+        "start": 89,

@@ -64,4 +64,5 @@ class E
   }
 end
 
-puts E.cm      #
+puts E.cm      # error, should be found
+puts E.cm2     # error, should be found
