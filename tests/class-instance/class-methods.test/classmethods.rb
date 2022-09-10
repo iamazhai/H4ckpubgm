@@ -55,4 +55,13 @@ puts D.cm
 # -----------------------------------
 class E
   class_eval { |kls| 
-    
+    def kls.cm
+      "E"
+    end
+    def self.cm2
+      "E"
+    end 
+  }
+end
+
+puts E.cm      #
