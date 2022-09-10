@@ -47,3 +47,12 @@ class << D
   def cm
     "D"
   end
+end
+
+puts D.cm
+
+
+# -----------------------------------
+class E
+  class_eval { |kls| 
+    
