@@ -34,4 +34,16 @@ class C
       "C"
     end
   end
-en
+end
+
+puts C.cm
+
+
+# -----------------------------------
+class D
+end
+
+class << D
+  def cm
+    "D"
+  end
