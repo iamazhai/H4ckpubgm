@@ -12,3 +12,109 @@
         "name": "A",
         "file": "classmethods.rb",
         "start": 89,
+        "end": 90
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "A",
+      "file": "classmethods.rb",
+      "start": 184,
+      "end": 185
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "classmethods.rb",
+        "start": 89,
+        "end": 90
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "cm",
+      "file": "classmethods.rb",
+      "start": 186,
+      "end": 188
+    },
+    "dests": [
+      {
+        "name": "cm",
+        "file": "classmethods.rb",
+        "start": 102,
+        "end": 104
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "A",
+      "file": "classmethods.rb",
+      "start": 194,
+      "end": 195
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "classmethods.rb",
+        "start": 89,
+        "end": 90
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "im",
+      "file": "classmethods.rb",
+      "start": 196,
+      "end": 198
+    },
+    "dests": [
+      {
+        "name": "im",
+        "file": "classmethods.rb",
+        "start": 140,
+        "end": 142
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "B",
+      "file": "classmethods.rb",
+      "start": 280,
+      "end": 281
+    },
+    "dests": [
+      {
+        "name": "B",
+        "file": "classmethods.rb",
+        "start": 269,
+        "end": 270
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "B",
+      "file": "classmethods.rb",
+      "start": 302,
+      "end": 303
+    },
+    "dests": [
+      {
+        "name": "B",
+        "file": "classmethods.rb",
+        "start": 269,
+        "end": 270
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "cm",
+      "file": "classmethods.rb",
+      "start": 304,
+      "end": 306
