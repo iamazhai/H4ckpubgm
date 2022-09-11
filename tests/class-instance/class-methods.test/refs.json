@@ -248,3 +248,44 @@
       "end": 717
     },
     "dests": [
+      {
+        "name": "E",
+        "file": "classmethods.rb",
+        "start": 569,
+        "end": 570
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "kls",
+      "file": "classmethods.rb",
+      "start": 601,
+      "end": 604
+    },
+    "dests": [
+      {
+        "name": "kls",
+        "file": "classmethods.rb",
+        "start": 587,
+        "end": 590
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "self",
+      "file": "classmethods.rb",
+      "start": 634,
+      "end": 638
+    },
+    "dests": [
+      {
+        "name": "E",
+        "file": "classmethods.rb",
+        "start": 569,
+        "end": 570
+      }
+    ]
+  }
+]
