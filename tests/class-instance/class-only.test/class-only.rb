@@ -9,4 +9,4 @@ end
 
 puts A.foo
 ao = A.new
-puts ao.foo    # shouldn
+puts ao.foo    # shouldn't find
