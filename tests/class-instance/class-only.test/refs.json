@@ -70,3 +70,14 @@
       "file": "class-only.rb",
       "start": 154,
       "end": 156
+    },
+    "dests": [
+      {
+        "name": "ao",
+        "file": "class-only.rb",
+        "start": 138,
+        "end": 140
+      }
+    ]
+  }
+]
