@@ -1,0 +1,40 @@
+
+[
+  {
+    "ref": {
+      "name": "line",
+      "file": "test1.rb",
+      "start": 49,
+      "end": 53
+    },
+    "dests": [
+      {
+        "name": "line",
+        "file": "test1.rb",
+        "start": 15,
+        "end": 19
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "words",
+      "file": "test1.rb",
+      "start": 385,
+      "end": 390
+    },
+    "dests": [
+      {
+        "name": "words",
+        "file": "test1.rb",
+        "start": 23,
+        "end": 28
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "garbage",
+      "file": "test1.rb",
+      "start": 250,
+      "end": 257
