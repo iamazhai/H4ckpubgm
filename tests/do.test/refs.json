@@ -159,3 +159,37 @@
         "end": 178
       }
     ]
+  },
+  {
+    "ref": {
+      "name": "words",
+      "file": "test1.rb",
+      "start": 337,
+      "end": 342
+    },
+    "dests": [
+      {
+        "name": "words",
+        "file": "test1.rb",
+        "start": 23,
+        "end": 28
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "field",
+      "file": "test1.rb",
+      "start": 346,
+      "end": 351
+    },
+    "dests": [
+      {
+        "name": "field",
+        "file": "test1.rb",
+        "start": 36,
+        "end": 41
+      }
+    ]
+  }
+]
