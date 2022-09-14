@@ -1,0 +1,56 @@
+
+[
+  {
+    "ref": {
+      "name": "x",
+      "file": "begin.rb",
+      "start": 36,
+      "end": 37
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "begin.rb",
+        "start": 0,
+        "end": 1
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "begin.rb",
+      "start": 53,
+      "end": 54
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "begin.rb",
+        "start": 0,
+        "end": 1
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "begin.rb",
+      "start": 19,
+      "end": 20
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "begin.rb",
+        "start": 0,
+        "end": 1
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "begin.rb",
+      "start": 68,
+      "end": 69
