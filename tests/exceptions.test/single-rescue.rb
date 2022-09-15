@@ -4,4 +4,5 @@ end
 
 
 def foo(x)
-  bar(x) rescue
+  bar(x) rescue ok 0
+end
