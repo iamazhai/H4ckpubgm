@@ -4,4 +4,9 @@
       "name": "FieldTest1",
       "file": "test1.rb",
       "start": 93,
-      "e
+      "end": 103
+    },
+    "dests": [
+      {
+        "name": "FieldTest1",
+        "file": "test1.rb
