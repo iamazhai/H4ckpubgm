@@ -18,4 +18,10 @@
   {
     "ref": {
       "name": "new",
-    
+      "file": "test1.rb",
+      "start": 104,
+      "end": 107
+    },
+    "dests": [
+      {
+        "name": "initia
