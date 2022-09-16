@@ -24,4 +24,12 @@
     },
     "dests": [
       {
-        "name": "initia
+        "name": "initialize",
+        "file": "test1.rb",
+        "start": 23,
+        "end": 33
+      }
+    ]
+  },
+  {
+   
