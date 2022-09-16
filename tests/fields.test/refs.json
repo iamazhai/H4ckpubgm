@@ -9,4 +9,13 @@
     "dests": [
       {
         "name": "FieldTest1",
-        "file": "test1.rb
+        "file": "test1.rb",
+        "start": 6,
+        "end": 16
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "new",
+    
