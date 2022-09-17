@@ -50,4 +50,11 @@
       "name": "o1",
       "file": "test1.rb",
       "start": 113,
-      "end":
+      "end": 115
+    },
+    "dests": [
+      {
+        "name": "o1",
+        "file": "test1.rb",
+        "start": 88,
+        
