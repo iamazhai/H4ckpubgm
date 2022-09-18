@@ -57,4 +57,12 @@
         "name": "o1",
         "file": "test1.rb",
         "start": 88,
-        
+        "end": 90
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "test1.rb",
+     
