@@ -71,4 +71,11 @@
     "dests": [
       {
         "file": "test1.rb",
-     
+        "start": 38,
+        "end": 40
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "FieldTest
