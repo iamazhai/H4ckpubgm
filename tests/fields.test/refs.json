@@ -78,4 +78,11 @@
   },
   {
     "ref": {
-      "name": "FieldTest
+      "name": "FieldTest2",
+      "file": "test2.rb",
+      "start": 96,
+      "end": 106
+    },
+    "dests": [
+      {
+        "na
