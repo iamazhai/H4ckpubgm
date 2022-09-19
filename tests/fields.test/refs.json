@@ -85,4 +85,12 @@
     },
     "dests": [
       {
-        "na
+        "name": "FieldTest2",
+        "file": "test2.rb",
+        "start": 6,
+        "end": 16
+      }
+    ]
+  },
+  {
+    
