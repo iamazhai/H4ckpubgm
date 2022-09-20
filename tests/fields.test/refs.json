@@ -93,4 +93,10 @@
     ]
   },
   {
-    
+    "ref": {
+      "name": "new",
+      "file": "test2.rb",
+      "start": 107,
+      "end": 110
+    },
+ 
