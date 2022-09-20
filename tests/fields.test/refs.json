@@ -103,4 +103,13 @@
       {
         "name": "initialize",
         "file": "test2.rb",
-        "star
+        "start": 23,
+        "end": 33
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "o",
+      "file": "test2.rb",
+ 
