@@ -112,4 +112,10 @@
     "ref": {
       "name": "o",
       "file": "test2.rb",
- 
+      "start": 116,
+      "end": 117
+    },
+    "dests": [
+      {
+        "name": "o",
+        "file": "test2.rb",
