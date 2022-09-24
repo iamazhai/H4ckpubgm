@@ -119,3 +119,12 @@
       {
         "name": "o",
         "file": "test2.rb",
+        "start": 92,
+        "end": 93
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "data",
+      "fi
