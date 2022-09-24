@@ -127,4 +127,10 @@
   {
     "ref": {
       "name": "data",
-      "fi
+      "file": "test2.rb",
+      "start": 118,
+      "end": 122
+    },
+    "dests": [
+      {
+        "fil
