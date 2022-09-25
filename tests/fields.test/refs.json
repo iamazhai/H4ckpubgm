@@ -133,4 +133,12 @@
     },
     "dests": [
       {
-        "fil
+        "file": "test2.rb",
+        "start": 38,
+        "end": 43
+      }
+    ]
+  },
+  {
+    "ref": {
+      "fil
