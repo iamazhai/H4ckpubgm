@@ -1,0 +1,40 @@
+
+[
+  {
+    "ref": {
+      "name": "A",
+      "file": "test1.rb",
+      "start": 73,
+      "end": 74
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "test1.rb",
+        "start": 6,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "new",
+      "file": "test1.rb",
+      "start": 75,
+      "end": 78
+    },
+    "dests": [
+      {
+        "name": "initialize",
+        "file": "test1.rb",
+        "start": 14,
+        "end": 24
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "o1",
+      "file": "test1.rb",
+      "start": 84,
+      "end": 86
