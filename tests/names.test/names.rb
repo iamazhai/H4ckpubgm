@@ -9,4 +9,13 @@ class Foo
 end
 
 def wow?
-  'w
+  'wow?'
+end
+
+puts wow?
+
+def wow!
+  'wow!'
+end
+
+puts wow!
