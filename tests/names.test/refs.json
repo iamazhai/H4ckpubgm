@@ -60,3 +60,24 @@
         "name": "wow?",
         "file": "names.rb",
         "start": 131,
+        "end": 135
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "wow!",
+      "file": "names.rb",
+      "start": 189,
+      "end": 193
+    },
+    "dests": [
+      {
+        "name": "wow!",
+        "file": "names.rb",
+        "start": 165,
+        "end": 169
+      }
+    ]
+  }
+]
