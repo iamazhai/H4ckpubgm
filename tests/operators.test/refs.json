@@ -22,4 +22,9 @@
       "start": 53,
       "end": 54
     },
-    
+    "dests": [
+      {
+        "name": "o",
+        "file": "operator.rb",
+        "start": 38,
+        "e
