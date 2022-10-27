@@ -7,4 +7,10 @@
       "end": 43
     },
     "dests": [
-    
+      {
+        "name": "A",
+        "file": "operator.rb",
+        "start": 6,
+        "end": 7
+      }
+ 
