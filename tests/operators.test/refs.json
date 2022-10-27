@@ -1,4 +1,10 @@
 [
   {
     "ref": {
-      "nam
+      "name": "A",
+      "file": "operator.rb",
+      "start": 42,
+      "end": 43
+    },
+    "dests": [
+    
