@@ -13,4 +13,13 @@
         "start": 6,
         "end": 7
       }
- 
+    ]
+  },
+  {
+    "ref": {
+      "name": "o",
+      "file": "operator.rb",
+      "start": 53,
+      "end": 54
+    },
+    
