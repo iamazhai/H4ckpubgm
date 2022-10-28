@@ -27,4 +27,12 @@
         "name": "o",
         "file": "operator.rb",
         "start": 38,
-        "e
+        "end": 39
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "[]",
+      "file": "operator.rb",
+      "start": 55
