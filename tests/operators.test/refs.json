@@ -35,4 +35,11 @@
     "ref": {
       "name": "[]",
       "file": "operator.rb",
-      "start": 55
+      "start": 55,
+      "end": 57
+    },
+    "dests": [
+      {
+        "name": "[]",
+        "file": "operator.rb",
+        "star
