@@ -2,4 +2,8 @@
   {
     "ref": {
       "name": "ActiveModel",
-   
+      "file": "test2.rb",
+      "start": 28,
+      "end": 39
+    },
+    "dests": [
