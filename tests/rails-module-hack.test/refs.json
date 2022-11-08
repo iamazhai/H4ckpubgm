@@ -14,3 +14,9 @@
         "end": 18
       }
     ]
+  },
+  {
+    "ref": {
+      "name": "SecurePassword",
+      "file": "test2.rb",
+      "start"
