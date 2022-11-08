@@ -7,3 +7,10 @@
       "end": 39
     },
     "dests": [
+      {
+        "name": "ActiveModel",
+        "file": "test1.rb",
+        "start": 7,
+        "end": 18
+      }
+    ]
