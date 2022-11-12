@@ -19,4 +19,10 @@
     "ref": {
       "name": "SecurePassword",
       "file": "test2.rb",
-      "start"
+      "start": 41,
+      "end": 55
+    },
+    "dests": [
+      {
+        "name": "SecurePassword",
+        "
