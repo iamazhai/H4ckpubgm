@@ -36,4 +36,11 @@
       "name": "has_secure_password",
       "file": "test2.rb",
       "start": 58,
-      "end"
+      "end": 77
+    },
+    "dests": [
+      {
+        "name": "has_secure_password",
+        "file": "test1.rb",
+        "start": 78,
+        "
