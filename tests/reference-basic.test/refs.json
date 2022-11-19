@@ -1,0 +1,13 @@
+
+[
+  {
+    "ref": {
+      "name": "x",
+      "file": "basic.rb",
+      "start": 10,
+      "end": 11
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "basic.rb",

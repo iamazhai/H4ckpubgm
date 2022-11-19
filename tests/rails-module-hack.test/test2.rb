@@ -1,2 +1,4 @@
 class OauthedUser
-  include ActiveMod
+  include ActiveModel::SecurePassword
+  has_secure_password(validations: false)
+end
