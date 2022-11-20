@@ -11,3 +11,9 @@
       {
         "name": "x",
         "file": "basic.rb",
+        "start": 0,
+        "end": 1
+      }
+    ]
+  }
+]
