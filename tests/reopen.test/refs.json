@@ -18,4 +18,11 @@
   {
     "ref": {
       "name": "self",
-      "file": "test1
+      "file": "test1.rb",
+      "start": 92,
+      "end": 96
+    },
+    "dests": [
+      {
+        "name": "B",
+   
