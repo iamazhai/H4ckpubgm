@@ -47,3 +47,12 @@
       }
     ]
   },
+  {
+    "ref": {
+      "name": "bar",
+      "file": "test1.rb",
+      "start": 155,
+      "end": 158
+    },
+    "dests": [
+    
