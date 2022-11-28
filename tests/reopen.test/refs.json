@@ -32,4 +32,10 @@
     ]
   },
   {
-    "ref
+    "ref": {
+      "name": "B",
+      "file": "test1.rb",
+      "start": 153,
+      "end": 154
+    },
+    "d
