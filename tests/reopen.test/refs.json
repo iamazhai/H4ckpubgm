@@ -68,4 +68,10 @@
       "name": "A",
       "file": "test1.rb",
       "start": 180,
-      "en
+      "end": 181
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "test1.rb",
+        "start": 6,
