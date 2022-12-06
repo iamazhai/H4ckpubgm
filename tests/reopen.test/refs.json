@@ -60,4 +60,12 @@
         "file": "test1.rb",
         "start": 105,
         "end": 108
-   
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "A",
+      "file": "test1.rb",
+      "start": 180,
+      "en
