@@ -75,3 +75,12 @@
         "name": "A",
         "file": "test1.rb",
         "start": 6,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "A",
+      "file": "test1.rb",
+      "
