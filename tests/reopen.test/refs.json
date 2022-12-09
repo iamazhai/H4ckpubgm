@@ -97,4 +97,11 @@
   },
   {
     "ref": {
-      "name": "
+      "name": "baz",
+      "file": "test1.rb",
+      "start": 240,
+      "end": 243
+    },
+    "dests": [
+      {
+        "name": "b
