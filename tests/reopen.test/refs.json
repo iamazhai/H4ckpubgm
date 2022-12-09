@@ -90,4 +90,11 @@
       {
         "name": "A",
         "file": "test1.rb",
-        "st
+        "start": 6,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "
