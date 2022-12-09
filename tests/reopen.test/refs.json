@@ -83,4 +83,11 @@
     "ref": {
       "name": "A",
       "file": "test1.rb",
-      "
+      "start": 238,
+      "end": 239
+    },
+    "dests": [
+      {
+        "name": "A",
+        "file": "test1.rb",
+        "st
