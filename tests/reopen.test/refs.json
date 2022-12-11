@@ -104,4 +104,11 @@
     },
     "dests": [
       {
-        "name": "b
+        "name": "baz",
+        "file": "test1.rb",
+        "start": 190,
+        "end": 193
+      }
+    ]
+  }
+]
