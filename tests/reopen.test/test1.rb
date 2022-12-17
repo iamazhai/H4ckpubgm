@@ -25,3 +25,5 @@ class C
     end
   end
 end
+
+A.baz
