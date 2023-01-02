@@ -59,4 +59,12 @@
         "name": "eat",
         "file": "italy.rb",
         "start": 35,
-        "end"
+        "end": 38
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "italy.rb",
+      "star
