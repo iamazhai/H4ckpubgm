@@ -67,4 +67,10 @@
     "ref": {
       "name": "x",
       "file": "italy.rb",
-      "star
+      "start": 48,
+      "end": 49
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": 
