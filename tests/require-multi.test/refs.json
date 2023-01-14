@@ -1,0 +1,98 @@
+
+[
+  {
+    "ref": {
+      "name": "Italy",
+      "file": "italy.rb",
+      "start": 7,
+      "end": 12
+    },
+    "dests": [
+      {
+        "name": "Italy",
+        "file": "italy.rb",
+        "start": 7,
+        "end": 12
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "Italy",
+      "file": "pepperoni.rb",
+      "start": 26,
+      "end": 31
+    },
+    "dests": [
+      {
+        "name": "Italy",
+        "file": "italy.rb",
+        "start": 7,
+        "end": 12
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "Italy",
+      "file": "sausage.rb",
+      "start": 26,
+      "end": 31
+    },
+    "dests": [
+      {
+        "name": "Italy",
+        "file": "italy.rb",
+        "start": 7,
+        "end": 12
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "Pizza",
+      "file": "sausage.rb",
+      "start": 33,
+      "end": 38
+    },
+    "dests": [
+      {
+        "name": "Pizza",
+        "file": "pepperoni.rb",
+        "start": 33,
+        "end": 38
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "Pizza",
+      "file": "pepperoni.rb",
+      "start": 33,
+      "end": 38
+    },
+    "dests": [
+      {
+        "name": "Pizza",
+        "file": "pepperoni.rb",
+        "start": 33,
+        "end": 38
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "Pepperoni",
+      "file": "pepperoni.rb",
+      "start": 47,
+      "end": 56
+    },
+    "dests": [
+      {
+        "name": "Pepperoni",
+        "file": "pepperoni.rb",
+        "start": 47,
+        "end": 56
+      }
+    ]
+  },
