@@ -9,4 +9,12 @@
     "dests": [
       {
         "name": "ordinalize",
-        "file
+        "file": "embed.rb",
+        "start": 4,
+        "end": 14
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "nu
