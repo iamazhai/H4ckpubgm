@@ -17,4 +17,11 @@
   },
   {
     "ref": {
-      "name": "nu
+      "name": "number",
+      "file": "embed.rb",
+      "start": 28,
+      "end": 34
+    },
+    "dests": [
+      {
+        "nam
