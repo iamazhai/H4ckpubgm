@@ -24,4 +24,11 @@
     },
     "dests": [
       {
-        "nam
+        "name": "number",
+        "file": "embed.rb",
+        "start": 15,
+        "end": 21
+      }
+    ]
+  },
+  {
