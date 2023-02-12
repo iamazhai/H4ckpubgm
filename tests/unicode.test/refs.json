@@ -1,4 +1,12 @@
 [
   {
     "ref": {
-      "name": 
+      "name": "x",
+      "file": "test1.rb",
+      "start": 30,
+      "end": 31
+    },
+    "dests": [
+      {
+        "name": "x",
+ 
