@@ -9,4 +9,9 @@
     "dests": [
       {
         "name": "x",
- 
+        "file": "test1.rb",
+        "start": 17,
+        "end": 18
+      }
+    ]
+  
