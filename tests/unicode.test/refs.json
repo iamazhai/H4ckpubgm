@@ -21,4 +21,10 @@
       "file": "test1.rb",
       "start": 44,
       "end": 46
+    },
+    "dests": [
+      {
+        "name": "猪头",
+        "file": "test1.rb",
+        "start": 33,
   
