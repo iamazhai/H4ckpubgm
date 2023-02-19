@@ -35,4 +35,10 @@
     "ref": {
       "name": "x",
       "file": "test2.rb",
-      "start": 30
+      "start": 30,
+      "end": 31
+    },
+    "dests": [
+      {
+        "name": "x",
+        "file": "test2.rb"
