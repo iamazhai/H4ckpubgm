@@ -41,4 +41,13 @@
     "dests": [
       {
         "name": "x",
-        "file": "test2.rb"
+        "file": "test2.rb",
+        "start": 17,
+        "end": 18
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "猪头",
+   
