@@ -27,4 +27,12 @@
         "name": "猪头",
         "file": "test1.rb",
         "start": 33,
-  
+        "end": 35
+      }
+    ]
+  },
+  {
+    "ref": {
+      "name": "x",
+      "file": "test2.rb",
+      "start": 30
