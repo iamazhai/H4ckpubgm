@@ -56,4 +56,9 @@
     },
     "dests": [
       {
-        "n
+        "name": "猪头",
+        "file": "test2.rb",
+        "start": 33,
+        "end": 35
+      }
+    ]
